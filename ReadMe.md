@@ -1,6 +1,7 @@
 # App Design
 
 ![Design](https://github.com/HashirAKhan/CSCI-499-Drip-Me-Out/blob/main/ReadMeAssets/Design.gif)
+![Design](https://github.com/HashirAKhan/CSCI-499-Drip-Me-Out/blob/main/ReadMeAssets/DesignScreenshot.png)
 
 # Getting Started with Create React App
 
