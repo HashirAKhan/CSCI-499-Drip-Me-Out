@@ -1,11 +1,7 @@
 #navbar {
    height: 85px;
    background-color: rgba(0,0, 0, .5);
-}
-
-#logout {
    text-align: right;
-   margin-top: -85px;
 }
 
 p {
