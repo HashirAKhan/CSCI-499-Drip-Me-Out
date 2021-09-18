@@ -21,7 +21,7 @@ const App = () => {
             <ClothingForm />
             <ClothingImage />
           </div>
-      </Route>
+        </Route>
       </Switch>
     </Router>
   )

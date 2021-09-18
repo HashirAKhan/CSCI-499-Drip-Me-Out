@@ -9,7 +9,7 @@ export default function Home() {
    }
 
    return (
-      <>
+      <div id="page">
          <div id="navbar">
             <p id="logout" onClick={onClick}>Log Out</p>
          </div>
@@ -28,7 +28,6 @@ export default function Home() {
          <div id="dripmeout">
             <p>Drip Me Out is lorem ipsum dolor sit amet.</p>
          </div>
-
-      </>
+      </div>
    )
 }
