@@ -2,14 +2,18 @@ import Header from './components/Header'
 import ClothingForm from './components/ClothingForm'
 import ClothingImage from './components/ClothingImage'
 import Login from './components/Login'
+import Home from './components/Home'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 const App = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <Login />
+        </Route>
+        <Route path="/home">
+          <Home />
         </Route>
         <Route path="/clothingpage">
           <div className='container'>
@@ -17,7 +21,7 @@ const App = () => {
             <ClothingForm />
             <ClothingImage />
           </div>
-        </Route>
+      </Route>
       </Switch>
     </Router>
   )
