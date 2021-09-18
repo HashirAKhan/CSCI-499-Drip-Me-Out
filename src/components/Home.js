@@ -1,10 +1,17 @@
 import "../css/home.css"
+import { useHistory } from "react-router-dom"
 
 export default function Home() {
+   let history = useHistory()
+
+   function onClick(){
+      history.push("/")
+   }
+
    return (
       <>
          <div id="navbar">
-            <p id="logout">Log Out</p>
+            <p id="logout" onClick={onClick}>Log Out</p>
          </div>
          <div class="boxes" id="box1">
             <p>Drip Me Out</p>

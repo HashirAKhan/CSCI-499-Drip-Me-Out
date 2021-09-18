@@ -8,6 +8,12 @@
    padding: 30px;
 }
 
+#logout:hover {
+   position: relative;
+   bottom: 2.5px;
+   cursor: pointer;
+}
+
 p {
    color: white;
    padding: 20px;
