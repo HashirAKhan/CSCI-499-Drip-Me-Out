@@ -1,14 +1,25 @@
 import Header from './components/Header'
 import ClothingForm from './components/ClothingForm'
 import ClothingImage from './components/ClothingImage'
+import Login from './components/Login'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 const App = () => {
   return (
-    <div className='container'>
-      <Header/>
-      <ClothingForm/>
-      <ClothingImage/>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/">
+          <Login />
+        </Route>
+        <Route path="/clothingpage">
+          <div className='container'>
+            <Header />
+            <ClothingForm />
+            <ClothingImage />
+          </div>
+        </Route>
+      </Switch>
+    </Router>
   )
 }
 
