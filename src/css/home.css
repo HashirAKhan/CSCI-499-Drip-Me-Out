@@ -4,7 +4,53 @@
    text-align: right;
 }
 
+#logout {
+   padding: 30px;
+}
+
 p {
    color: white;
-   padding: 30px;
+   padding: 20px;
+}
+
+.boxes {
+   background-color: rgba(0,0, 0, .5);
+   margin-top: 10%;
+   float: left;
+   text-align: center;
+   border-radius: 25px;
+   width: 32%;
+}
+
+#box1 {
+   margin-left: 1%;
+}
+
+#box2 {
+   margin-left: 1%;
+   margin-right: 1%;
+}
+
+#box3 {
+   margin-right: 1%;
+}
+
+.smalltext {
+   font-weight: lighter;
+   font-size: small;
+}
+
+#dripmeout {
+   position: absolute;
+   top: 70%;
+   left: 0;
+   right: 0;
+   margin-left: auto;
+   margin-right: auto;
+   width: 400px;
+}
+
+h1 {
+   font-size: small;
+   color: white;
 }
