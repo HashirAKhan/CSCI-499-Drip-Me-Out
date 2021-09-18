@@ -1,14 +1,15 @@
 #navbar {
-   height: 85px;
+   height: 60px;
    background-color: rgba(0,0, 0, .5);
    text-align: right;
-   padding: 27px;
+   padding: 16px;
 }
 
 #logout {
    padding: 30px;
    text-decoration: none;
    color: white;
+   font-weight: lighter;
 }
 
 #logout:hover {
