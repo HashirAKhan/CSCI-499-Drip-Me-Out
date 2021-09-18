@@ -1,17 +1,22 @@
 import "../css/home.css"
-import { useHistory } from "react-router-dom"
+import { useEffect } from 'react'
 
 export default function Home() {
-   let history = useHistory()
 
-   function onClick(){
-      history.push("/")
-   }
+   useEffect(() => {
+      document.body.style.background = "url(https://i.ibb.co/T2JzMkn/anotherrack.jpg)"
+      document.body.style.backgroundSize = "cover"
+      document.body.style.backgroundAttachment = "fixed"
+      document.body.style.backgroundPosition = "center"
+      return () => {
+         document.body.style.background = "url('../closet_image.jpg')"
+      }
+   }, []);
 
    return (
-      <div id="page">
+      <>
          <div id="navbar">
-            <p id="logout" onClick={onClick}>Log Out</p>
+            <a href="/" id="logout">Log Out</a>
          </div>
          <div class="boxes" id="box1">
             <p>Drip Me Out</p>
@@ -28,6 +33,6 @@ export default function Home() {
          <div id="dripmeout">
             <p>Drip Me Out is lorem ipsum dolor sit amet.</p>
          </div>
-      </div>
+      </>
    )
 }

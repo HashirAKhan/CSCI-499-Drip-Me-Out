@@ -2,10 +2,13 @@
    height: 85px;
    background-color: rgba(0,0, 0, .5);
    text-align: right;
+   padding: 27px;
 }
 
 #logout {
    padding: 30px;
+   text-decoration: none;
+   color: white;
 }
 
 #logout:hover {
