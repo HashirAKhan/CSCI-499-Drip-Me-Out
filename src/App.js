@@ -9,13 +9,13 @@ const App = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/CSCI-499-Drip-Me-Out/">
           <Login />
         </Route>
-        <Route path="/home">
+        <Route path="/CSCI-499-Drip-Me-Out/home">
           <Home />
         </Route>
-        <Route path="/clothingpage">
+        <Route path="/CSCI-499-Drip-Me-Out/clothingpage">
           <div className='container'>
             <Header />
             <ClothingForm />
