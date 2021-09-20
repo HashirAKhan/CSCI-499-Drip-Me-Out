@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 const App = () => {
   return (
-    <Router>
+    {/*<Router>*/}
       <Switch>
         <Route exact path="/">
           <Login />
@@ -23,7 +23,7 @@ const App = () => {
           </div>
         </Route>
       </Switch>
-    </Router>
+    {/*</Router>*/}
   )
 }
 
