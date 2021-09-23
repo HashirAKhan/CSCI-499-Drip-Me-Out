@@ -3,19 +3,19 @@ import ClothingForm from './components/ClothingForm'
 import ClothingImage from './components/ClothingImage'
 import Login from './components/Login'
 import Home from './components/Home'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { HashRouter, Route, Switch } from 'react-router-dom'
 
 const App = () => {
   return (
-    <Router>
+    <HashRouter>
       <Switch>
-        <Route exact path="/CSCI-499-Drip-Me-Out/">
+        <Route exact path="/">
           <Login />
         </Route>
-        <Route path="/CSCI-499-Drip-Me-Out/home">
+        <Route exact path="/home">
           <Home />
         </Route>
-        <Route path="/CSCI-499-Drip-Me-Out/clothingpage">
+        <Route exact path="/clothingpage">
           <div className='container'>
             <Header />
             <ClothingForm />
@@ -23,7 +23,7 @@ const App = () => {
           </div>
         </Route>
       </Switch>
-    </Router>
+    </HashRouter>
   )
 }
 
