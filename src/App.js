@@ -17,7 +17,9 @@ const App = () => {
         </Route>
         <Route exact path="/clothingpage">
           <div className='container'>
-            <Header />
+          <div id="navbar">
+             <a href="/" id="logout">Log Out</a>
+          </div>
             <ClothingForm />
             <ClothingImage />
           </div>
