@@ -6,6 +6,7 @@ const Header = () => {
     <header className='header'>
       <Button
         text={'Log Out'}
+        onClick={() => console.log('Logged Out')}
       />
     </header>
   )

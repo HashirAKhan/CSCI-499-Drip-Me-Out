@@ -1,10 +1,6 @@
 import PropTypes from 'prop-types'
 
-const Button = ({ text }) => {
-  const onClick = () => {
-    console.log('Logged Out')
-  }
-
+const Button = ({ text, onClick }) => {
   return (
     <button
       onClick={onClick}
@@ -16,7 +12,8 @@ const Button = ({ text }) => {
 }
 
 Button.propTypes = {
-text: PropTypes.string,
+  text: PropTypes.string,
+  onClick: PropTypes.func,
 }
 
 export default Button
