@@ -3,6 +3,7 @@ import ClothingForm from './components/ClothingForm'
 import ClothingImage from './components/ClothingImage'
 import Login from './components/Login'
 import Home from './components/Home'
+import SignUp from './components/SignUp'
 import { HashRouter, Route, Switch } from 'react-router-dom'
 
 const App = () => {
@@ -21,6 +22,9 @@ const App = () => {
             <ClothingForm />
             <ClothingImage />
           </div>
+        </Route>
+        <Route path="/signup">
+          <SignUp />
         </Route>
       </Switch>
     </HashRouter>
