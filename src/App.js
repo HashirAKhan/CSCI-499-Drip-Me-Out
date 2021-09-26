@@ -4,19 +4,19 @@ import ClothingImage from './components/ClothingImage'
 import Login from './components/Login'
 import Home from './components/Home'
 import SignUp from './components/SignUp'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { HashRouter, Route, Switch } from 'react-router-dom'
 
 const App = () => {
   return (
-    <Router>
+    <HashRouter>
       <Switch>
         <Route exact path="/">
           <Login />
         </Route>
-        <Route path="/home">
+        <Route exact path="/home">
           <Home />
         </Route>
-        <Route path="/clothingpage">
+        <Route exact path="/clothingpage">
           <div className='container'>
             <Header />
             <ClothingForm />
@@ -25,9 +25,9 @@ const App = () => {
         </Route>
         <Route path="/signup">
           <SignUp />
-        </Route> 
+        </Route>
       </Switch>
-    </Router>
+    </HashRouter>
   )
 }
 

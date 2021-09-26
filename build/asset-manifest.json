@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/CSCI-499-Drip-Me-Out/static/css/main.1c549519.chunk.css",
+    "main.js": "/CSCI-499-Drip-Me-Out/static/js/main.039d0b3b.chunk.js",
+    "main.js.map": "/CSCI-499-Drip-Me-Out/static/js/main.039d0b3b.chunk.js.map",
+    "runtime-main.js": "/CSCI-499-Drip-Me-Out/static/js/runtime-main.0f02c1c5.js",
+    "runtime-main.js.map": "/CSCI-499-Drip-Me-Out/static/js/runtime-main.0f02c1c5.js.map",
+    "static/js/2.036dc28b.chunk.js": "/CSCI-499-Drip-Me-Out/static/js/2.036dc28b.chunk.js",
+    "static/js/2.036dc28b.chunk.js.map": "/CSCI-499-Drip-Me-Out/static/js/2.036dc28b.chunk.js.map",
+    "static/js/3.97fb42c9.chunk.js": "/CSCI-499-Drip-Me-Out/static/js/3.97fb42c9.chunk.js",
+    "static/js/3.97fb42c9.chunk.js.map": "/CSCI-499-Drip-Me-Out/static/js/3.97fb42c9.chunk.js.map",
+    "index.html": "/CSCI-499-Drip-Me-Out/index.html",
+    "static/css/main.1c549519.chunk.css.map": "/CSCI-499-Drip-Me-Out/static/css/main.1c549519.chunk.css.map",
+    "static/js/2.036dc28b.chunk.js.LICENSE.txt": "/CSCI-499-Drip-Me-Out/static/js/2.036dc28b.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/CSCI-499-Drip-Me-Out/static/media/closet_image.09b2d6c9.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0f02c1c5.js",
+    "static/js/2.036dc28b.chunk.js",
+    "static/css/main.1c549519.chunk.css",
+    "static/js/main.039d0b3b.chunk.js"
+  ]
+}
