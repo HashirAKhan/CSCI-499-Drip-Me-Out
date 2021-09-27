@@ -5,3 +5,41 @@
    width: 60%;
    border-radius: 25px;
 }
+
+#signup {
+  text-align: center;
+  background-color: rgba(0,0, 0, .5);
+  width: 40%;
+  border-radius: 25px;
+  margin: auto;
+  padding: 25px 50px;
+}
+
+#signup-form{
+  color: white;
+}
+
+#signup input{
+  border-radius: 25px;
+  padding: 10px;
+  width: 40%;
+}
+
+#form-title h1{
+  padding-bottom: 7px;
+}
+
+#form-title h1{
+  font-size: 150%;
+}
+
+#signup-button{
+  padding-top:20px;
+}
+
+#signup-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2%;
+}

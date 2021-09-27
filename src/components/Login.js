@@ -16,18 +16,18 @@ export default function Login() {
                 <div class="login-fields">
                   <label id="email-field" for="email-login"> Email: </label>
                   <br/>
-                  <input type="email" id="email-login"/>
+                  <input type="email" id="email-login" required />
                 </div>
 
                 <div class="login-fields">
                   <label id="password-field" for="password-login"> Password: </label>
                   <br/>
-                  <input type="password" id="password-login"/>
+                  <input type="password" id="password-login" required />
                 </div>
 
                 <div id="login-buttons">
-                  <Button text = "Login" />
-                  <Button text = "Sign Up" /> 
+                  <Button text = "Login" url="/home"/>
+                  <Button text = "Sign Up" url="/signup"/>
                 </div>
 
               </form>
