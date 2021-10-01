@@ -5,7 +5,7 @@ const Button = ({ text, href }) => {
   const history = useHistory();
   const onClick = () => {
     history.push(`${href}`);
-    console.log('Logged Out')
+    //console.log('Logged Out')
   }
 
   return (
