@@ -3,14 +3,12 @@ import ClothingForm from './components/ClothingForm'
 import ClothingImage from './components/ClothingImage'
 import Login from './components/Login'
 import Home from './components/Home'
+import Weather from './components/Weather'
 import SignUp from './components/SignUp'
 import { HashRouter, Route, Switch } from 'react-router-dom'
 import React from 'react'
 
 class App extends React.Component {
-  constructor() {
-    super();
-  }
   render() {
     return (
       <HashRouter>
@@ -21,6 +19,9 @@ class App extends React.Component {
           <Route exact path="/home">
             <Home />
           </Route>
+          <Route exact path="/weather">
+            <Weather />
+          </Route>
           <Route exact path="/clothingpage">
             <div className='container'>
               <Header />
@@ -28,6 +29,7 @@ class App extends React.Component {
               <ClothingImage />
             </div>
           </Route>
+
           <Route exact path="/signup">
             <SignUp />
           </Route>
