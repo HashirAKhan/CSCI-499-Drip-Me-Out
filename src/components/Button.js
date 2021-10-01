@@ -1,22 +1,28 @@
 import PropTypes from 'prop-types'
+import { useHistory } from 'react-router-dom'
 
-const Button = ({ text }) => {
+const Button = ({ text, href }) => {
+  const history = useHistory();
   const onClick = () => {
+    history.push(`${href}`);
     console.log('Logged Out')
   }
 
   return (
-    <button
-      onClick={onClick}
-      className='btn'
-    >
-      {text}
-    </button>
+    <a href={href}>
+      <button
+        onClick={onClick}
+        className='btn'
+      >
+        {text}
+      </button>
+    </a>
   )
 }
 
 Button.propTypes = {
 text: PropTypes.string,
+href: PropTypes.string
 }
 
 export default Button

@@ -40,7 +40,7 @@ export default function SignUp() {
 
 
                 <div id="signup-button">
-                  <Button text = "Sign Up" />
+                  <a href="/home"><Button text = "Sign Up" /></a>
                 </div>
 
               </form>
