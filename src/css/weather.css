@@ -1,0 +1,29 @@
+#body {
+   text-align: center;
+   background-color:  rgba(0,0, 0, .5);
+   border-radius: 25px;
+   margin-top: 10%;
+   margin-left: 2.5%;
+   margin-right: 2.5%;
+}
+
+button {
+   padding: 10px;
+   background-color: black;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   font-size: medium;
+}
+
+button:hover {
+   position: relative;
+   bottom: 2.5px;
+   cursor: pointer;
+}
+
+input {
+   border-radius: 5px;
+   border: none;
+   padding: 5px;
+}

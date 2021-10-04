@@ -1,8 +1,18 @@
 import "../css/home.css"
 import { useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 
 export default function Home() {
-
+   const history = useHistory();
+   function onClickWeather() {
+      history.push(`/weather`);
+   }
+   function onClickCustomize() {
+      history.push("/customize")
+   }
+   function onClickCloset() {
+      history.push("/clothingpage")
+   }
    useEffect(() => {
       document.body.style.background = "url(https://i.ibb.co/T2JzMkn/anotherrack.jpg)"
       document.body.style.backgroundSize = "cover"
@@ -18,15 +28,15 @@ export default function Home() {
          <div id="navbar">
             <a href="/" id="logout">Log Out</a>
          </div>
-         <div class="boxes" id="box1">
-            <p>Drip Me Out</p>
-            <p class="smalltext">Have an outfit created for you based on the weather and your preferences</p>
+         <div class="boxes" id="box1" onClick={onClickWeather}>
+            <p>Weather</p>
+            <p class="smalltext">Enter zip code to see current weather with conditons, high, and low</p>
          </div>
-         <div class="boxes" id="box2">
+         <div class="boxes" id="box2" onClick={onClickCustomize}>
             <p>Customize an Outfit</p>
             <p class="smalltext">Create your own outfit based on items you have in your closet</p>
          </div>
-         <div class="boxes" id="box3">
+         <div class="boxes" id="box3" onClick={onClickCloset}>
             <p>My Closet</p>
             <p class="smalltext">Browse and add items to your very own virtual closet</p>
          </div>

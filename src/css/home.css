@@ -64,3 +64,9 @@ h1 {
    font-size: small;
    color: white;
 }
+
+.boxes:hover {
+   position: relative;
+   bottom: 2.5px;
+   cursor: pointer;
+}

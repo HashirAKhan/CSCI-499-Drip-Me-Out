@@ -1,0 +1,39 @@
+#navbar {
+   height: 60px;
+   background-color: rgba(0,0, 0, .5);
+   text-align: right;
+   padding: 16px;
+}
+
+#navbar2 {
+   position: relative;
+   bottom: 25px;
+}
+
+#logout {
+   padding: 15px;
+}
+
+a {
+   color: white;
+   text-decoration: none;
+   padding: 20px;
+   font-weight: lighter;
+}
+
+a:hover {
+   position: relative;
+   bottom: 2.5px;
+   cursor: pointer;
+}
+
+#logout {
+   text-decoration: none;
+   font-weight: lighter;
+}
+
+#logout:hover {
+   position: relative;
+   bottom: 2.5px;
+   cursor: pointer;
+}
