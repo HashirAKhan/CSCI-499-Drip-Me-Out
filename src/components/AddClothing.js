@@ -10,7 +10,7 @@ const AddClothing = () => {
       <div id="navbar">
         <a href="/" id="logout">Log Out</a>
       </div>
-      <div>
+      <div className='content-container'>
         <ClothingForm />
         <ClothingImage />
       </div>
