@@ -1,8 +1,6 @@
-import Header from './components/Header'
-import ClothingForm from './components/ClothingForm'
-import ClothingImage from './components/ClothingImage'
 import Login from './components/Login'
 import Home from './components/Home'
+import AddClothing from './components/AddClothing'
 import Weather from './components/Weather'
 import SignUp from './components/SignUp'
 import { HashRouter, Route, Switch } from 'react-router-dom'
@@ -22,14 +20,9 @@ class App extends React.Component {
           <Route exact path="/weather">
             <Weather />
           </Route>
-          <Route exact path="/clothingpage">
-            <div className='container'>
-              <Header />
-              <ClothingForm />
-              <ClothingImage />
-            </div>
+          <Route exact path="/addclothing">
+            <AddClothing />
           </Route>
-
           <Route exact path="/signup">
             <SignUp />
           </Route>
