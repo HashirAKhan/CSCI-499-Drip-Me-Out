@@ -1,8 +1,19 @@
 import "../css/weather.css"
 import Navbar from "./Navbar"
-import Button from "./Button"
+import { useEffect } from 'react'
+
 
 export default function Weather() {
+   useEffect(() => {
+      document.body.style.background = "url(https://i.ibb.co/KVTT444/globe.jpg)"
+      document.body.style.backgroundSize = "cover"
+      document.body.style.backgroundAttachment = "fixed"
+      document.body.style.backgroundPosition = "center"
+      return () => {
+         document.body.style.background = "url('../closet_image.jpg')"
+      }
+   }, [])
+
    function onClick(){
       let input = document.getElementById("userinput").value;
 
