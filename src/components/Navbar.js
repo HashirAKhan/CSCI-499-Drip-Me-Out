@@ -32,8 +32,8 @@ export default function Navbar() {
             <a href="/" id="logout">Log Out</a>
          </div>
          <div id="navbar2">
-            <a href="/home" id="home" onClick={onClickHome}>Home</a>
-            <a href="/weather" id="weather" onClick={onClickWeather}>Weather</a>
+            <a href="/home" id="home">Home</a>
+            <a href="/weather" id="weather">Weather</a>
             <a href="/customize" id="customize" onClick={onClickCustomize}>Customize</a>
             <a href="/clothingpage" id="closet" onClick={onClickCloset}>Closet</a>
          </div>
