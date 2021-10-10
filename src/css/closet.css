@@ -1,0 +1,65 @@
+
+
+.closet {
+   font-size: small;
+   padding: 0px;
+   text-align: center;
+}
+
+#closetbutton {
+   background-color:  rgba(0,0, 0, .5);
+   float: right;
+   width: 18.25%;
+   border-radius: 10px;
+   margin-right: 1%;
+   margin-left: 1%;
+   margin-bottom: 1%;
+   display: flex;
+   height: 50px;
+   justify-content: center;
+   align-items: center;
+   
+
+   color: white;
+}
+
+#closetbutton2 {
+   background-color:  rgba(0,0, 0, .5);
+   float: right;
+   width: 18.25%;
+   text-align: center;
+   border-radius: 10px;
+   margin-bottom: 1%;
+   display: flex;
+   height: 50px;
+   justify-content: center;
+   align-items: center;
+
+   color: white;
+}
+
+#leftbox {
+   background-color:  rgba(0,0, 0, .5);
+   width: 58.5%; 
+   padding: 10px;
+   border-radius: 10px;
+   float: left;
+   margin-left: 1%;
+   margin-right: 1%;
+   text-align: center;
+   font-size: small;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+/* #rightbox {
+   background-color:  rgba(0,0, 0, .5);
+   padding: 10px;
+   border-radius: 10px;
+   width: 16.5%;
+   float: right;
+   margin-right: 1%;
+
+   color: white;
+} */

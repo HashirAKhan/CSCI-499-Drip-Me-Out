@@ -11,7 +11,7 @@ export default function Home() {
       history.push("/customize")
    }
    function onClickCloset() {
-      history.push("/clothingpage")
+      history.push("/closet")
    }
    useEffect(() => {
       document.body.style.background = "url(https://i.ibb.co/T2JzMkn/anotherrack.jpg)"
