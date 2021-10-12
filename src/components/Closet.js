@@ -23,7 +23,9 @@ export default function Closet() {
    useEffect(() => {
 
       if (!rendered_value) {
-         document.body.style.background = "url(https://i.ibb.co/6mxrnnY/rack.jpg)"
+         //https://i.ibb.co/6mxrnnY/rack.jpg
+         //https://i.ibb.co/h8RZwhY/base.jpg
+         document.body.style.background = "url(https://i.ibb.co/h8RZwhY/base.jpg)"
          document.body.style.backgroundSize = "cover"
          document.body.style.backgroundAttachment = "fixed"
          document.body.style.backgroundPosition = "center"

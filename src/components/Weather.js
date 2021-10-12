@@ -5,7 +5,9 @@ import { useEffect } from 'react'
 
 export default function Weather() {
    useEffect(() => {
-      document.body.style.background = "url(https://i.ibb.co/KVTT444/globe.jpg)"
+      //https://i.ibb.co/h8RZwhY/base.jpg
+      //https://i.ibb.co/KVTT444/globe.jpg
+      document.body.style.background = "url(https://i.ibb.co/h8RZwhY/base.jpg)"
       document.body.style.backgroundSize = "cover"
       document.body.style.backgroundAttachment = "fixed"
       document.body.style.backgroundPosition = "center"
