@@ -14,7 +14,9 @@ export default function Home() {
       history.push("/closet")
    }
    useEffect(() => {
-      document.body.style.background = "url(https://i.ibb.co/T2JzMkn/anotherrack.jpg)"
+      //https://i.ibb.co/h8RZwhY/base.jpg
+      //https://i.ibb.co/T2JzMkn/anotherrack.jpg
+      document.body.style.background = "url(https://i.ibb.co/h8RZwhY/base.jpg)"
       document.body.style.backgroundSize = "cover"
       document.body.style.backgroundAttachment = "fixed"
       document.body.style.backgroundPosition = "center"
