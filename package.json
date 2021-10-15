@@ -1,6 +1,5 @@
 {
   "name": "my-app",
-  "homepage": "https://hashirakhan.github.io/CSCI-499-Drip-Me-Out/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
