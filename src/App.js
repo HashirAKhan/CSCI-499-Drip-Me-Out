@@ -4,7 +4,7 @@ import AddClothing from './components/AddClothing'
 import Weather from './components/Weather'
 import SignUp from './components/SignUp'
 import Closet from './components/Closet'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import React from 'react'
 
 class App extends React.Component {
