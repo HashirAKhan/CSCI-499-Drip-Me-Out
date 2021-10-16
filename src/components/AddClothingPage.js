@@ -1,4 +1,4 @@
-import '../css/addclothing.css';
+import '../css/addclothingpage.css';
 import Button from './Button.js';
 // import Header from './Header'
 

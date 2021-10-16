@@ -1,6 +1,6 @@
 import Navbar from './Navbar'
 import React, { useEffect, useRef, useState } from 'react'
-import "../css/closet.css"
+import "../css/closetpage.css"
 import ItemImages from "./ItemImages"
 import ItemClick from './ItemClick'
 
