@@ -1,4 +1,4 @@
-import '../css/signup.css';
+import '../css/signuppage.css';
 import Button from './Button.js';
 
 export default function SignUp() {

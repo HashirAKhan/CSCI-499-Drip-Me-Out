@@ -1,4 +1,4 @@
-import "../css/weather.css"
+import "../css/weatherpage.css"
 import Navbar from "./Navbar"
 import { useEffect } from 'react'
 
@@ -41,7 +41,7 @@ export default function Weather() {
          xhr.send(input);
 
          //weather.innerText = "The weather is sunny with a low of 89 and high of 93.";
-         
+
          let div = document.getElementById("body");
          div.appendChild(weather);
          //document.
@@ -49,7 +49,7 @@ export default function Weather() {
          div.appendChild(create_p);
       }
    }
-   
+
    return (
       <>
          <Navbar />

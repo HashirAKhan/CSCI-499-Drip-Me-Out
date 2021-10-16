@@ -1,4 +1,4 @@
-import "../css/home.css"
+import "../css/homepage.css"
 import { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 
