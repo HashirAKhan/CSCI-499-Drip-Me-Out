@@ -4,7 +4,10 @@ import { useHistory } from 'react-router-dom'
 const Button = ({ text, href }) => {
   const history = useHistory();
   const onClick = () => {
-    history.push(`${href}`);
+    if (href != undefined)
+    {
+      history.push(`${href}`);
+    }
     //console.log('Logged Out')
   }
 

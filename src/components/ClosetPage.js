@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import "../css/closetpage.css"
 import ItemImages from "./ItemImages"
 import ItemClick from './ItemClick'
+import { useHistory } from 'react-router-dom'
 
 export default function Closet() {
    const rendered = useRef(false);
@@ -22,7 +23,8 @@ export default function Closet() {
 
    useEffect(() => {
 
-      if (!rendered_value) {
+      // Just added .current to render_valued, have not tested for working functionality yet
+      if (!(rendered_value.current)) {
          //https://i.ibb.co/6mxrnnY/rack.jpg
          //https://i.ibb.co/h8RZwhY/base.jpg
          document.body.style.background = "url(https://i.ibb.co/h8RZwhY/base.jpg)"
@@ -36,7 +38,10 @@ export default function Closet() {
             // let counter = 0;
 
             let load = document.getElementById("load");
-            load.remove();
+            if (document.getElementById("load"))
+            {
+               load.remove();
+            }
 
             let item_image_array = [];
             let item_id_array = [];
@@ -71,7 +76,7 @@ export default function Closet() {
          <Navbar />
          <div id="leftbox">
             <div id="innerdiv">
-               <a id="load" href="/closet">Loading Items...</a>
+               <a id="load" href="/#/closet">Loading Items...</a>
                <ItemImages itemimages={itemimages} itemids={itemids} onChange={onChange}/>
             </div>
          </div>
