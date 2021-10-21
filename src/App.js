@@ -8,15 +8,33 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import React from 'react'
 
 class App extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      login: false,
+      email: "",
+      password: ""
+    };
+  }
+
+  setState(login, email, password) {
+    this.setState({
+      login: login,
+      email: email,
+      password: password
+    });
+    console.log(this.state);
+  }
+
   render() {
     return (
       <Router>
         <Switch>
           <Route exact path="/">
-            <Login />
+            <Login setState={setState}/>
           </Route>
           <Route exact path="/home">
-            <Home />
+            <Home login={this.state}/>
           </Route>
           <Route exact path="/weather">
             <Weather />
