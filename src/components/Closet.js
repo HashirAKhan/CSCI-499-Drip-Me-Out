@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import "../css/closet.css"
 import ItemImages from "./ItemImages"
 import ItemClick from './ItemClick'
+import { useHistory } from 'react-router-dom'
 
 export default function Closet() {
    const rendered = useRef(false);
@@ -71,7 +72,7 @@ export default function Closet() {
          <Navbar />
          <div id="leftbox">
             <div id="innerdiv">
-               <a id="load" href="/closet">Loading Items...</a>
+               <a id="load" href="/#/closet">Loading Items...</a>
                <ItemImages itemimages={itemimages} itemids={itemids} onChange={onChange}/>
             </div>
          </div>

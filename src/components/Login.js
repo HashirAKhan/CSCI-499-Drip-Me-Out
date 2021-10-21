@@ -34,7 +34,7 @@ export default function Login(props) {
             </div>
             <div id="login-buttons">
               <Button text="Login" href="/home" />
-              <Button text="Sign Up" href="signup" />
+              <Button text="Sign Up" href="/signup" />
             </div>
           </form>
         </div>
