@@ -23,7 +23,8 @@ export default function Closet() {
 
    useEffect(() => {
 
-      if (!rendered_value) {
+      // Just added .current to render_valued, have not tested for working functionality yet
+      if (!(rendered_value.current)) {
          //https://i.ibb.co/6mxrnnY/rack.jpg
          //https://i.ibb.co/h8RZwhY/base.jpg
          document.body.style.background = "url(https://i.ibb.co/h8RZwhY/base.jpg)"
@@ -37,7 +38,10 @@ export default function Closet() {
             // let counter = 0;
 
             let load = document.getElementById("load");
-            load.remove();
+            if (document.getElementById("load"))
+            {
+               load.remove();
+            }
 
             let item_image_array = [];
             let item_id_array = [];

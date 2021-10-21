@@ -17,12 +17,26 @@ class App extends React.Component {
     };
   }
 
-  setState(login, email, password) {
+  handleEmail = (email) => {
     this.setState({
-      login: login,
+      login: true,
+      email: email
+    })
+  }
+
+  handlePassword = (password) => {
+    this.setState({
+      password: password
+    })
+    alert(this.state);
+  }
+
+  handleLoginInfo = (email, password) => {
+    this.setState({
+      login: true,
       email: email,
       password: password
-    });
+    })
     console.log(this.state);
   }
 
@@ -31,10 +45,10 @@ class App extends React.Component {
       <Router>
         <Switch>
           <Route exact path="/">
-            <Login setState={setState}/>
+            <Login loginInfo={this.handleLoginInfo}/>
           </Route>
           <Route exact path="/home">
-            <Home login={this.state}/>
+            <Home />
           </Route>
           <Route exact path="/weather">
             <Weather />
@@ -46,7 +60,7 @@ class App extends React.Component {
             <AddClothing />
           </Route>
           <Route exact path="/signup">
-            <SignUp />
+            <SignUp email={this.handleEmail} password={this.handlePassword} />
           </Route>
         </Switch>
       </Router >
