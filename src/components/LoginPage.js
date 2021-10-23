@@ -23,6 +23,8 @@ export default function Login(props) {
         {
           props.loginInfo(email, password); 
           history.push("/home");  
+          localStorage.setItem('email', email);
+          localStorage.setItem('password', password);
         }
         if (xhr.responseText === "unsuccessful")
         {

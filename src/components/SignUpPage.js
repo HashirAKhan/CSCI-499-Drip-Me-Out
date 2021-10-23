@@ -43,6 +43,8 @@ export default function SignUp(props) {
       {
         setSignedEmail(email);
         setSignedPassword(password);
+        localStorage.setItem('email', email);
+        localStorage.setItem('password', password);
         history.push("/home");
       }
     });

@@ -5,8 +5,21 @@ import ItemImages from "./ItemImages"
 import ItemClick from './ItemClick'
 import { useHistory } from 'react-router-dom'
 
-export default function Closet() {
+export default function Closet(props) {
+   const history = useHistory();
+   function add(){
+      history.push("/addclothing");
+   }
+
    const rendered = useRef(false);
+
+   let user = useRef();
+
+   if (props.user.login)
+   {
+      user.current = props.user;
+   }
+
    const rendered_value = rendered.current;
 
    const [itemimages, setItemImages] = useState([]);
@@ -65,7 +78,7 @@ export default function Closet() {
             item_image_array.forEach(itemimage => setItemImages(oldArray => [...oldArray, itemimage]));
          });
          xhr.open("POST", "http://localhost:8080/closet");
-         xhr.send();
+         xhr.send(`${localStorage.getItem('email')}&${localStorage.getItem('password')}`);
          rendered.current = true;
       }
 
@@ -80,8 +93,8 @@ export default function Closet() {
                <ItemImages itemimages={itemimages} itemids={itemids} onChange={onChange}/>
             </div>
          </div>
-         <div id="closetbutton">
-            <a href="/addclothingpage" className="closet">Add Item</a>
+         <div onClick={add} id="closetbutton">
+            <a className="closet">Add Item</a>
          </div>
          <div id="closetbutton2">
             <a href="/outfits" className="closet">View Saved Outfits</a>

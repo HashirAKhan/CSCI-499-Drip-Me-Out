@@ -37,7 +37,6 @@ class App extends React.Component {
       email: email,
       password: password
     })
-    console.log(this.state);
   }
 
   render() {
@@ -54,7 +53,7 @@ class App extends React.Component {
             <Weather />
           </Route>
           <Route exact path="/closet">
-            <Closet />
+            <Closet user={this.state}/>
           </Route>
           <Route exact path="/addclothing">
             <AddClothing />
