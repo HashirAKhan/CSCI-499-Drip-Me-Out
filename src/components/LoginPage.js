@@ -21,8 +21,8 @@ export default function Login(props) {
       xhr.addEventListener("load", () => {
         if (xhr.responseText === "verified")
         {
-          props.loginInfo(email, password); 
-          history.push("/home");  
+          props.loginInfo(email, password);
+          history.push("/home");
           localStorage.setItem('email', email);
           localStorage.setItem('password', password);
         }
@@ -32,8 +32,9 @@ export default function Login(props) {
         }
       });
       xhr.open("POST", "http://localhost:8080/login");
-      let data = `${email}&${password}`;
-      xhr.send(data);
+      const data = {"email":`${email}`, "password":`${password}`};
+      console.log()
+      xhr.send(JSON.stringify(data));
     }
 
     document.body.style.background = "url(https://i.ibb.co/h8RZwhY/base.jpg)"
