@@ -179,8 +179,29 @@ const AddClothing = () => {
               <div class="clothing-fields">
                 <label id="color-field" for="clothing-color"> Color: </label>
                 <br />
-                <input type="input" id="clothing-color" required />
+                {/* <input type="input" id="clothing-color" required /> */}
+                <select id="color">
+                  <option value="select">Select</option>
+                  <option value="Black">Black</option>
+                  <option value="Blue">Blue</option>
+                  <option value="Brown">Brown</option>
+                  <option value="Gold">Gold</option>
+                  <option value="Green">Green</option>
+                  <option value="Grey">Grey</option>
+                  <option value="Multi">Multi</option>
+                  <option value="Navy">Navy</option>
+                  <option value="Neutral">Neutral</option>
+                  <option value="No Color">No Color</option>
+                  <option value="Orange">Orange</option>
+                  <option value="Pink">Pink</option>
+                  <option value="Purple">Purple</option>
+                  <option value="Red">Red</option>
+                  <option value="Silver">Silver</option>
+                  <option value="White">White</option>
+                  <option value="Yellow">Yellow</option>
+                </select>
               </div>
+
               <div>
                 <Button text="Save" save={true} />
               </div>
