@@ -27,6 +27,9 @@ export default function SignUp(props) {
   }, [])
 
   function onClick() {
+    let first = document.getElementById("firstname-signup").value;
+    let last = document.getElementById("lastname-signup").value;
+    let username = `${first} ${last}`;
     let email = document.getElementById("email-login").value;
     let password = document.getElementById("password-signup").value;
     let login_info_encoded = `email=${email}&password=${password}`;
@@ -49,8 +52,9 @@ export default function SignUp(props) {
       }
     });
     xhr.open("POST", "http://localhost:8080/signup");
-    let data = `${email}&${password}`;
-    xhr.send(data);
+    const data = {"username":`${username}`, "email":`${email}`, "password":`${password}`};
+    console.log(data);
+    xhr.send(JSON.stringify(data));
 
 
   }
@@ -70,13 +74,13 @@ export default function SignUp(props) {
             <div class="signup-fields">
               <label id="firstname-field" for="firstname-signup"> First Name: </label>
               <br />
-              <input type="password" id="firstname-signup" required />
+              <input type="text" id="firstname-signup" required />
             </div>
 
             <div class="signup-fields">
               <label id="lastname-field" for="lastname-signup"> Last Name: </label>
               <br />
-              <input type="password" id="lastname-signup" required />
+              <input type="text" id="lastname-signup" required />
             </div>
 
             <div class="signup-fields">
