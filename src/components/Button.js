@@ -34,15 +34,20 @@ const Button = ({ text, href, image, save }) => {
     }
     if (save) {
       let label = document.getElementById("clothing-label").value;
-      let color = document.getElementById("clothing-color").value;
-      if (document.getElementById("category").value === "select" || document.getElementById("type").value === "select") {
-        alert("Category and Type required");
+      if (label === "") {
+        alert("Label required");
+      }
+      else if (document.getElementById("category").value === "select") {
+        alert("Category required");
+      }
+      else if (document.getElementById("type").value === "select") {
+        alert("Type required");
+      }
+      else if (document.getElementById("color").value === "select") {
+        alert("Color required");
       }
       else if (!document.getElementById("clothing_img")) {
-        alert("Image upload required (must press upload)")
-      }
-      else if (label === "" || color === "") {
-        alert("Label and color required")
+        alert("Image upload required (must press upload)");
       }
       else {
         let file = document.getElementById("myFile").files[0]
@@ -63,17 +68,18 @@ const Button = ({ text, href, image, save }) => {
           xhr.addEventListener("load", () => {
             if (xhr.responseText === "recorded")
             {
-              alert("Add unsuccessful. Item has already been added to database");
+              alert("Add unsuccessful. Item is already in your closet");
             }
             else if (xhr.responseText === "added")
             {
-              alert("Item added to database");
+              alert("Item added to closet");
             }
           });
 
           xhr.open("POST", "http://localhost:8080/additem");
           let category = document.getElementById("category").value;
           let type = document.getElementById("type").value;
+          let color = document.getElementById("color").value;
           let email = localStorage.getItem('email');
           let password = localStorage.getItem('password');
           let adding_item = `${type}&${category}&${label}&${color}&${base64}&${email}&${password}`
