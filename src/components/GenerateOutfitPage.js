@@ -20,11 +20,12 @@ export default function GenerateOutfit(){
 
               <input type="checkbox" id="weather-condition" />
               <select name="weather-dropdown" for="weather-condition">
-                <option value="sunny"> Sunny </option>
-                <option value="rainy"> Rainy </option>
-                <option value="windy"> Windy </option>
-                <option value="cloudy"> Cloudy </option>
-                <option value="snowy"> Snowy </option>
+                <option value="sunny"> Clear </option>
+                <option value="rainy"> Rain </option>
+                <option value="windy"> Snow </option>
+                <option value="windy"> Clouds </option>
+                <option value="cloudy"> Thunderstorm </option>
+                <option value="snowy"> Drizzle </option>
               </select>
 
             </form>
