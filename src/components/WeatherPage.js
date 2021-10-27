@@ -35,10 +35,14 @@ export default function Weather() {
 
          let xhr = new XMLHttpRequest();
          xhr.addEventListener("load", () => {
-            weather.innerText = xhr.responseText;
+            console.log(xhr.response)
+            let weatherData = JSON.parse(xhr.response)
+            let weatherText = `The weather is ${weatherData["status"]} with a low of ${weatherData["low"]} and high of ${weatherData["high"]}.`
+            weather.innerText = weatherText;
          });
+         const data = JSON.stringify({"zipcode":input})
          xhr.open("POST", "http://localhost:8080/zipcode");
-         xhr.send(input);
+         xhr.send(data);
 
          //weather.innerText = "The weather is sunny with a low of 89 and high of 93.";
 

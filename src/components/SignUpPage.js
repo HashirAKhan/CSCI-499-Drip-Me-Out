@@ -32,30 +32,34 @@ export default function SignUp(props) {
     let username = `${first} ${last}`;
     let email = document.getElementById("email-login").value;
     let password = document.getElementById("password-signup").value;
+    let zipcode = document.getElementById("zipcode-signup").value;
     let login_info_encoded = `email=${email}&password=${password}`;
 
-    let xhr = new XMLHttpRequest();
-    xhr.addEventListener("load", () => {
-      if (xhr.responseText === "verified")
-      {
-        setSignedUp(true);
-        alert("Account already in database... press ok to redirect to login");
-        history.push("/");
-      }
-      else if (xhr.responseText === "signedup")
-      {
-        setSignedEmail(email);
-        setSignedPassword(password);
-        localStorage.setItem('email', email);
-        localStorage.setItem('password', password);
-        history.push("/home");
-      }
-    });
-    xhr.open("POST", "http://localhost:8080/signup");
-    const data = {"username":`${username}`, "email":`${email}`, "password":`${password}`};
-    console.log(data);
-    xhr.send(JSON.stringify(data));
 
+
+      let xhr = new XMLHttpRequest();
+      xhr.addEventListener("load", () => {
+        if (xhr.responseText === "verified")
+        {
+          setSignedUp(true);
+          alert("Account already in database... press ok to redirect to login");
+          history.push("/");
+        }
+        else if (xhr.responseText === "signedup")
+        {
+          setSignedEmail(email);
+          setSignedPassword(password);
+          localStorage.setItem('email', email);
+          localStorage.setItem('password', password);
+          localStorage.setItem('username', username);
+          localStorage.setItem('zipcode', zipcode);
+          history.push("/home");
+        }
+      });
+      xhr.open("POST", "http://localhost:8080/signup");
+      const data = {"username": username, "email": email , "password": password, "zipcode": zipcode};
+      console.log(data);
+      xhr.send(JSON.stringify(data));
 
   }
 
@@ -93,6 +97,12 @@ export default function SignUp(props) {
               <label id="password-field" for="password-signup"> Password: </label>
               <br />
               <input type="password" id="password-signup" required />
+            </div>
+
+            <div class="signup-fields">
+              <label id="zipcode-field" for="zipcode-signup"> Zipcode: </label>
+              <br />
+              <input type="number" id="zipcode-signup" pattern="^(?(^00000(|-0000))|(\d{5}(|-\d{4})))$" required />
             </div>
 
 
