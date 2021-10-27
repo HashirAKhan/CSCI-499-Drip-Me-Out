@@ -57,9 +57,9 @@ export default function SignUp(props) {
         }
       });
       xhr.open("POST", "http://localhost:8080/signup");
-      const data = {"username": username, "email": email , "password": password, "zipcode": zipcode};
+      const data = JSON.stringify({"username": username, "email": email , "password": password, "zipcode": zipcode});
       console.log(data);
-      xhr.send(JSON.stringify(data));
+      xhr.send(data);
 
   }
 
