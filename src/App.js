@@ -4,6 +4,8 @@ import AddClothing from './components/AddClothingPage'
 import Weather from './components/WeatherPage'
 import SignUp from './components/SignUpPage'
 import Closet from './components/ClosetPage'
+import ViewOutfit from './components/ViewOutfitPage'
+import GenerateOutfit from './components/GenerateOutfitPage'
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import React from 'react'
 
@@ -60,6 +62,12 @@ class App extends React.Component {
           </Route>
           <Route exact path="/signup">
             <SignUp email={this.handleEmail} password={this.handlePassword} />
+          </Route>
+          <Route exact path="/viewoutfits">
+            <ViewOutfit user={this.state}/>
+          </Route>
+          <Route exact path="/generateoutfit">
+            <GenerateOutfit />
           </Route>
         </Switch>
       </Router >
