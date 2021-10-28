@@ -64,26 +64,42 @@ const Button = ({ text, href, image, save }) => {
         }
         function send_data_to_db(base64) {
           let img = document.getElementById("clothing_img").src;
+          let imgxhr = new XMLHttpRequest();
           let xhr = new XMLHttpRequest();
-          xhr.addEventListener("load", () => {
-            if (xhr.responseText === "recorded")
-            {
-              alert("Add unsuccessful. Item is already in your closet");
+          imgxhr.addEventListener("load", () => {
+            if (imgxhr.responseText === "error"){
+              alert("Add unsuccessful. Error with image");
             }
-            else if (xhr.responseText === "added")
+            else if (imgxhr.responseText === "added")
             {
-              alert("Item added to closet");
+              xhr.addEventListener("load", () => {
+                if (xhr.responseText === "recorded")
+                {
+                  alert("Add unsuccessful. Item is already in your closet");
+                }
+                else if (xhr.responseText === "added")
+                {
+                  alert("Item added to closet");
+                }
+              });
+
+              xhr.open("POST", "http://localhost:8080/additem");
+
+              const data = JSON.stringify({
+                "catagory" : document.getElementById("category").value,
+                "type" : document.getElementById("type").value,
+                "color" : document.getElementById("color").value,
+                "label" : label,
+                "email" : localStorage.getItem('email')
+              })
+              console.log(img);
+              xhr.send(data);
             }
           });
 
-          xhr.open("POST", "http://localhost:8080/additem");
-          let category = document.getElementById("category").value;
-          let type = document.getElementById("type").value;
-          let color = document.getElementById("color").value;
-          let email = localStorage.getItem('email');
-          let password = localStorage.getItem('password');
-          let adding_item = `${type}&${category}&${label}&${color}&${base64}&${email}&${password}`
-          xhr.send(adding_item);
+          imgxhr.open("POST", "http://localhost:8080/addimage");
+          let imgdata = `${base64}`;
+          imgxhr.send(imgdata);
         }
 
       }
