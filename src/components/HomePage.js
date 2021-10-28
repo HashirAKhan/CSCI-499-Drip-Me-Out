@@ -1,9 +1,9 @@
 import "../css/homepage.css"
 import { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
-import dripIcon from "../images/dripmeouticon.png"
-import closetImage from "../images/customimage.png"
-import wardrobeImage from '../images/wardrobeicon.png'
+import dripIcon from "../images/dripicon.png"
+import closetImage from "../images/customicon.png"
+import wardrobeImage from '../images/closeticon.png'
 
 export default function Home() {
    const history = useHistory();
@@ -47,9 +47,6 @@ export default function Home() {
             <p>My Closet</p>
             <img src= {wardrobeImage} />
             <p class="smalltext">Browse and add items to your very own virtual closet</p>
-         </div>
-         <div id="dripmeout">
-            <p>Drip Me Out is lorem ipsum dolor sit amet.</p>
          </div>
       </>
    )

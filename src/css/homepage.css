@@ -26,7 +26,7 @@ p {
 
 .boxes {
    background-color: rgba(0,0, 0, .5);
-   margin-top: 10%;
+   margin-top: 8%;
    float: left;
    text-align: center;
    border-radius: 25px;
@@ -51,14 +51,10 @@ p {
    font-size: small;
 }
 
-#dripmeout {
-   position: absolute;
-   top: 85%;
-   left: 0;
-   right: 0;
-   margin-left: auto;
-   margin-right: auto;
-   width: 400px;
+img {
+  width: 275px !important;
+  height: 275px !important;
+  object-fit: cover;
 }
 
 h1 {
