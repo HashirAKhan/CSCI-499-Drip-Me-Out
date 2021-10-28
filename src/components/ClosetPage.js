@@ -62,11 +62,9 @@ export default function Closet(props) {
             let temp = JSON.parse(xhr.response);
             let data = temp["closet"];
             for(let i = 0; i < data.length; i++){
-              const object = data[i];
-              const json = JSON.parse(object[1]);
-              console.log(json);
-              item_id_array.push(`${json["id"]}`);
-              item_image_array.push(`data:image/png;base64,${object[0]}`);
+              const object = JSON.parse(data[i]);
+              item_id_array.push(`${object["id"]}`);
+              item_image_array.push(`data:image/png;base64,${object["image"]}`);
             }
 
             item_id_array.forEach(itemid => setItemIds(oldArray => [...oldArray, itemid]));
