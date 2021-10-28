@@ -2,10 +2,10 @@ img {
    width: 47%;
    height: 47%;
    border-radius: 10px;
-   background-color: #fff;
+   /* background-color: #fff; */
    padding: 1px;
-   margin: 1px 4px 1px 4px;  
-   
+   margin: 1px 4px 1px 4px;
+
 }
 
 img:hover {

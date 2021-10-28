@@ -11,8 +11,49 @@ const AddClothing = () => {
     document.getElementById("category").onchange = function category() {
       let category = document.getElementById("category").value;
       let type = document.getElementById("type");
-
-      if (category === "Coats & Jackets") {
+      if (category === "Bottoms") {
+        document.getElementById("1") ? document.getElementById("1").remove() : void 0 ;
+        document.getElementById("2") ? document.getElementById("2").remove() : void 0 ;
+        document.getElementById("3") ? document.getElementById("3").remove() : void 0 ;
+        document.getElementById("4") ? document.getElementById("4").remove() : void 0 ;
+        document.getElementById("5") ? document.getElementById("5").remove() : void 0 ;
+        document.getElementById("6") ? document.getElementById("6").remove() : void 0 ;
+        document.getElementById("7") ? document.getElementById("7").remove() : void 0 ;
+        document.getElementById("8") ? document.getElementById("8").remove() : void 0 ;
+        document.getElementById("9") ? document.getElementById("9").remove() : void 0 ;
+        document.getElementById("10") ? document.getElementById("10").remove() : void 0 ;
+        let option1 = document.createElement("option");
+        option1.id = "1";
+        option1.value = "Cargo Pants";
+        option1.text = option1.value;
+        type.appendChild(option1);
+        let option2 = document.createElement("option");
+        option2.id = "2";
+        option2.value = "Jeans";
+        option2.text = option2.value;
+        type.appendChild(option2);
+        let option3 = document.createElement("option");
+        option3.id = "3";
+        option3.value = "Pants";
+        option3.text = option3.value;
+        type.appendChild(option3);
+        let option4 = document.createElement("option");
+        option4.id = "4";
+        option4.value = "Shorts";
+        option4.text = option4.value;
+        type.appendChild(option4);
+        let option5 = document.createElement("option");
+        option5.id = "5";
+        option5.value = "Skirt";
+        option5.text = option5.value;
+        type.appendChild(option5);
+        let option6 = document.createElement("option");
+        option6.id = "6";
+        option6.value = "Sweatpants";
+        option6.text = option6.value;
+        type.appendChild(option6);
+      }
+      else if (category === "Coats & Jackets") {
         document.getElementById("1") ? document.getElementById("1").remove() : void 0 ;
         document.getElementById("2") ? document.getElementById("2").remove() : void 0 ;
         document.getElementById("3") ? document.getElementById("3").remove() : void 0 ;
@@ -44,24 +85,7 @@ const AddClothing = () => {
         option4.text = option4.value;
         type.appendChild(option4);
       }
-      else if (category === "Dresses") {
-        document.getElementById("1") ? document.getElementById("1").remove() : void 0 ;
-        document.getElementById("2") ? document.getElementById("2").remove() : void 0 ;
-        document.getElementById("3") ? document.getElementById("3").remove() : void 0 ;
-        document.getElementById("4") ? document.getElementById("4").remove() : void 0 ;
-        document.getElementById("5") ? document.getElementById("5").remove() : void 0 ;
-        document.getElementById("6") ? document.getElementById("6").remove() : void 0 ;
-        document.getElementById("7") ? document.getElementById("7").remove() : void 0 ;
-        document.getElementById("8") ? document.getElementById("8").remove() : void 0 ;
-        document.getElementById("9") ? document.getElementById("9").remove() : void 0 ;
-        document.getElementById("10") ? document.getElementById("10").remove() : void 0 ;
-        let option = document.createElement("option");
-        option.id = "1";
-        option.value = "Dress";
-        option.text = option.value;
-        type.appendChild(option);
-      }
-      else if (category === "Hoodies & Sweatshirts") {
+      else if (category === "Dresses & Jumpsuits & Rompers") {
         document.getElementById("1") ? document.getElementById("1").remove() : void 0 ;
         document.getElementById("2") ? document.getElementById("2").remove() : void 0 ;
         document.getElementById("3") ? document.getElementById("3").remove() : void 0 ;
@@ -74,68 +98,19 @@ const AddClothing = () => {
         document.getElementById("10") ? document.getElementById("10").remove() : void 0 ;
         let option1 = document.createElement("option");
         option1.id = "1";
-        option1.value = "Hoodie";
+        option1.value = "Dress";
         option1.text = option1.value;
         type.appendChild(option1);
         let option2 = document.createElement("option");
         option2.id = "2";
-        option2.value = "Sweatshirt";
-        option2.text = option2.value;
-        type.appendChild(option2);
-      }
-      else if (category === "Jumpsuits & Rompers") {
-        document.getElementById("1") ? document.getElementById("1").remove() : void 0 ;
-        document.getElementById("2") ? document.getElementById("2").remove() : void 0 ;
-        document.getElementById("3") ? document.getElementById("3").remove() : void 0 ;
-        document.getElementById("4") ? document.getElementById("4").remove() : void 0 ;
-        document.getElementById("5") ? document.getElementById("5").remove() : void 0 ;
-        document.getElementById("6") ? document.getElementById("6").remove() : void 0 ;
-        document.getElementById("7") ? document.getElementById("7").remove() : void 0 ;
-        document.getElementById("8") ? document.getElementById("8").remove() : void 0 ;
-        document.getElementById("9") ? document.getElementById("9").remove() : void 0 ;
-        document.getElementById("10") ? document.getElementById("10").remove() : void 0 ;
-        let option1 = document.createElement("option");
-        option1.id = "1";
-        option1.value = "Jumpsuit";
-        option1.text = option1.value;
-        type.appendChild(option1);
-        let option2 = document.createElement("option");
-        option2.id = "2";
-        option2.value = "Romper";
-        option2.text = option2.value;
-        type.appendChild(option2);
-      }
-      else if (category === "Pants") {
-        document.getElementById("1") ? document.getElementById("1").remove() : void 0 ;
-        document.getElementById("2") ? document.getElementById("2").remove() : void 0 ;
-        document.getElementById("3") ? document.getElementById("3").remove() : void 0 ;
-        document.getElementById("4") ? document.getElementById("4").remove() : void 0 ;
-        document.getElementById("5") ? document.getElementById("5").remove() : void 0 ;
-        document.getElementById("6") ? document.getElementById("6").remove() : void 0 ;
-        document.getElementById("7") ? document.getElementById("7").remove() : void 0 ;
-        document.getElementById("8") ? document.getElementById("8").remove() : void 0 ;
-        document.getElementById("9") ? document.getElementById("9").remove() : void 0 ;
-        document.getElementById("10") ? document.getElementById("10").remove() : void 0 ;
-        let option1 = document.createElement("option");
-        option1.id = "1";
-        option1.value = "Cargo Pants";
-        option1.text = option1.value;
-        type.appendChild(option1);
-        let option2 = document.createElement("option");
-        option2.id = "2";
-        option2.value = "Jeans";
+        option2.value = "Jumpsuit";
         option2.text = option2.value;
         type.appendChild(option2);
         let option3 = document.createElement("option");
         option3.id = "3";
-        option3.value = "Pants";
+        option3.value = "Romper";
         option3.text = option3.value;
         type.appendChild(option3);
-        let option4 = document.createElement("option");
-        option4.id = "4";
-        option4.value = "Sweatpants";
-        option4.text = option4.value;
-        type.appendChild(option4);
       }
       else if (category === "Shoes") {
         document.getElementById("1") ? document.getElementById("1").remove() : void 0 ;
@@ -189,62 +164,6 @@ const AddClothing = () => {
         option8.text = option8.value;
         type.appendChild(option8);
       }
-      else if (category === "Shorts") {
-        document.getElementById("1") ? document.getElementById("1").remove() : void 0 ;
-        document.getElementById("2") ? document.getElementById("2").remove() : void 0 ;
-        document.getElementById("3") ? document.getElementById("3").remove() : void 0 ;
-        document.getElementById("4") ? document.getElementById("4").remove() : void 0 ;
-        document.getElementById("5") ? document.getElementById("5").remove() : void 0 ;
-        document.getElementById("6") ? document.getElementById("6").remove() : void 0 ;
-        document.getElementById("7") ? document.getElementById("7").remove() : void 0 ;
-        document.getElementById("8") ? document.getElementById("8").remove() : void 0 ;
-        document.getElementById("9") ? document.getElementById("9").remove() : void 0 ;
-        document.getElementById("10") ? document.getElementById("10").remove() : void 0 ;
-        let option = document.createElement("option");
-        option.id = "1";
-        option.value = "Shorts";
-        option.text = option.value;
-        type.appendChild(option);
-      }
-      else if (category === "Skirts") {
-        document.getElementById("1") ? document.getElementById("1").remove() : void 0 ;
-        document.getElementById("2") ? document.getElementById("2").remove() : void 0 ;
-        document.getElementById("3") ? document.getElementById("3").remove() : void 0 ;
-        document.getElementById("4") ? document.getElementById("4").remove() : void 0 ;
-        document.getElementById("5") ? document.getElementById("5").remove() : void 0 ;
-        document.getElementById("6") ? document.getElementById("6").remove() : void 0 ;
-        document.getElementById("7") ? document.getElementById("7").remove() : void 0 ;
-        document.getElementById("8") ? document.getElementById("8").remove() : void 0 ;
-        document.getElementById("9") ? document.getElementById("9").remove() : void 0 ;
-        document.getElementById("10") ? document.getElementById("10").remove() : void 0 ;
-        let option = document.createElement("option");
-        option.id = "1";
-        option.value = "Skirt";
-        option.text = option.value;
-        type.appendChild(option);
-      }
-      else if (category === "Sweaters & Cardigans") {
-        document.getElementById("1") ? document.getElementById("1").remove() : void 0 ;
-        document.getElementById("2") ? document.getElementById("2").remove() : void 0 ;
-        document.getElementById("3") ? document.getElementById("3").remove() : void 0 ;
-        document.getElementById("4") ? document.getElementById("4").remove() : void 0 ;
-        document.getElementById("5") ? document.getElementById("5").remove() : void 0 ;
-        document.getElementById("6") ? document.getElementById("6").remove() : void 0 ;
-        document.getElementById("7") ? document.getElementById("7").remove() : void 0 ;
-        document.getElementById("8") ? document.getElementById("8").remove() : void 0 ;
-        document.getElementById("9") ? document.getElementById("9").remove() : void 0 ;
-        document.getElementById("10") ? document.getElementById("10").remove() : void 0 ;
-        let option1 = document.createElement("option");
-        option1.id = "1";
-        option1.value = "Cardigan";
-        option1.text = option1.value;
-        type.appendChild(option1);
-        let option2 = document.createElement("option");
-        option2.id = "2";
-        option2.value = "Sweater";
-        option2.text = option2.value;
-        type.appendChild(option2);
-      }
       else if (category === "Tops") {
         document.getElementById("1") ? document.getElementById("1").remove() : void 0 ;
         document.getElementById("2") ? document.getElementById("2").remove() : void 0 ;
@@ -291,11 +210,38 @@ const AddClothing = () => {
         option7.value = "Short Sleeve T-shirt";
         option7.text = option7.value;
         type.appendChild(option7);
-        let option8 = document.createElement("option");
-        option8.id = "8";
-        option8.value = "Sneakers";
-        option8.text = option8.value;
-        type.appendChild(option8);
+      }
+      else if (category === "Warm Tops") {
+        document.getElementById("1") ? document.getElementById("1").remove() : void 0 ;
+        document.getElementById("2") ? document.getElementById("2").remove() : void 0 ;
+        document.getElementById("3") ? document.getElementById("3").remove() : void 0 ;
+        document.getElementById("4") ? document.getElementById("4").remove() : void 0 ;
+        document.getElementById("5") ? document.getElementById("5").remove() : void 0 ;
+        document.getElementById("6") ? document.getElementById("6").remove() : void 0 ;
+        document.getElementById("7") ? document.getElementById("7").remove() : void 0 ;
+        document.getElementById("8") ? document.getElementById("8").remove() : void 0 ;
+        document.getElementById("9") ? document.getElementById("9").remove() : void 0 ;
+        document.getElementById("10") ? document.getElementById("10").remove() : void 0 ;
+        let option1 = document.createElement("option");
+        option1.id = "1";
+        option1.value = "Cardigan";
+        option1.text = option1.value;
+        type.appendChild(option1);
+        let option2 = document.createElement("option");
+        option2.id = "2";
+        option2.value = "Hoodie";
+        option2.text = option2.value;
+        type.appendChild(option2);
+        let option3 = document.createElement("option");
+        option3.id = "3";
+        option3.value = "Sweater";
+        option3.text = option3.value;
+        type.appendChild(option3);
+        let option4 = document.createElement("option");
+        option4.id = "4";
+        option4.value = "Sweatshirt";
+        option4.text = option4.value;
+        type.appendChild(option4);
       }
     };
 
@@ -329,16 +275,12 @@ const AddClothing = () => {
                 {/* <input type="input" id="clothing-category" required /> */}
                 <select id="category">
                   <option value="select">Select</option>
+                  <option value="Bottoms">Bottoms</option>
+                  <option value="Dresses & Jumpsuits & Rompers">Dresses & Jumpsuits & Rompers</option>
                   <option value="Coats & Jackets">Coats & Jackets</option>
-                  <option value="Dresses">Dresses</option>
-                  <option value="Hoodies & Sweatshirts">Hoodies & Sweatshirts</option>
-                  <option value="Jumpsuits & Rompers">Jumpsuits & Rompers</option>
-                  <option value="Pants">Pants</option>
                   <option value="Shoes">Shoes</option>
-                  <option value="Shorts">Shorts</option>
-                  <option value="Skirts">Skirts</option>
-                  <option value="Sweaters & Cardigans">Sweaters & Cardigans</option>
                   <option value="Tops">Tops</option>
+                  <option value="Warm Tops">Warm Tops</option>
                 </select>
               </div>
 

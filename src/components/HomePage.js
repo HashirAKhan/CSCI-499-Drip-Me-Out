@@ -1,6 +1,9 @@
 import "../css/homepage.css"
 import { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
+import dripIcon from "../images/dripicon.png"
+import closetImage from "../images/customicon.png"
+import wardrobeImage from '../images/closeticon.png'
 
 export default function Home() {
    const history = useHistory();
@@ -32,18 +35,18 @@ export default function Home() {
          </div>
          <div class="boxes" id="box1" onClick={onClickWeather}>
             <p>Weather</p>
+            <img id="drip-icon" src= {dripIcon} />
             <p class="smalltext">Enter zip code to see current weather with conditons, high, and low</p>
          </div>
          <div class="boxes" id="box2" onClick={onClickCustomize}>
             <p>Customize an Outfit</p>
+            <img src= {closetImage} />
             <p class="smalltext">Create your own outfit based on items you have in your closet</p>
          </div>
          <div class="boxes" id="box3" onClick={onClickCloset}>
             <p>My Closet</p>
+            <img src= {wardrobeImage} />
             <p class="smalltext">Browse and add items to your very own virtual closet</p>
-         </div>
-         <div id="dripmeout">
-            <p>Drip Me Out is lorem ipsum dolor sit amet.</p>
          </div>
       </>
    )
