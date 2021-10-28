@@ -19,14 +19,17 @@ export default function Login(props) {
 
       let xhr = new XMLHttpRequest();
       xhr.addEventListener("load", () => {
-        if (xhr.responseText === "verified")
+        let response = JSON.parse(xhr.response)
+        if (response["response"] === "verified")
         {
           props.loginInfo(email, password);
           history.push("/home");
           localStorage.setItem('email', email);
           localStorage.setItem('password', password);
+          localStorage.setItem('zipcode', response["zipcode"]);
+          localStorage.setItem('username', response["username"]);
         }
-        if (xhr.responseText === "unsuccessful")
+        if (response["response"] === "unsuccessful")
         {
           alert("Your login info is not in our database, please sign up")
         }

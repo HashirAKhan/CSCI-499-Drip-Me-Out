@@ -77,13 +77,16 @@ const Button = ({ text, href, image, save }) => {
           });
 
           xhr.open("POST", "http://localhost:8080/additem");
-          let category = document.getElementById("category").value;
-          let type = document.getElementById("type").value;
-          let color = document.getElementById("color").value;
-          let email = localStorage.getItem('email');
-          let password = localStorage.getItem('password');
-          let adding_item = `${type}&${category}&${label}&${color}&${base64}&${email}&${password}`
-          xhr.send(adding_item);
+
+          const data = JSON.stringify({
+            "catagory" : document.getElementById("category").value,
+            "type" : document.getElementById("type").value,
+            "color" : document.getElementById("color").value,
+            "label" : label,
+            "email" : localStorage.getItem('email'),
+            "image" : base64
+          })
+          xhr.send(data);
         }
 
       }
