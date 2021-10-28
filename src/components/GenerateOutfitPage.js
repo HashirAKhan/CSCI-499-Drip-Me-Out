@@ -84,8 +84,6 @@ export default function GenerateOutfit(){
                   <option value="rain"> Rain </option>
                   <option value="snow"> Snow </option>
                   <option value="clouds"> Clouds </option>
-                  <option value="thunderstorm"> Thunderstorm </option>
-                  <option value="drizzle"> Drizzle </option>
                 </select>
 
               </form>
