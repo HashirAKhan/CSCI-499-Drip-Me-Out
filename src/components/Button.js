@@ -92,7 +92,6 @@ const Button = ({ text, href, image, save }) => {
                 "label" : label,
                 "email" : localStorage.getItem('email')
               })
-              console.log(img);
               xhr.send(data);
             }
           });

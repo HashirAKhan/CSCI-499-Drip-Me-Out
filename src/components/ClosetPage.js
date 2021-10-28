@@ -58,19 +58,15 @@ export default function Closet(props) {
 
             let item_image_array = [];
             let item_id_array = [];
-
-            for (let i = 0; i < xhr.responseText.length; i++) {
-               if (xhr.responseText[i] === "*") {
-                  let base64image = xhr.responseText.substring(stop, i - 10);
-
-                  let item_id = xhr.responseText.substring(i - 10, i);
-
-                  item_id_array.push(`${item_id}`);
-
-                  item_image_array.push(`data:image/png;base64,${base64image}`);
-                  // counter++;
-                  stop = i + 1;
-               }
+            console.log("test");
+            let temp = JSON.parse(xhr.response);
+            let data = temp["closet"];
+            for(let i = 0; i < data.length; i++){
+              const object = data[i];
+              const json = JSON.parse(object[1]);
+              console.log(json);
+              item_id_array.push(`${json["id"]}`);
+              item_image_array.push(`data:image/png;base64,${object[0]}`);
             }
 
             item_id_array.forEach(itemid => setItemIds(oldArray => [...oldArray, itemid]));
@@ -78,7 +74,11 @@ export default function Closet(props) {
             item_image_array.forEach(itemimage => setItemImages(oldArray => [...oldArray, itemimage]));
          });
          xhr.open("POST", "http://localhost:8080/closet");
-         xhr.send(`${localStorage.getItem('email')}&${localStorage.getItem('password')}`);
+         const data = JSON.stringify({
+           "email" : localStorage.getItem('email'),
+         })
+         console.log(data);
+         xhr.send(data);
          rendered.current = true;
       }
 
