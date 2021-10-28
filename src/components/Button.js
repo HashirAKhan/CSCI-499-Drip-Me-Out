@@ -64,41 +64,29 @@ const Button = ({ text, href, image, save }) => {
         }
         function send_data_to_db(base64) {
           let img = document.getElementById("clothing_img").src;
-          let imgxhr = new XMLHttpRequest();
           let xhr = new XMLHttpRequest();
-          imgxhr.addEventListener("load", () => {
-            if (imgxhr.responseText === "error"){
-              alert("Add unsuccessful. Error with image");
-            }
-            else if (imgxhr.responseText === "added")
+          xhr.addEventListener("load", () => {
+            if (xhr.responseText === "recorded")
             {
-              xhr.addEventListener("load", () => {
-                if (xhr.responseText === "recorded")
-                {
-                  alert("Add unsuccessful. Item is already in your closet");
-                }
-                else if (xhr.responseText === "added")
-                {
-                  alert("Item added to closet");
-                }
-              });
-
-              xhr.open("POST", "http://localhost:8080/additem");
-
-              const data = JSON.stringify({
-                "catagory" : document.getElementById("category").value,
-                "type" : document.getElementById("type").value,
-                "color" : document.getElementById("color").value,
-                "label" : label,
-                "email" : localStorage.getItem('email')
-              })
-              xhr.send(data);
+              alert("Add unsuccessful. Item is already in your closet");
+            }
+            else if (xhr.responseText === "added")
+            {
+              alert("Item added to closet");
             }
           });
 
-          imgxhr.open("POST", "http://localhost:8080/addimage");
-          let imgdata = `${base64}`;
-          imgxhr.send(imgdata);
+          xhr.open("POST", "http://localhost:8080/additem");
+
+          const data = JSON.stringify({
+            "catagory" : document.getElementById("category").value,
+            "type" : document.getElementById("type").value,
+            "color" : document.getElementById("color").value,
+            "label" : label,
+            "email" : localStorage.getItem('email'),
+            "image" : base64
+          })
+          xhr.send(data);
         }
 
       }
