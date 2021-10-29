@@ -60,6 +60,23 @@ export default function GenerateOutfit(){
       xhr.send(data);
 
     }
+    function onClick(){
+      let temp = parseInt(document.getElementById("temp-input").value);
+      let condition = document.getElementById("weather-dropdown").value;
+      let xhr = new XMLHttpRequest();
+      xhr.addEventListener("load", () => {
+        //Code to display generated outfit goes here
+         console.log(xhr.response)
+      });
+      const data = JSON.stringify({
+        "user": localStorage.getItem('email'),
+        "temp": temp,
+        "condition": condition
+      });
+      console.log(data);
+      xhr.open("POST", "http://localhost:8080/generate");
+      xhr.send(data);
+    }
 
 
 
@@ -89,7 +106,7 @@ export default function GenerateOutfit(){
               </form>
 
               <div id="drip-button">
-                <Button text="Drip Me Out!" />
+                <button onClick={onClick}>Drip Me Out!</button>
               </div>
 
             </div>
