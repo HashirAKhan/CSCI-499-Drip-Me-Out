@@ -40,9 +40,6 @@ const Button = ({ text, href, image, save }) => {
       else if (document.getElementById("category").value === "select") {
         alert("Category required");
       }
-      else if (document.getElementById("type").value === "select") {
-        alert("Type required");
-      }
       else if (document.getElementById("color").value === "select") {
         alert("Color required");
       }
@@ -77,15 +74,14 @@ const Button = ({ text, href, image, save }) => {
           });
 
           xhr.open("POST", "http://localhost:8080/additem");
-
+          console.log(document.getElementById("category").value);
           const data = JSON.stringify({
-            "catagory" : document.getElementById("category").value,
-            "type" : document.getElementById("type").value,
+            "category" : document.getElementById("category").value,
             "color" : document.getElementById("color").value,
             "label" : label,
             "email" : localStorage.getItem('email'),
             "image" : base64
-          })
+          });
           xhr.send(data);
         }
 
