@@ -40,17 +40,23 @@ export default function Weather() {
             let weatherText = `The weather is ${weatherData["status"]} with a low of ${weatherData["low"]} and high of ${weatherData["high"]}.`
             weather.innerText = weatherText;
          });
-         const data = JSON.stringify({"zipcode":input})
+         const data = JSON.stringify({
+            "zipcode":input,
+            "email": localStorage.getItem('email')
+         });
          xhr.open("POST", "http://localhost:8080/zipcode");
          xhr.send(data);
 
-         //weather.innerText = "The weather is sunny with a low of 89 and high of 93.";
-
          let div = document.getElementById("body");
          div.appendChild(weather);
-         //document.
-         let create_p = document.createElement("p");
-         div.appendChild(create_p);
+
+         div.style.marginTop = "0";
+
+         let load = document.createElement("p");
+         load.innerText = "Loading outfit...";
+         load.style.fontSize = "smaller"; 
+         load.style.color = "white";
+         div.appendChild(load);
       }
    }
 

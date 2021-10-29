@@ -4,10 +4,16 @@ import '../css/itemimage.css'
 export default function ItemImage(props) {  
    return (
       <img id={props.itemid} alt="" src={props.itemimage} onClick={() => {
+         let prevImg = document.getElementById("view");
+         if (prevImg)
+         {
+            prevImg.remove();
+         }
          props.onChange(props.itemid);
          let div = document.getElementById("toplowerbox");
          let newimg = document.getElementById(props.itemid).cloneNode(true);
          div.appendChild(newimg);
+         newimg.id = "view"
          newimg.style.width = "47%";
          newimg.style.height = "47%";
          newimg.style.borderRadius = "10px";
@@ -22,8 +28,8 @@ export default function ItemImage(props) {
             newimg.style.bottom = "0px";
             newimg.style.cursor = "default";
          });
-         let p = document.createElement("p");
-         div.appendChild(p);
+         // let p = document.createElement("p");
+         // div.appendChild(p);
       }}>
       </img>
    )
