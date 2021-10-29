@@ -28,8 +28,8 @@ const Button = ({ text, href, image, save }) => {
         // img.style.marginBottom = "80%";
         image_div.appendChild(img);
         image_displayed = true;
-        let clothing_image_text = document.getElementById("innerdiv");
-        clothing_image_text.style.position = "absolute";
+        // let clothing_image_text = document.getElementById("innerdiv");
+        // clothing_image_text.style.position = "absolute";
       }
     }
     if (save) {
@@ -40,6 +40,9 @@ const Button = ({ text, href, image, save }) => {
       else if (document.getElementById("category").value === "select") {
         alert("Category required");
       }
+      // else if (document.getElementById("type").value === "select") {
+      //   alert("Type required");
+      // }
       else if (document.getElementById("color").value === "select") {
         alert("Color required");
       }
@@ -53,13 +56,13 @@ const Button = ({ text, href, image, save }) => {
         reader.addEventListener("load", function () {
           // convert image file to base64 string
           let base64 = reader.result;
-          send_data_to_db(base64);
+          sendDataToDb(base64);
         }, false);
 
         if (file) {
           reader.readAsDataURL(file);
         }
-        function send_data_to_db(base64) {
+        function sendDataToDb(base64) {
           let img = document.getElementById("clothing_img").src;
           let xhr = new XMLHttpRequest();
           xhr.addEventListener("load", () => {
@@ -74,14 +77,17 @@ const Button = ({ text, href, image, save }) => {
           });
 
           xhr.open("POST", "http://localhost:8080/additem");
-          console.log(document.getElementById("category").value);
+
           const data = JSON.stringify({
             "category" : document.getElementById("category").value,
+            // "type" : document.getElementById("type").value,
             "color" : document.getElementById("color").value,
             "label" : label,
             "email" : localStorage.getItem('email'),
             "image" : base64
-          });
+          })
+          console.log(data);
+          // xhr.setRequestHeader("Content-Type", "application/json");
           xhr.send(data);
         }
 

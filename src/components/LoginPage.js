@@ -19,7 +19,7 @@ export default function Login(props) {
 
       let xhr = new XMLHttpRequest();
       xhr.addEventListener("load", () => {
-        let response = JSON.parse(xhr.response)
+        let response = JSON.parse(xhr.responseText)
         if (response["response"] === "verified")
         {
           props.loginInfo(email, password);

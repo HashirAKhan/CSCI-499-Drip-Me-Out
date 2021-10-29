@@ -52,8 +52,9 @@ p {
 }
 
 img {
-  width: 275px !important;
-  height: 275px !important;
+   /* !important */
+  width: 275px;
+  height: 275px;
   object-fit: cover;
 }
 

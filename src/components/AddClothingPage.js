@@ -1,10 +1,17 @@
 import '../css/addclothingpage.css';
 import Button from './Button.js';
 import Navbar from './Navbar';
-import { useEffect } from 'react';
+ import { useEffect } from 'react';
 // import Header from './Header'
 
 const AddClothing = () => {
+  useEffect(() => {
+    document.body.style.background = "url(https://i.ibb.co/h8RZwhY/base.jpg)"
+    document.body.style.backgroundSize = "cover"
+    document.body.style.backgroundAttachment = "fixed"
+    document.body.style.backgroundPosition = "center"
+  }, [])
+
   return (
     <div className='container'>
       <Navbar />
