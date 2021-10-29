@@ -1,7 +1,14 @@
 import PropTypes from 'prop-types'
 import { useHistory } from 'react-router-dom'
+import { useEffect } from 'react'
 
 const Button = ({ text, href, image, save }) => {
+  useEffect(() => {
+    let button = document.querySelector("button");
+    button.addEventListener("click", function(event) {
+      event.preventDefault();
+    })
+  }, [])
   const history = useHistory();
 
   let image_displayed;

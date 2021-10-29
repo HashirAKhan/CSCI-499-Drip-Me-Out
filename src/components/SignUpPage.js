@@ -41,12 +41,14 @@ export default function SignUp(props) {
       xhr.addEventListener("load", () => {
         if (xhr.responseText === "verified")
         {
+          console.log(xhr.responseText);
           setSignedUp(true);
           alert("Account already in database... press ok to redirect to login");
           history.push("/");
         }
         else if (xhr.responseText === "signedup")
         {
+          console.log(xhr.responseText);
           setSignedEmail(email);
           setSignedPassword(password);
           localStorage.setItem('email', email);
@@ -58,7 +60,6 @@ export default function SignUp(props) {
       });
       xhr.open("POST", "http://localhost:8080/signup");
       const data = JSON.stringify({"username": username, "email": email , "password": password, "zipcode": zipcode});
-      console.log(data);
       xhr.send(data);
 
   }

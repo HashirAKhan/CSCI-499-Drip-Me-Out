@@ -50,13 +50,13 @@ export default function Weather() {
          let div = document.getElementById("body");
          div.appendChild(weather);
 
-         div.style.marginTop = "0";
+         // div.style.marginTop = "0";
 
-         let load = document.createElement("p");
-         load.innerText = "Loading outfit...";
-         load.style.fontSize = "smaller"; 
-         load.style.color = "white";
-         div.appendChild(load);
+         // let load = document.createElement("p");
+         // load.innerText = "Loading outfit...";
+         // load.style.fontSize = "smaller"; 
+         // load.style.color = "white";
+         // div.appendChild(load);
       }
    }
 
