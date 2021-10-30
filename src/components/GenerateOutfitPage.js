@@ -1,9 +1,24 @@
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Navbar from './Navbar'
 import Button from './Button.js';
+import ItemImages from "./ItemImages"
 import "../css/generateoutfitpage.css"
 
 export default function GenerateOutfit(){
+
+  //const rendered_value = rendered.current;
+
+  const [itemimages, setItemImages] = useState([]);
+
+  const [itemids, setItemIds] = useState([]);
+
+  const [viewitemimage, setViewItemImage] = useState('');
+
+  const [viewitemid, setViewItemId] = useState('');
+
+  function onChange(id) {
+     setViewItemId(id);
+  }
 
   useEffect(() => {
      //https://i.ibb.co/h8RZwhY/base.jpg
@@ -14,10 +29,11 @@ export default function GenerateOutfit(){
      document.body.style.backgroundPosition = "center"
      setTempField();
      setDropDown();
-     return () => {
-        document.body.style.background = "url('../closet_image.jpg')"
-     }
+     // return () => {
+     //    document.body.style.background = "url('../closet_image.jpg')"
+     // }
   }, []);
+
 
     function setTempField(){
       let temp_field = document.getElementById("temp-input");
@@ -34,7 +50,7 @@ export default function GenerateOutfit(){
     function setDropDown(){
       var weather_dropdown = document.getElementById("weather-dropdown");
       let xhr = new XMLHttpRequest();
-      let rain = ['rain','drizzle','thunderstorm'];
+      let rain = ['rain','drizzle','thunderstorm', 'mist'];
       xhr.addEventListener("load", () => {
         let tempData = JSON.parse(xhr.response)
         console.log(tempData["status"])
@@ -60,13 +76,32 @@ export default function GenerateOutfit(){
       xhr.send(data);
 
     }
+
     function onClick(){
+      let item_image_array = [];
+      let item_id_array = [];
       let temp = parseInt(document.getElementById("temp-input").value);
       let condition = document.getElementById("weather-dropdown").value;
       let xhr = new XMLHttpRequest();
       xhr.addEventListener("load", () => {
         //Code to display generated outfit goes here
-         console.log(xhr.response)
+
+        let temp = JSON.parse(xhr.response);
+        let data = temp["outfit"];
+        for(let i = 0; i < data.length; i++){
+          const object = data[i];
+          item_id_array.push(object["id"])
+          item_image_array.push(`data:image/png;base64,${object["image"]}`)
+        }
+
+        // item_id_array.forEach(itemid => setItemIds(oldArray => [...oldArray, itemid]));
+        //
+        // item_image_array.forEach(itemimage => setItemImages(oldArray => [...oldArray, itemimage]));
+
+        setItemIds(item_id_array);
+        setItemImages(item_image_array);
+
+        console.log(xhr.response)
       });
       const data = JSON.stringify({
         "user": localStorage.getItem('email'),
@@ -112,25 +147,7 @@ export default function GenerateOutfit(){
             </div>
 
             <div id="outfit-display">
-              <div>
-                <span> <img src="https://bit.ly/3pCSazN"/> </span>
-                <span> White T-shirt </span>
-              </div>
-
-              <div>
-                <span> <img src="https://bit.ly/3pCzO1Q"/> </span>
-                <span> Black Hoodie </span>
-              </div>
-
-              <div>
-                <span> <img src="https://bit.ly/3nsWBdK"/> </span>
-                <span> Blue Jeans </span>
-              </div>
-
-              <div>
-                <span> <img src="https://bit.ly/3jxVVTl"/> </span>
-                <span> Red Jacket </span>
-              </div>
+              <ItemImages itemimages={itemimages} itemids={itemids} onChange={onChange}/>
 
             </div>
 
