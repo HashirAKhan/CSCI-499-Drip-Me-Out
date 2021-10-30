@@ -8,7 +8,7 @@ import wardrobeImage from '../images/closeticon.png'
 export default function Home() {
    const history = useHistory();
    function onClickWeather() {
-      history.push(`/weather`);
+      history.push(`/generateoutfit`);
    }
    function onClickCustomize() {
       history.push("/customize")
@@ -34,9 +34,9 @@ export default function Home() {
             <a href="/" id="logout">Log Out</a>
          </div>
          <div class="boxes" id="box1" onClick={onClickWeather}>
-            <p>Weather</p>
+            <p>Drip Me Out</p>
             <img id="drip-icon" src= {dripIcon} />
-            <p class="smalltext">Enter zip code to see current weather with conditons, high, and low</p>
+            <p class="smalltext">Generate an outfit based on your clothes and the current weather in the local area</p>
          </div>
          <div class="boxes" id="box2" onClick={onClickCustomize}>
             <p>Customize an Outfit</p>

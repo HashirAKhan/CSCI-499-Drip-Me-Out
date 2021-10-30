@@ -36,7 +36,7 @@ export default function Navbar() {
          <div id="navbar2">
             {/* Use "CSCI-499-Drip-Me-Out/" before href link when using BrowserRouter */}
             <Link to="/home" id="home">Home</Link>
-            <Link to="/weather" id="weather">Weather</Link>
+            <Link to="/generateoutfit" id="generate">Generate</Link>
             <Link to="/customize" id="customize">Customize</Link>
             <Link to="/closet" id="closet">Closet</Link>
             {/* <a href="/#/home" id="home">Home</a>
