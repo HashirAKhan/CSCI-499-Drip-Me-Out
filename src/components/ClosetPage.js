@@ -67,6 +67,10 @@ export default function Closet(props) {
               item_image_array.push(`data:image/png;base64,${object["image"]}`);
             }
 
+            let leftbox = document.getElementById("leftbox");
+            let height = 250 * (data.length / 2);
+            leftbox.style.height = `${height.toString()}px`;
+
             item_id_array.forEach(itemid => setItemIds(oldArray => [...oldArray, itemid]));
 
             item_image_array.forEach(itemimage => setItemImages(oldArray => [...oldArray, itemimage]));
