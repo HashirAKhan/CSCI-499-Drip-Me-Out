@@ -68,7 +68,7 @@ export default function Closet(props) {
             }
 
             let leftbox = document.getElementById("leftbox");
-            let height = 250 * (data.length / 2);
+            let height = 240 * (data.length / 2);
             leftbox.style.height = `${height.toString()}px`;
 
             item_id_array.forEach(itemid => setItemIds(oldArray => [...oldArray, itemid]));
