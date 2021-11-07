@@ -91,7 +91,8 @@ export default function GenerateOutfit(){
         for(let i = 0; i < data.length; i++){
           const object = data[i];
           item_id_array.push(object["id"])
-          item_image_array.push(`data:image/png;base64,${object["image"]}`)
+          item_image_array.push(`data:image/png;base64,/${object["image"]}`);
+          // item_image_array.push(`data:image/png;base64,${object["image"]}`);
         }
 
         // item_id_array.forEach(itemid => setItemIds(oldArray => [...oldArray, itemid]));
