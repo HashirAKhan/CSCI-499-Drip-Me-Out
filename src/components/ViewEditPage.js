@@ -30,8 +30,7 @@ const ViewEdit = () => {
         let imageDiv = document.getElementById("image");
         let img = document.createElement("img");
         img.id = "clothing_img";
-        img.src = `data:image/png;base64,/${data.image}`;
-        // img.src = `x`;
+        img.src = `data:image/png;base64,${data.image}`;
         imageDiv.appendChild(img);
       }
     });

@@ -12,6 +12,8 @@ export default function GenerateOutfit(){
 
   const [itemids, setItemIds] = useState([]);
 
+  const [itemlabels, setItemLabels] = useState([]);
+
   const [viewitemimage, setViewItemImage] = useState('');
 
   const [viewitemid, setViewItemId] = useState('');
@@ -80,6 +82,7 @@ export default function GenerateOutfit(){
     function onClick(){
       let item_image_array = [];
       let item_id_array = [];
+      let item_label_array = [];
       let temp = parseInt(document.getElementById("temp-input").value);
       let condition = document.getElementById("weather-dropdown").value;
       let xhr = new XMLHttpRequest();
@@ -90,15 +93,15 @@ export default function GenerateOutfit(){
         let data = temp["outfit"];
         for(let i = 0; i < data.length; i++){
           const object = data[i];
-          item_id_array.push(object["id"])
-          item_image_array.push(`data:image/png;base64,/${object["image"]}`);
-          // item_image_array.push(`data:image/png;base64,${object["image"]}`);
+          item_id_array.push(object["id"]);
+          item_image_array.push(`data:image/png;base64,${object["image"]}`);
+          item_label_array.push(object["label"]);
         }
 
         // item_id_array.forEach(itemid => setItemIds(oldArray => [...oldArray, itemid]));
         //
         // item_image_array.forEach(itemimage => setItemImages(oldArray => [...oldArray, itemimage]));
-
+        setItemLabels(item_label_array)
         setItemIds(item_id_array);
         setItemImages(item_image_array);
 
@@ -148,7 +151,7 @@ export default function GenerateOutfit(){
             </div>
 
             <div id="outfit-display">
-              <ItemImages itemimages={itemimages} itemids={itemids} onChange={onChange}/>
+              <ItemImages itemimages={itemimages} itemids={itemids} itemlabels={itemlabels} onChange={onChange}/>
 
             </div>
 
