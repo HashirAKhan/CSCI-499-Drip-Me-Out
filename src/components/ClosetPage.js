@@ -82,7 +82,6 @@ export default function Closet(props) {
               const object = JSON.parse(data[i]);
               item_label_array.push(`${object["label"]}`);
               item_id_array.push(`${object["id"]}`);
-            //   item_image_array.push(`data:image/png;base64,${object["image"]}`);
               item_image_array.push(`data:image/png;base64,${object["image"]}`);
               console.log(object)
             }
