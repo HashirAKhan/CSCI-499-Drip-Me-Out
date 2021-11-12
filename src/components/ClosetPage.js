@@ -11,6 +11,19 @@ export default function Closet(props) {
       history.push("/addclothing");
    }
 
+   function viewedit(){
+      if (localStorage.getItem('viewedit') === 'true')
+      {
+         history.push("/viewedit");
+         localStorage.setItem('viewedit', false);
+         localStorage.setItem('viewedititemid', viewitemid);
+      }
+      else 
+      {
+         alert("No closet item selected");
+      }
+   }
+
    const rendered = useRef(false);
 
    let user = useRef();
@@ -26,9 +39,13 @@ export default function Closet(props) {
 
    const [itemids, setItemIds] = useState([]);
 
+   const [itemlabels, setItemLabels] = useState([]);
+
    const [viewitemimage, setViewItemImage] = useState('');
 
    const [viewitemid, setViewItemId] = useState('');
+
+   const [viewitemlabel, setViewItemLabel] = useState('');
 
    function onChange(id) {
       setViewItemId(id);
@@ -58,28 +75,30 @@ export default function Closet(props) {
 
             let item_image_array = [];
             let item_id_array = [];
-            console.log("test");
+            let item_label_array = [];
             let temp = JSON.parse(xhr.response);
             let data = temp["closet"];
             for(let i = 0; i < data.length; i++){
               const object = JSON.parse(data[i]);
+              item_label_array.push(`${object["label"]}`);
               item_id_array.push(`${object["id"]}`);
+            //   item_image_array.push(`data:image/png;base64,${object["image"]}`);
               item_image_array.push(`data:image/png;base64,${object["image"]}`);
+              console.log(object)
             }
 
             let leftbox = document.getElementById("leftbox");
             let height = 240 * (data.length / 2);
             leftbox.style.height = `${height.toString()}px`;
 
+            item_label_array.forEach(itemlabel => setItemLabels(oldArray => [...oldArray, itemlabel]));
             item_id_array.forEach(itemid => setItemIds(oldArray => [...oldArray, itemid]));
-
             item_image_array.forEach(itemimage => setItemImages(oldArray => [...oldArray, itemimage]));
          });
          xhr.open("POST", "http://localhost:8080/closet");
          const data = JSON.stringify({
            "email" : localStorage.getItem('email'),
          })
-         console.log(data);
          xhr.send(data);
          rendered.current = true;
       }
@@ -92,7 +111,7 @@ export default function Closet(props) {
          <div id="leftbox">
             <div id="innerdiv">
                <a id="load" href="/#/closet">Loading Items...</a>
-               <ItemImages itemimages={itemimages} itemids={itemids} onChange={onChange}/>
+               <ItemImages itemimages={itemimages} itemlabels={itemlabels} itemids={itemids} onChange={onChange}/>
             </div>
          </div>
          <div onClick={add} id="closetbutton">
@@ -105,7 +124,9 @@ export default function Closet(props) {
             <ItemClick viewitemid={viewitemid} viewitemimage={viewitemimage}/>
          </div>
          <div class="rightbox" id="rightlowerbox">
-            <a href="/viewedit" className="closet" id="viewedit">View/Edit</a>
+            <div onClick={viewedit} itemid={viewitemid}>
+               <a className="closet" id="viewedit">View/Edit</a>
+            </div>
          </div>
          <p></p>
       </>
