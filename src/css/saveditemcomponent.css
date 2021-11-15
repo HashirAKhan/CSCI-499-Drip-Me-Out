@@ -1,0 +1,13 @@
+div#saved-item {
+    display: flex;
+    padding-bottom: 2%;
+}
+
+#saved-item img{
+  width: 30%;
+  height: 30%;
+}
+#saved-item h3{
+  padding-left: 23%;
+  padding-top: 10%;
+}

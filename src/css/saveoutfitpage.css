@@ -1,0 +1,49 @@
+div#save-outfit {
+    display: flex;
+}
+
+#outfits{
+  list-style: none;
+  padding: 7% 6%;
+  overflow: scroll;
+}
+
+#outfit-list{
+  background-color: rgba(0,0, 0, .5);
+  color: white;
+  width:40%;
+  margin-left: 2%;
+  margin-top: 2%;
+  text-align: center;
+  border-radius: 25px;
+}
+
+#outfit-list li{
+  padding-bottom: 8%;
+}
+
+#view-saved{
+  overflow: scroll;
+  background-color: rgba(0,0, 0, .5);
+  color: white;
+  border-radius: 25px;
+  margin-left: 5%;
+  margin-right: 2%;
+  width: 50%;
+  height: 75vh;
+  margin-top: 2%;
+
+}
+
+/* overflow: scroll;
+padding: 20px 25px 20px;
+background-color: rgba(0,0, 0, .5);
+border-radius: 25px;
+margin-left: 5%;
+margin-right: 2%;
+color: white;
+overflow: scroll;
+width: 50%;
+height: 85vh;
+margin-bottom: 2%;
+float: right; */
