@@ -1,5 +1,6 @@
 #generate-outfit{
   display: flex;
+  flex-direction:row;
 }
 
 #filters-container{
@@ -25,7 +26,7 @@
   margin-left: 3%;
 }
 
-#filters-container Button{
+#filters-container button{
   position: static;
   margin-top: 12%;
   margin-left: 30%;
@@ -44,11 +45,29 @@
   margin-right: 2%;
   color: white;
   overflow: scroll;
-  width: 60%;
-  height: 85vh;
+  width: 90%;
+  height: 80vh;
   margin-bottom: 2%;
 }
 
+#display-div{
+  float:right;
+  width: 60%;
+}
+
+#display-div{
+  float:right;
+  width: 60%;
+}
+
+#save-button{
+  text-align: center;
+  padding-bottom: 2%;
+}
+
+/* #save-button{
+  display: inline-block;
+} */
 /* #outfit-display img{
   height: 30vh;
   width: 30vh;
