@@ -7,6 +7,7 @@ import Closet from './components/ClosetPage'
 import ViewOutfit from './components/ViewOutfitPage'
 import GenerateOutfit from './components/GenerateOutfitPage'
 import ViewEdit from './components/ViewEditPage'
+import SaveOutfit from './components/SaveOutfitPage'
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import React from 'react'
 
@@ -72,6 +73,12 @@ class App extends React.Component {
           </Route>
           <Route exact path="/generateoutfit">
             <GenerateOutfit />
+          </Route>
+          <Route exact path="/generateoutfit">
+            <GenerateOutfit />
+          </Route>
+          <Route exact path="/saveoutfit">
+            <SaveOutfit />
           </Route>
         </Switch>
       </Router >

@@ -150,8 +150,14 @@ export default function GenerateOutfit(){
 
             </div>
 
-            <div id="outfit-display">
-              <ItemImages itemimages={itemimages} itemids={itemids} itemlabels={itemlabels} onChange={onChange}/>
+            <div id="display-div">
+              <div id="outfit-display">
+                <ItemImages itemimages={itemimages} itemids={itemids} itemlabels={itemlabels} onChange={onChange}/>
+              </div>
+
+              <div id ="save-button">
+                <button> Save Outfit </button> 
+              </div>
 
             </div>
 
