@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import Navbar from './Navbar'
-import "../css/saveoutfitpage.css"
-import SavedItem from './SavedItemComponent'
+import Navbar from '../Navbar'
+import "../../css/saveoutfitpage.css"
+import SavedItem from '../SavedItemComponent'
 
 export default function SaveOutfit(){
 

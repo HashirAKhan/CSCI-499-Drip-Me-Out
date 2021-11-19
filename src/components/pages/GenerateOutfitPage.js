@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import Navbar from './Navbar'
-import Button from './Button.js';
-import ItemImages from "./ItemImages"
-import "../css/generateoutfitpage.css"
+import Navbar from '../Navbar'
+import Button from '../Button.js';
+import ItemImages from "../ItemImages"
+import "../../css/generateoutfitpage.css"
 
 export default function GenerateOutfit(){
 

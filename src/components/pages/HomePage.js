@@ -1,9 +1,9 @@
-import "../css/homepage.css"
+import "../../css/homepage.css"
 import { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
-import dripIcon from "../images/dripicon.png"
-import closetImage from "../images/customicon.png"
-import wardrobeImage from '../images/closeticon.png'
+import dripIcon from "../../images/dripicon.png"
+import closetImage from "../../images/customicon.png"
+import wardrobeImage from '../../images/closeticon.png'
 
 export default function Home() {
    const history = useHistory();

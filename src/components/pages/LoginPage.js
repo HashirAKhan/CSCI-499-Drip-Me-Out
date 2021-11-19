@@ -1,5 +1,5 @@
-import '../css/loginpage.css';
-import Button from './Button.js';
+import '../../css/loginpage.css';
+import Button from '../Button.js';
 import { useEffect, useRef } from 'react'
 import { useHistory } from 'react-router-dom'
 

@@ -1,8 +1,8 @@
-import Navbar from './Navbar'
+import Navbar from '../Navbar'
 import React, { useEffect, useRef, useState } from 'react'
-import "../css/closetpage.css"
-import ItemImages from "./ItemImages"
-import ItemClick from './ItemClick'
+import "../../css/closetpage.css"
+import ItemImages from "../ItemImages"
+import ItemClick from '../ItemClick'
 import { useHistory } from 'react-router-dom'
 
 export default function Closet(props) {

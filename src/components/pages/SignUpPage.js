@@ -1,5 +1,5 @@
-import '../css/signuppage.css';
-import Button from './Button.js';
+import '../../css/signuppage.css';
+import Button from '../Button.js';
 import { useState, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom'
 
