@@ -1,54 +1,55 @@
-import Login from './components/pages/LoginPage'
-import Home from './components/pages/HomePage'
-import AddClothing from './components/pages/AddClothingPage'
-import Weather from './components/pages/WeatherPage'
-import SignUp from './components/pages/SignUpPage'
-import Closet from './components/pages/ClosetPage'
-import ViewOutfit from './components/pages/ViewOutfitPage'
-import GenerateOutfit from './components/pages/GenerateOutfitPage'
-import ViewEdit from './components/pages/ViewEditPage'
-import SaveOutfit from './components/pages/SaveOutfitPage'
-import { HashRouter as Router, Route, Switch } from 'react-router-dom'
-import React from 'react'
+import Login from "./components/pages/LoginPage";
+import Home from "./components/pages/HomePage";
+import AddClothing from "./components/pages/AddClothingPage";
+import Weather from "./components/pages/WeatherPage";
+import SignUp from "./components/pages/SignUpPage";
+import Closet from "./components/pages/ClosetPage";
+import ViewOutfit from "./components/pages/ViewOutfitPage";
+import GenerateOutfit from "./components/pages/GenerateOutfitPage";
+import ViewEdit from "./components/pages/ViewEditPage";
+import SaveOutfit from "./components/pages/SaveOutfitPage";
+import Customize from "./components/pages/CustomizePage";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import React from "react";
 
 class App extends React.Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       login: false,
       email: "",
-      password: ""
+      password: "",
     };
   }
 
   handleEmail = (email) => {
     this.setState({
       login: true,
-      email: email
-    })
-  }
+      email: email,
+    });
+  };
 
   handlePassword = (password) => {
     this.setState({
-      password: password
-    })
+      password: password,
+    });
     alert(this.state);
-  }
+  };
 
   handleLoginInfo = (email, password) => {
     this.setState({
       login: true,
       email: email,
-      password: password
-    })
-  }
+      password: password,
+    });
+  };
 
   render() {
     return (
       <Router>
         <Switch>
           <Route exact path="/">
-            <Login loginInfo={this.handleLoginInfo}/>
+            <Login loginInfo={this.handleLoginInfo} />
           </Route>
           <Route exact path="/home">
             <Home />
@@ -66,7 +67,7 @@ class App extends React.Component {
             <SignUp email={this.handleEmail} password={this.handlePassword} />
           </Route>
           <Route exact path="/viewoutfits">
-            <ViewOutfit user={this.state}/>
+            <ViewOutfit user={this.state} />
           </Route>
           <Route exact path="/viewedit">
             <ViewEdit />
@@ -74,16 +75,16 @@ class App extends React.Component {
           <Route exact path="/generateoutfit">
             <GenerateOutfit />
           </Route>
-          <Route exact path="/generateoutfit">
-            <GenerateOutfit />
-          </Route>
           <Route exact path="/saveoutfit">
             <SaveOutfit />
           </Route>
+          <Route exact path="/customize">
+            <Customize renderBackground={true} />
+          </Route>
         </Switch>
-      </Router >
+      </Router>
     );
   }
 }
 
-export default App
+export default App;

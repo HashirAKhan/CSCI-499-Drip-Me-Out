@@ -1,0 +1,41 @@
+#page {
+  text-align: center;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item {
+  margin: 10px 10px 10px 10px;
+  border-radius: 10px;
+  height: 150px;
+  width: 150px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 0;
+}
+
+.select {
+  font-size: 13.5px;
+}
+
+.item:hover {
+  border: solid white 2px;
+  cursor: pointer;
+}
+
+#xdiv {
+  text-align: left;
+  width: 30px;
+  height: 30px;
+  z-index: 100;
+}
+
+#x {
+  color: red;
+  font-size: 22.5px;
+  margin: -1px 3px 3px 9px;
+}
