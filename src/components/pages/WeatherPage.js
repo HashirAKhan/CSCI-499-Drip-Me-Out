@@ -1,5 +1,5 @@
-import "../css/weatherpage.css"
-import Navbar from "./Navbar"
+import "../../css/weatherpage.css"
+import Navbar from "../Navbar"
 import { useEffect } from 'react'
 
 

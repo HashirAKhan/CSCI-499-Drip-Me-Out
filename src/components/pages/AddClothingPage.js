@@ -1,6 +1,6 @@
-import '../css/addclothingpage.css';
-import Button from './Button.js';
-import Navbar from './Navbar';
+import '../../css/addclothingpage.css';
+import Button from '../Button.js';
+import Navbar from '../Navbar';
  import { useEffect } from 'react';
 // import Header from './Header'
 
