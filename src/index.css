@@ -12,7 +12,7 @@ code {
     monospace;
 } */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 
 * {
   box-sizing: border-box;
@@ -23,7 +23,7 @@ code {
 body {
   background: url("https://i.ibb.co/h8RZwhY/base.jpg") no-repeat center fixed;
   background-size: cover;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .btn {
