@@ -9,9 +9,7 @@ import GenerateOutfit from "./components/pages/GenerateOutfitPage";
 import ViewEdit from "./components/pages/ViewEditPage";
 import SaveOutfit from "./components/pages/SaveOutfitPage";
 import Customize from "./components/pages/CustomizePage";
-import TopLayer1 from "./components/pages/TopLayer1Page";
-import ShoeLayer from "./components/pages/ShoeLayerPage";
-import BottomLayer1 from "./components/pages/BottomLayer1Page";
+import Layer from "./components/pages/LayerPage";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import React from "react";
 
@@ -26,6 +24,7 @@ class App extends React.Component {
       bottom: [],
       shoes: [],
       dress: [],
+      layer: "",
     };
   }
 
@@ -43,71 +42,22 @@ class App extends React.Component {
     alert(this.state);
   };
 
+  // Child = () => {
+  //   let layer = useParams();
+  //   // this.setState({
+  //   //   layer: layer,
+  //   // });
+  // };
+
   handleLoginInfo = (email, password) => {
     this.setState({
       login: true,
       email: email,
       password: password,
     });
-
-    let xhr = new XMLHttpRequest();
-    xhr.addEventListener("load", () => {
-      const closetJSON = JSON.parse(xhr.responseText);
-      for (let i = 0; i < closetJSON.closet.length; i++) {
-        const item = JSON.parse(closetJSON.closet[i]);
-        const category = item.category;
-        if (category === "Coats") {
-          this.setState({
-            top: [...this.state.top, item],
-          });
-        } else if (category === "Hoodies/Sweaters/Jackets") {
-          this.setState({
-            top: [...this.state.top, item],
-          });
-        } else if (category === "Long Sleeve T-shirt") {
-          this.setState({
-            top: [...this.state.top, item],
-          });
-        } else if (category === "Short Sleeve T-shirt") {
-          this.setState({
-            top: [...this.state.top, item],
-          });
-        } else if (category === "Sleeveless Top") {
-          this.setState({
-            top: [...this.state.top, item],
-          });
-        } else if (category === "Pants") {
-          this.setState({
-            bottom: [...this.state.bottom, item],
-          });
-        } else if (category === "Shorts/Skirt") {
-          this.setState({
-            bottom: [...this.state.bottom, item],
-          });
-        } else if (category === "Open Toed Shoes") {
-          this.setState({
-            shoes: [...this.state.shoes, item],
-          });
-        } else if (category === "Close Toed Shoes") {
-          this.setState({
-            shoes: [...this.state.shoes, item],
-          });
-        } else if (category === "Rain Boots") {
-          this.setState({
-            shoes: [...this.state.shoes, item],
-          });
-        } else if (category === "Dress") {
-          this.setState({
-            dress: [...this.state.dress, item],
-          });
-        }
-      }
-    });
-    xhr.open("POST", "http://localhost:8080/closet");
-    const data = JSON.stringify({
-      email: localStorage.getItem("email"),
-    });
-    xhr.send(data);
+    localStorage.setItem(`toplayer`, "");
+    localStorage.setItem(`bottomlayer`, "");
+    localStorage.setItem(`shoelayer`, "");
   };
 
   render() {
@@ -135,14 +85,8 @@ class App extends React.Component {
           <Route exact path="/customize">
             <Customize user={this.state.email} />
           </Route>
-          <Route exact path="/toplayer1">
-            <TopLayer1 />
-          </Route>
-          <Route exact path="/bottomlayer1">
-            <BottomLayer1 />
-          </Route>
-          <Route exact path="/shoelayer">
-            <ShoeLayer />
+          <Route exact path="/layer/:layer">
+            <Layer info={this.state} />
           </Route>
         </Switch>
       </Router>
