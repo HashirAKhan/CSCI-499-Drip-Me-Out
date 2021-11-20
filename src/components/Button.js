@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
 import { useEffect } from "react";
 
-const Button = ({ text, href, image, save, save_two }) => {
+const Button = ({ text, href, image, save, save_two, customize }) => {
   useEffect(() => {
     let button = document.querySelector("button");
     button.addEventListener("click", function (event) {
@@ -13,10 +13,11 @@ const Button = ({ text, href, image, save, save_two }) => {
 
   let image_displayed;
   const onClick = () => {
-    if (href != undefined) {
+    if (customize) {
+      history.push("/customize");
+    } else if (href != undefined) {
       history.push(`${href}`);
-    }
-    if (save_two) {
+    } else if (save_two) {
       let label = document.getElementById("clothing-label").value;
       if (label === "") {
         alert("Label required");

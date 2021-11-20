@@ -2,7 +2,6 @@ import Navbar from "../Navbar";
 import React, { useEffect, useRef, useState } from "react";
 import "../../css/closetpage.css";
 import ItemImages from "../ItemImages";
-import ItemClick from "../ItemClick";
 import { useHistory } from "react-router-dom";
 
 export default function Closet(props) {
@@ -43,8 +42,37 @@ export default function Closet(props) {
 
   const [viewitemlabel, setViewItemLabel] = useState("");
 
-  function onChange(id) {
+  function onChange(id, image, itemlabel) {
     setViewItemId(id);
+    let div = document.getElementById("toplowerbox");
+    let label = document.createElement("p");
+    label.style.fontWeight = "lighter";
+    label.innerText = itemlabel;
+    label.id = "label";
+    div.appendChild(label);
+    let newimg = document.getElementById(id).cloneNode(true);
+    div.appendChild(newimg);
+    newimg.id = "view";
+    newimg.style.width = "47%";
+    newimg.style.height = "47%";
+    newimg.style.borderRadius = "10px";
+    newimg.style.margin = "1px 4px 1px 4px";
+    newimg.style.padding = "0px";
+    newimg.addEventListener("mouseenter", (e) => {
+      newimg.style.bottom = "0px";
+      newimg.style.cursor = "default";
+    });
+    newimg.addEventListener("mouseleave", (e) => {
+      newimg.style.bottom = "0px";
+      newimg.style.cursor = "default";
+    });
+    let p = document.createElement("p");
+    p.id = "emptytext";
+    div.appendChild(p);
+
+    localStorage.setItem("viewedit", true);
+    localStorage.setItem("viewedititemid", id);
+    localStorage.setItem("viewitemimage", image);
   }
 
   useEffect(() => {
@@ -120,9 +148,7 @@ export default function Closet(props) {
           View Saved Outfits
         </a>
       </div>
-      <div id="toplowerbox">
-        <ItemClick viewitemid={viewitemid} viewitemimage={viewitemimage} />
-      </div>
+      <div id="toplowerbox"></div>
       <div class="rightbox" id="rightlowerbox">
         <div onClick={viewedit} itemid={viewitemid}>
           <a className="closet" id="viewedit">

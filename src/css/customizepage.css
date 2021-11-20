@@ -15,7 +15,6 @@
   width: 150px;
   background-color: rgba(0, 0, 0, 0.5);
   position: relative;
-  z-index: 0;
 }
 
 .select {
@@ -31,11 +30,14 @@
   text-align: left;
   width: 30px;
   height: 30px;
-  z-index: 100;
 }
 
 #x {
   color: red;
   font-size: 22.5px;
   margin: -1px 3px 3px 9px;
+}
+
+#shoediv {
+  margin-top: -25px;
 }

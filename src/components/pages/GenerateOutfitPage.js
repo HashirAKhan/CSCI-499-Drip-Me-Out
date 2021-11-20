@@ -8,13 +8,9 @@ export default function GenerateOutfit() {
   //const rendered_value = rendered.current;
 
   const [itemimages, setItemImages] = useState([]);
-
   const [itemids, setItemIds] = useState([]);
-
   const [itemlabels, setItemLabels] = useState([]);
-
   const [viewitemimage, setViewItemImage] = useState("");
-
   const [viewitemid, setViewItemId] = useState("");
 
   function onChange(id) {
