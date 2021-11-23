@@ -13,12 +13,12 @@ export default function SaveItemModal(props){
     const data = JSON.stringify({
       user: localStorage.getItem("email"),
       name: document.getElementById("outfit-name").value,
-      outfits: props.outfits,
+      outfit: props.outfits,
     });
 
     console.log(data)
 
-    xhr.open("POST", "http://localhost:8080/saveoutfit");
+    xhr.open("POST", "http://localhost:8080/saveOutfit");
     xhr.send(data);
   }
 
