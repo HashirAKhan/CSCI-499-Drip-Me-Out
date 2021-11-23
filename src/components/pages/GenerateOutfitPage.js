@@ -108,26 +108,6 @@ export default function GenerateOutfit() {
     setShow(true);
   }
 
-  // @func: this function closes the modal when user saves the outfit
-  function closeSaveOutfitModal(data){
-
-    setShow(false);
-    alert("Your outfit has been saved!");
-
-    // let xhr = new XMLHttpRequest();
-    //
-    // const data = JSON.stringify({
-    //   user: localStorage.getItem("email"),
-    //   name: // contents are in the child, cant pass child contents up to parent component
-    //   //document.getElementById("outfit-name").innerHTML,
-    //   outfits: itemids,
-    // });
-    //
-    // xhr.open("POST", "http://localhost:8080/saveoutfit");
-    // xhr.send(data);
-
-  }
-
   // @func: this function closes modal if the user clicks out of it
   function exitModal(){
     setShow(false);
@@ -180,7 +160,7 @@ export default function GenerateOutfit() {
         </div>
       </div>
 
-      <SaveItemModal show={show} onClick ={closeSaveOutfitModal} onClose={exitModal} outfits={itemids}/>
+      <SaveItemModal show={show} onClose={exitModal} outfits={itemids}/>
     </>
   );
 }
