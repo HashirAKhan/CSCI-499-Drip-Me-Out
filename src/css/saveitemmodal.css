@@ -1,0 +1,39 @@
+#modal{
+  position: fixed;
+  background-color: rgba(0,0, 0, .5);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#modal-content {
+  width: 500px;
+  border-radius: 25px;
+  background-color: #fff;
+  padding: 15px 20px;
+  text-align:center;
+}
+
+#modal-header, #modal-footer{
+  padding: 10px;
+}
+
+#modal-title{
+  margin:0;
+}
+
+#modal-body{
+  padding: 10px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+#outfit-name{
+  padding: 10px 20px;
+  border: 2px solid rgba(0,0, 0, .5);
+  box-sizing: border-box;
+}

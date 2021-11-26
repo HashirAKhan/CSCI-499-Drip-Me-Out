@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Navbar from "../Navbar";
 import Button from "../Button.js";
 import ItemImages from "../ItemImages";
+import SaveItemModal from "../SaveItemModal";
 import "../../css/generateoutfitpage.css";
 
 export default function GenerateOutfit() {
@@ -12,6 +13,11 @@ export default function GenerateOutfit() {
   const [itemlabels, setItemLabels] = useState([]);
   const [viewitemimage, setViewItemImage] = useState("");
   const [viewitemid, setViewItemId] = useState("");
+  const [show, setShow] = useState(false)
+
+  // state = {
+  //   outfit_name: "",
+  // };
 
   function onChange(id) {
     setViewItemId(id);
@@ -97,6 +103,16 @@ export default function GenerateOutfit() {
     xhr.send(data);
   }
 
+  // @func: this function opens the modal for saving an outfit
+  function onClickSaveOutfit(){
+    setShow(true);
+  }
+
+  // @func: this function closes modal if the user clicks out of it
+  function exitModal(){
+    setShow(false);
+  }
+
   return (
     <>
       <Navbar />
@@ -139,10 +155,12 @@ export default function GenerateOutfit() {
           </div>
 
           <div id="save-button">
-            <button> Save Outfit </button>
+            <button onClick={onClickSaveOutfit}> Save Outfit </button>
           </div>
         </div>
       </div>
+
+      <SaveItemModal show={show} onClose={exitModal} outfits={itemids}/>
     </>
   );
 }
