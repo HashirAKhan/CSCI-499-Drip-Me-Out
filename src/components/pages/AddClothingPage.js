@@ -1,7 +1,7 @@
-import '../css/addclothingpage.css';
-import Button from './Button.js';
-import Navbar from './Navbar';
- import { useEffect } from 'react';
+import "../../css/addclothingpage.css";
+import Button from "../Button.js";
+import Navbar from "../Navbar";
+import { useEffect } from "react";
 // import Header from './Header'
 
 const AddClothing = () => {
@@ -86,21 +86,26 @@ const AddClothing = () => {
     }, []);
 
   return (
-    <div className='container'>
+    <div className="container">
       <Navbar />
-      <div className='content-container'>
+      <div className="content-container">
         <div id="clothingform">
           <div id="innerdiv">
             <form id="clothing-form">
-
               <div class="clothing-fields">
-                <label id="label-field" for="clothing-label"> Clothing Label: </label>
+                <label id="label-field" for="clothing-label">
+                  {" "}
+                  Clothing Label:{" "}
+                </label>
                 <br />
                 <input type="input" id="clothing-label" required />
               </div>
 
               <div class="clothing-fields">
-                <label id="category-field" for="clothing-category"> Category: </label>
+                <label id="category-field" for="clothing-category">
+                  {" "}
+                  Category:{" "}
+                </label>
                 <br />
                 {/* <input type="input" id="clothing-category" required /> */}
                 <select id="category">
@@ -128,7 +133,10 @@ const AddClothing = () => {
               </div>
 
               <div class="clothing-fields">
-                <label id="color-field" for="clothing-color"> Color: </label>
+                <label id="color-field" for="clothing-color">
+                  {" "}
+                  Color:{" "}
+                </label>
                 <br />
                 {/* <input type="input" id="clothing-color" required /> */}
                 <select id="color">
@@ -189,9 +197,7 @@ const AddClothing = () => {
           {/* <div id="innerdiv">
             Clothing Image
            </div> */}
-          <div id="image">
-
-          </div>
+          <div id="image"></div>
           <div id="upload">
             <input accept="image/*" type="file" id="myFile" name="filename" />
             <Button text="Upload Image" image={true} />
@@ -199,7 +205,7 @@ const AddClothing = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AddClothing
+export default AddClothing;

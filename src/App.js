@@ -1,82 +1,97 @@
-import Login from './components/LoginPage'
-import Home from './components/HomePage'
-import AddClothing from './components/AddClothingPage'
-import Weather from './components/WeatherPage'
-import SignUp from './components/SignUpPage'
-import Closet from './components/ClosetPage'
-import ViewOutfit from './components/ViewOutfitPage'
-import GenerateOutfit from './components/GenerateOutfitPage'
-import ViewEdit from './components/ViewEditPage'
-import { HashRouter as Router, Route, Switch } from 'react-router-dom'
-import React from 'react'
+import Login from "./components/pages/LoginPage";
+import Home from "./components/pages/HomePage";
+import AddClothing from "./components/pages/AddClothingPage";
+import Weather from "./components/pages/WeatherPage";
+import SignUp from "./components/pages/SignUpPage";
+import Closet from "./components/pages/ClosetPage";
+import ViewOutfit from "./components/pages/ViewOutfitPage";
+import GenerateOutfit from "./components/pages/GenerateOutfitPage";
+import ViewEdit from "./components/pages/ViewEditPage";
+import SaveOutfit from "./components/pages/SaveOutfitPage";
+import Customize from "./components/pages/CustomizePage";
+import Layer from "./components/pages/LayerPage";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import React from "react";
 
 class App extends React.Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       login: false,
       email: "",
-      password: ""
+      password: "",
+      top: [],
+      bottom: [],
+      shoes: [],
+      dress: [],
+      layer: "",
     };
   }
 
   handleEmail = (email) => {
     this.setState({
       login: true,
-      email: email
-    })
-  }
+      email: email,
+    });
+  };
 
   handlePassword = (password) => {
     this.setState({
-      password: password
-    })
+      password: password,
+    });
     alert(this.state);
-  }
+  };
+
+  // Child = () => {
+  //   let layer = useParams();
+  //   // this.setState({
+  //   //   layer: layer,
+  //   // });
+  // };
 
   handleLoginInfo = (email, password) => {
     this.setState({
       login: true,
       email: email,
-      password: password
-    })
-  }
+      password: password,
+    });
+    localStorage.setItem(`toplayer`, "");
+    localStorage.setItem(`bottomlayer`, "");
+    localStorage.setItem(`shoelayer`, "");
+  };
 
   render() {
     return (
       <Router>
         <Switch>
           <Route exact path="/">
-            <Login loginInfo={this.handleLoginInfo}/>
+            <Login loginInfo={this.handleLoginInfo} />
           </Route>
-          <Route exact path="/home">
-            <Home />
-          </Route>
-          <Route exact path="/weather">
-            <Weather />
-          </Route>
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/weather" component={Weather} />
           <Route exact path="/closet">
             <Closet user={this.state} />
           </Route>
-          <Route exact path="/addclothing">
-            <AddClothing />
-          </Route>
+          <Route exact path="/addclothing" component={AddClothing} />
           <Route exact path="/signup">
             <SignUp email={this.handleEmail} password={this.handlePassword} />
           </Route>
           <Route exact path="/viewoutfits">
-            <ViewOutfit user={this.state}/>
+            <ViewOutfit user={this.state} />
           </Route>
-          <Route exact path="/viewedit">
-            <ViewEdit />
+          <Route exact path="/viewedit" component={ViewEdit} />
+          <Route exact path="/generateoutfit" component={GenerateOutfit} />
+          <Route exact path="/saveoutfit" component={SaveOutfit} />
+          <Route exact path="/customize">
+            <Customize user={this.state.email} />
           </Route>
-          <Route exact path="/generateoutfit">
-            <GenerateOutfit />
+          <Route exact path="/layer/:layer">
+            <Layer info={this.state} />
           </Route>
         </Switch>
-      </Router >
+      </Router>
     );
   }
 }
 
-export default App
+export default App;

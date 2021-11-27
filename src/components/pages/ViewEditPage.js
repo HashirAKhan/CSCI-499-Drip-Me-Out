@@ -1,16 +1,11 @@
-import '../css/addclothingpage.css';
-import Button from './Button.js';
-import Navbar from './Navbar';
-import { useEffect } from 'react';
+import "../../css/addclothingpage.css";
+import Button from "../Button.js";
+import Navbar from "../Navbar";
+import { useEffect } from "react";
 // import Header from './Header'
 
 const ViewEdit = () => {
   useEffect(() => {
-    document.body.style.background = "url(https://i.ibb.co/h8RZwhY/base.jpg)"
-    document.body.style.backgroundSize = "cover"
-    document.body.style.backgroundAttachment = "fixed"
-    document.body.style.backgroundPosition = "center"
-
     let xhr = new XMLHttpRequest();
     xhr.addEventListener("load", () => {
       let temp = JSON.parse(xhr.response);
@@ -24,9 +19,7 @@ const ViewEdit = () => {
         color.value = `${data.color}`;
       }
       if (document.getElementById("clothing_img")) {
-
-      }
-      else {
+      } else {
         let imageDiv = document.getElementById("image");
         let img = document.createElement("img");
         img.id = "clothing_img";
@@ -36,37 +29,53 @@ const ViewEdit = () => {
     });
     let data = "";
     data = JSON.stringify({
-      "id": localStorage.getItem("viewedititemid"),
-      "email": localStorage.getItem("email")
-    })
+      id: localStorage.getItem("viewedititemid"),
+      email: localStorage.getItem("email"),
+    });
     xhr.open("POST", "http://localhost:8080/view");
     xhr.send(data);
-  }, [])
+  }, []);
 
   return (
-    <div className='container'>
+    <div className="container">
       <Navbar />
-      <div className='content-container'>
+      <div className="content-container">
         <div id="clothingform">
           <div id="innerdiv">
             <form id="clothing-form">
-
               <div class="clothing-fields">
-                <label id="label-field" for="clothing-label"> Clothing Label: </label>
+                <label id="label-field" for="clothing-label">
+                  {" "}
+                  Clothing Label:{" "}
+                </label>
                 <br />
-                <input id="labelinput" type="input" id="clothing-label" required />
+                <input
+                  id="labelinput"
+                  type="input"
+                  id="clothing-label"
+                  required
+                />
               </div>
 
               <div class="clothing-fields">
-                <label id="category-field" for="clothing-category"> Category: </label>
+                <label id="category-field" for="clothing-category">
+                  {" "}
+                  Category:{" "}
+                </label>
                 <br />
                 {/* <input type="input" id="clothing-category" required /> */}
                 <select id="category">
                   <option value="select">Select</option>
                   <option value="Coats">Coats</option>
-                  <option value="Hoodies/Sweaters/Jackets">Hoodies/Sweaters/Jackets</option>
-                  <option value="Long Sleeve T-shirt">Long Sleeve T-shirt</option>
-                  <option value="Short Sleeve T-shirt">Short Sleeve T-shirt</option>
+                  <option value="Hoodies/Sweaters/Jackets">
+                    Hoodies/Sweaters/Jackets
+                  </option>
+                  <option value="Long Sleeve T-shirt">
+                    Long Sleeve T-shirt
+                  </option>
+                  <option value="Short Sleeve T-shirt">
+                    Short Sleeve T-shirt
+                  </option>
                   <option value="Sleeveless Top">Sleeveless Top</option>
                   <option value="Pants">Pants</option>
                   <option value="Dress">Dress</option>
@@ -78,7 +87,10 @@ const ViewEdit = () => {
               </div>
 
               <div class="clothing-fields">
-                <label id="color-field" for="clothing-color"> Color: </label>
+                <label id="color-field" for="clothing-color">
+                  {" "}
+                  Color:{" "}
+                </label>
                 <br />
                 {/* <input type="input" id="clothing-color" required /> */}
                 <select id="color">
@@ -114,9 +126,7 @@ const ViewEdit = () => {
           {/* <div id="innerdiv">
             Clothing Image
            </div> */}
-          <div id="image">
-
-          </div>
+          <div id="image"></div>
           <div id="upload">
             <input accept="image/*" type="file" id="myFile" name="filename" />
             <Button text="Upload Image" image={true} />
@@ -124,7 +134,7 @@ const ViewEdit = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ViewEdit
+export default ViewEdit;
