@@ -1,16 +1,16 @@
-import Login from "./components/pages/LoginPage";
-import Home from "./components/pages/HomePage";
 import AddClothing from "./components/pages/AddClothingPage";
-import Weather from "./components/pages/WeatherPage";
-import SignUp from "./components/pages/SignUpPage";
 import Closet from "./components/pages/ClosetPage";
-import ViewOutfit from "./components/pages/ViewOutfitPage";
-import GenerateOutfit from "./components/pages/GenerateOutfitPage";
-import ViewEdit from "./components/pages/ViewEditPage";
-import SaveOutfit from "./components/pages/SaveOutfitPage";
 import Customize from "./components/pages/CustomizePage";
+import GenerateOutfit from "./components/pages/GenerateOutfitPage";
+import Home from "./components/pages/HomePage";
 import Layer from "./components/pages/LayerPage";
+import Login from "./components/pages/LoginPage";
 import Profile from "./components/pages/ProfilePage";
+import SaveOutfit from "./components/pages/SaveOutfitPage";
+import SignUp from "./components/pages/SignUpPage";
+import ViewEdit from "./components/pages/ViewEditPage";
+import ViewOutfit from "./components/pages/ViewOutfitPage";
+import Weather from "./components/pages/WeatherPage";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import React from "react";
 
