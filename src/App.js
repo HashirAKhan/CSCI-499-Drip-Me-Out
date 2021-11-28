@@ -10,6 +10,7 @@ import ViewEdit from "./components/pages/ViewEditPage";
 import SaveOutfit from "./components/pages/SaveOutfitPage";
 import Customize from "./components/pages/CustomizePage";
 import Layer from "./components/pages/LayerPage";
+import Profile from "./components/pages/ProfilePage";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import React from "react";
 
@@ -88,6 +89,7 @@ class App extends React.Component {
           <Route exact path="/layer/:layer">
             <Layer info={this.state} />
           </Route>
+          <Route exact path="/profile" component={Profile} />
         </Switch>
       </Router>
     );
