@@ -120,7 +120,7 @@ export default function Layer() {
     p.id = "emptytext";
     div.appendChild(p);
 
-    localStorage.setItem(`${layer}layer`, id);
+    sessionStorage.setItem(`${layer}layer`, id);
     setSelected(true);
   }
 
