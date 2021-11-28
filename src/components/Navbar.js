@@ -47,6 +47,9 @@ export default function Navbar() {
         <Link to="/closet" id="closet">
           Closet
         </Link>
+        <Link to="/profile" id="profile-text">
+          Profile
+        </Link>
         {/* <a href="/#/home" id="home">Home</a>
             <a href="/#/weather" id="weather">Weather</a>
             <a href="/#/customize" id="customize">Customize</a>
