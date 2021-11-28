@@ -13,7 +13,9 @@ const Button = ({ text, href, image, save, save_two, customize }) => {
 
   let image_displayed;
   const onClick = () => {
-    if (customize) {
+    if (text === "Save Outfit") {
+      saveOutfit();
+    } else if (customize) {
       history.push("/customize");
     } else if (href != undefined) {
       history.push(`${href}`);
@@ -157,12 +159,38 @@ const Button = ({ text, href, image, save, save_two, customize }) => {
             email: localStorage.getItem("email"),
             image: base64,
           });
-          // console.log(data);
           xhr.send(data);
         }
       }
     }
   };
+
+  function saveOutfit() {
+    const items = document.getElementsByTagName("img");
+    let outfit = [];
+    for (let i = 0; i < items.length; i++) {
+      outfit.push(items[i].id);
+    }
+    if (items.length > 1) {
+      let xhr = new XMLHttpRequest();
+      xhr.addEventListener("load", () => {
+        if (xhr.responseText === "saved") {
+          alert("Outfit saved");
+        } else {
+          alert("Outfit not saved");
+        }
+      });
+      xhr.open("POST", "http://localhost:8080/saveOutfit");
+      const data = JSON.stringify({
+        name: "Outfit",
+        outfit: outfit,
+        user: localStorage.getItem("email"),
+      });
+      xhr.send(data);
+    } else {
+      alert("Select more items to save outfit");
+    }
+  }
 
   return (
     <a href={href}>
