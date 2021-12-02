@@ -5,17 +5,21 @@ import SavedItem from '../SavedItemComponent'
 
 export default function SaveOutfit(){
 
-  useEffect(() => {
 
-    setOutfitList();
-  }, []);
-
-  let outfits = []
-  let outfits_ids = []
-  let test = ['test', 'outfit 1']
+  let outfit_list = []
+  const [outfits, setOutfits] = useState([]);
+  const rendered = useRef(false);
+  const rendered_value = rendered.current;
   //let test = ["outfits":[{"id": "000000", name: "summer outfit"}, {"id": "111111", name: "outfit 1"}]]
 
   //@func: sets the list of outfits on the frontend
+
+  useEffect(() => {
+    if(!rendered_value.current){
+      setOutfitList();
+    }
+  }, []);
+
   function setOutfitList(){
 
     let xhr = new XMLHttpRequest();
@@ -29,23 +33,36 @@ export default function SaveOutfit(){
         for (let i = 0; i < saved_outfits.length; i++) {
           const object = JSON.parse(saved_outfits[i]);
           //console.log(String(object['name']))
-          outfits.push(String(object['name']))
-          outfits_ids.push(`${object["id"]}`)
-          //console.log(object);
+          //outfits.push(String(object['name']))
+          outfit_list.push(object)
+          // outfits_ids.push(`${object["id"]}`)
+          // console.log(typeof(object.name));
         }
       }
 
-      console.log(outfits)
-      console.log(outfits_ids)
+      outfit_list.forEach((outfit) =>
+        setOutfits((oldArray) => [...oldArray, outfit])
+      );
+
     });
 
     const data = JSON.stringify({email: localStorage.getItem("email") });
     //console.log(data)
     xhr.open("POST", "http://localhost:8080/getOutfits");
     xhr.send(data);
+    rendered.current = true;
 
     //console.log("printing array")
     //console.log(outfit_names)
+  }
+
+  function fetchOutfit(e){
+    let xhr = new XMLHttpRequest();
+    const data = JSON.stringify({id: e.target.dataset.value});
+    //console.log(data)
+    xhr.open("POST", "http://localhost:8080/getOutfits");
+    xhr.send(data);
+    //console.log(id);
   }
 
     return(
@@ -57,8 +74,8 @@ export default function SaveOutfit(){
         <div id="outfit-list">
           <ul id="outfits">
           {
-            test.map((outfit) =>
-              <li> {outfit} </li>
+            outfits.map((outfit) =>
+              <li data-value={outfit["id"]} onClick={fetchOutfit}> {outfit["name"]} </li>
             )
           }
           </ul>

@@ -144,7 +144,7 @@ export default function Closet(props) {
         <a className="closet">Add Item</a>
       </div>
       <div id="closetbutton2">
-        <a href="/outfits" className="closet">
+        <a href="/#/saveoutfit" className="closet">
           View Saved Outfits
         </a>
       </div>
