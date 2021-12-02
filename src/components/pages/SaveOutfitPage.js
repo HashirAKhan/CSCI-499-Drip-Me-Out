@@ -1,12 +1,10 @@
-import { useEffect, useRef, useState, setState } from 'react';
-import Navbar from '../Navbar'
-import "../../css/saveoutfitpage.css"
-import SavedItem from '../SavedItemComponent'
+import { useEffect, useRef, useState, setState } from "react";
+import Navbar from "../Navbar";
+import "../../css/saveoutfitpage.css";
+import SavedItem from "../SavedItemComponent";
 
-export default function SaveOutfit(){
-
-
-  let outfit_list = []
+export default function SaveOutfit() {
+  let outfit_list = [];
   const [outfits, setOutfits] = useState([]);
   const rendered = useRef(false);
   const rendered_value = rendered.current;
@@ -17,26 +15,30 @@ export default function SaveOutfit(){
   useEffect(() => {
     //const [outfits, setOutfits] = useState([]);
 
+    const outfitListUl = document.getElementById("outfits");
+    while (outfitListUl.lastChild) {
+      outfitListUl.lastChild.remove();
+    }
+
     setOutfitList();
 
-    console.log("running")
+    console.log("running running");
   }, []);
 
-  function setOutfitList(){
-
+  function setOutfitList() {
     let xhr = new XMLHttpRequest();
     xhr.addEventListener("load", () => {
       let outfitList = JSON.parse(xhr.response);
       //console.log(outfitList)
       //will create an outfits list and populate it with the
       //outfit names
-      let saved_outfits = outfitList["outfits"]
-      if (saved_outfits.length != 0){
+      let saved_outfits = outfitList["outfits"];
+      if (saved_outfits.length != 0) {
         for (let i = 0; i < saved_outfits.length; i++) {
           const object = JSON.parse(saved_outfits[i]);
           //console.log(String(object['name']))
           //outfits.push(String(object['name']))
-          outfit_list.push(object)
+          outfit_list.push(object);
           // outfits_ids.push(`${object["id"]}`)
           // console.log(typeof(object.name));
         }
@@ -46,40 +48,43 @@ export default function SaveOutfit(){
         setOutfits((oldArray) => [...oldArray, outfit])
       );
 
-      console.log(outfits)
-
+      console.log(outfits);
     });
 
-    const data = JSON.stringify({email: localStorage.getItem("email") });
-    console.log(data)
+    const data = JSON.stringify({ email: localStorage.getItem("email") });
+    console.log(data);
     xhr.open("POST", "http://localhost:8080/getOutfits");
     xhr.send(data);
     //console.log("running")
     rendered.current = true;
   }
 
-  function fetchOutfit(e){
+  function fetchOutfit(e) {
     let xhr = new XMLHttpRequest();
-    const data = JSON.stringify({id: e.target.dataset.value});
-    console.log(data)
+    const data = JSON.stringify({ id: e.target.dataset.value });
+    console.log(data);
     xhr.open("POST", "http://localhost:8080/getOutfits");
     xhr.send(data);
     //console.log(id);
   }
 
-    return(
-      <>
-
-      <Navbar/>
+  return (
+    <>
+      <Navbar />
 
       <div id="save-outfit">
         <div id="outfit-list">
           <ul id="outfits">
-          {
-            outfits.map((outfit) =>
-              <li key={outfit["id"]} data-value={outfit["id"]} onClick={fetchOutfit}> {outfit["name"]} </li>
-            )
-          }
+            {outfits.map((outfit) => (
+              <li
+                key={outfit["id"]}
+                data-value={outfit["id"]}
+                onClick={fetchOutfit}
+              >
+                {" "}
+                {outfit["name"]}{" "}
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -90,9 +95,7 @@ export default function SaveOutfit(){
             <SavedItem img="https://bit.ly/3HlCfwi" itemname="Puffer Jacket" />
           </ul>
         </div>
-
       </div>
-
-      </>
-    );
+    </>
+  );
 }
