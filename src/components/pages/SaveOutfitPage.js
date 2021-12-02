@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, setState } from 'react';
 import Navbar from '../Navbar'
 import "../../css/saveoutfitpage.css"
 import SavedItem from '../SavedItemComponent'
@@ -15,9 +15,11 @@ export default function SaveOutfit(){
   //@func: sets the list of outfits on the frontend
 
   useEffect(() => {
-    if(!rendered_value.current){
-      setOutfitList();
-    }
+    //const [outfits, setOutfits] = useState([]);
+
+    setOutfitList();
+
+    console.log("running")
   }, []);
 
   function setOutfitList(){
@@ -44,22 +46,22 @@ export default function SaveOutfit(){
         setOutfits((oldArray) => [...oldArray, outfit])
       );
 
+      console.log(outfits)
+
     });
 
     const data = JSON.stringify({email: localStorage.getItem("email") });
-    //console.log(data)
+    console.log(data)
     xhr.open("POST", "http://localhost:8080/getOutfits");
     xhr.send(data);
+    //console.log("running")
     rendered.current = true;
-
-    //console.log("printing array")
-    //console.log(outfit_names)
   }
 
   function fetchOutfit(e){
     let xhr = new XMLHttpRequest();
     const data = JSON.stringify({id: e.target.dataset.value});
-    //console.log(data)
+    console.log(data)
     xhr.open("POST", "http://localhost:8080/getOutfits");
     xhr.send(data);
     //console.log(id);
@@ -75,7 +77,7 @@ export default function SaveOutfit(){
           <ul id="outfits">
           {
             outfits.map((outfit) =>
-              <li data-value={outfit["id"]} onClick={fetchOutfit}> {outfit["name"]} </li>
+              <li key={outfit["id"]} data-value={outfit["id"]} onClick={fetchOutfit}> {outfit["name"]} </li>
             )
           }
           </ul>
