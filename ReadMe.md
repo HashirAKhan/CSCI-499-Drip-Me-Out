@@ -8,7 +8,7 @@ To run the latest version, run `npm start`
 
   For back-end integration, run back-end server using `node index.js`
 
-  **Note**: you may need to comment out the credential.json and Weather API function and also note that you will not have current weather updates
+  **Note**: Since backend has not been deployed, you will need your own OpenWeatherMap API key for weather-related functionalities
 
 # Design
 
