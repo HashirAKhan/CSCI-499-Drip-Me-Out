@@ -13,8 +13,12 @@ export default function GenerateOutfit() {
   const [itemlabels, setItemLabels] = useState([]);
   const [viewitemimage, setViewItemImage] = useState("");
   const [viewitemid, setViewItemId] = useState("");
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
 
+  let temp_checkbox = false;
+  let weather_checkbox = false;
+  let color_checkbox = false;
+  let accessories_checkbox = false;
   // state = {
   //   outfit_name: "",
   // };
@@ -28,6 +32,8 @@ export default function GenerateOutfit() {
     setDropDown();
   }, []);
 
+  //@func: sets the temperature field to the default temperature value
+  //       returned by the API response
   function setTempField() {
     let temp_field = document.getElementById("temp-input");
     let xhr = new XMLHttpRequest();
@@ -40,6 +46,8 @@ export default function GenerateOutfit() {
     xhr.send(data);
   }
 
+  //@func: sets the drop down menu to default value of the weather condition
+  //       returned in the API response
   function setDropDown() {
     var weather_dropdown = document.getElementById("weather-dropdown");
     let xhr = new XMLHttpRequest();
@@ -65,6 +73,24 @@ export default function GenerateOutfit() {
     xhr.send(data);
   }
 
+  //@func: this function checks if the checkboxes for each filter are checked
+  function checkboxes(){
+    if(document.getElementById('temp').checked){
+      temp_checkbox = true
+    }
+    if(document.getElementById('weather-condition').checked){
+      weather_checkbox = true
+    }
+    if(document.getElementById('color-selection').checked){
+      color_checkbox = true
+    }
+    if(document.getElementById('accessories').checked){
+      accessories_checkbox = true
+    }
+  }
+
+  //@func: sets the item image, item id, and item label array, and sends the users
+  //       email and the filter preferences, and filter values to the backend
   function onClick() {
     let item_image_array = [];
     let item_id_array = [];
@@ -93,10 +119,23 @@ export default function GenerateOutfit() {
 
       console.log(xhr.response);
     });
+    // const data = JSON.stringify({
+    //   user: localStorage.getItem("email"),
+    //   temp: temp,
+    //   condition: condition,
+    // });
+    checkboxes()
+
+    //sending JSON object with email and checkbox values
     const data = JSON.stringify({
       user: localStorage.getItem("email"),
-      temp: temp,
-      condition: condition,
+      temp_checkbox: temp_checkbox,
+      temp_value: document.getElementById("temp-input").value,
+      weather_checkbox: weather_checkbox,
+      weather_value: document.getElementById("weather-dropdown").value,
+      color_checkbox: color_checkbox,
+      color_value: document.getElementById("color-dropdown").value,
+      accessories_checkbox: accessories_checkbox,
     });
     console.log(data);
     xhr.open("POST", "http://localhost:8080/generate");
@@ -137,6 +176,31 @@ export default function GenerateOutfit() {
               <option value="snow"> Snow </option>
               <option value="clouds"> Clouds </option>
             </select>
+
+            <input type="checkbox" id="color-selection" />
+            <select id="color-dropdown" for="color-selection">
+              <option value="select">Select</option>
+              <option value="Black">Black</option>
+              <option value="Blue">Blue</option>
+              <option value="Brown">Brown</option>
+              <option value="Gold">Gold</option>
+              <option value="Green">Green</option>
+              <option value="Grey">Grey</option>
+              <option value="Multi">Multi</option>
+              <option value="Navy">Navy</option>
+              <option value="Neutral">Neutral</option>
+              <option value="No Color">No Color</option>
+              <option value="Orange">Orange</option>
+              <option value="Pink">Pink</option>
+              <option value="Purple">Purple</option>
+              <option value="Red">Red</option>
+              <option value="Silver">Silver</option>
+              <option value="White">White</option>
+              <option value="Yellow">Yellow</option>
+            </select>
+
+            <input type="checkbox" id="accessories" />
+            <label for="accessories"> Accessories </label>
           </form>
 
           <div id="drip-button">
