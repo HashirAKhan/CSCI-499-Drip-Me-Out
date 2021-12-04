@@ -8,6 +8,13 @@ div#save-outfit {
   overflow: scroll;
 }
 
+#outfits li:hover{
+  cursor: pointer;
+  margin-top: -0.8%;
+  font-weight: 1000;
+  /* font-size: larger; */
+}
+
 #outfit-list{
   background-color: rgba(0,0, 0, .5);
   color: white;
