@@ -42,3 +42,27 @@
   justify-content: space-around;
   padding-top:20px;
 }
+
+#logout-container {
+  text-align: center;
+  background-color: rgba(0,0, 0, .5);
+  width: 60%;
+  border-radius: 25px;
+  margin: auto;
+  padding: 25px 50px;
+}
+
+#logout {
+   padding: 15px;
+}
+
+#logout {
+   text-decoration: none;
+   font-weight: lighter;
+}
+
+#logout:hover {
+   position: relative;
+   bottom: 2.5px;
+   cursor: pointer;
+}

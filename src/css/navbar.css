@@ -10,10 +10,6 @@
    bottom: 25px;
 }
 
-#logout {
-   padding: 15px;
-}
-
 a {
    color: white;
    text-decoration: none;
@@ -27,13 +23,7 @@ a:hover {
    cursor: pointer;
 }
 
-#logout {
-   text-decoration: none;
-   font-weight: lighter;
-}
-
-#logout:hover {
-   position: relative;
-   bottom: 2.5px;
-   cursor: pointer;
+#user-icon {
+  width: 30px;
+  height: 30px;
 }
