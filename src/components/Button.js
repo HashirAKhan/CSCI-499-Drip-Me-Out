@@ -15,6 +15,8 @@ const Button = ({ text, href, image, save, save_two, customize }) => {
   const onClick = () => {
     if (text === "Save Outfit") {
       saveOutfit();
+    } else if (text === "Change") {
+      changeProfile();
     } else if (customize) {
       history.push("/customize");
     } else if (href != undefined) {
@@ -70,7 +72,7 @@ const Button = ({ text, href, image, save, save_two, customize }) => {
             }
           });
 
-          xhr.open("POST", "http://localhost:8080/edit");
+          xhr.open("POST", "http://localhost:8080/editItem");
 
           const data = JSON.stringify({
             category: document.getElementById("category").value,
@@ -190,6 +192,23 @@ const Button = ({ text, href, image, save, save_two, customize }) => {
     } else {
       alert("Select more items to save outfit");
     }
+  }
+
+  function changeProfile() {
+    const inputs = document.getElementsByTagName("input");
+    let data = {};
+    for (let i = 0; i < inputs.length; i++) {
+      data[inputs[i].id] = inputs[i].value;
+    }
+    data["email"] = localStorage.getItem("email");
+    console.log(data);
+    let xhr = new XMLHttpRequest();
+    xhr.addEventListener("load", () => {
+      alert(xhr.responseText);
+    });
+    xhr.open("POST", "http://localhost:8080/editProfile");
+    data = JSON.stringify(data);
+    xhr.send(data);
   }
 
   return (
