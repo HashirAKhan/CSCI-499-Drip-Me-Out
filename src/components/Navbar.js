@@ -1,6 +1,7 @@
 import "../css/navbar.css";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import userIcon from "../images/usericon.png";
 // import { useHistory } from 'react-router-dom'
 
 export default function Navbar() {
@@ -29,8 +30,8 @@ export default function Navbar() {
       <div id="navbar">
         {/* <a href="/#/" id="logout">Log Out</a> */}
         {/* Use "CSCI-499-Drip-Me-Out/" before href link when using BrowserRouter */}
-        <Link to="/" id="logout">
-          Logout
+        <Link to="/profile" id="user">
+          <img id="user-icon" src={userIcon} />
         </Link>
       </div>
       <div id="navbar2">
@@ -46,9 +47,6 @@ export default function Navbar() {
         </Link>
         <Link to="/closet" id="closet">
           Closet
-        </Link>
-        <Link to="/profile" id="profile-text">
-          Profile
         </Link>
         {/* <a href="/#/home" id="home">Home</a>
             <a href="/#/weather" id="weather">Weather</a>

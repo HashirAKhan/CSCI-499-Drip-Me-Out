@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Navbar from "../Navbar";
 import Button from "../Button.js";
+import { Link } from "react-router-dom";
 import "../../css/profilepage.css";
 
 const Profile = () => {
@@ -50,6 +51,15 @@ const Profile = () => {
             <Button text="Change">Change</Button>
           </form>
         </div>
+
+        <br />
+
+        <div id="logout-container">
+          <Link to="/" id="logout">
+            Logout
+          </Link>
+        </div>
+
       </div>
     </>
   );

@@ -1,4 +1,5 @@
 import "../../css/homepage.css";
+import Navbar from "../Navbar";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import dripIcon from "../../images/dripicon.png";
@@ -19,11 +20,7 @@ export default function Home() {
 
   return (
     <>
-      <div id="navbar">
-        <a href="/" id="logout">
-          Log Out
-        </a>
-      </div>
+      <Navbar />
       <div class="boxes" id="box1" onClick={onClickWeather}>
         <p>Drip Me Out</p>
         <img id="drip-icon" src={dripIcon} />
