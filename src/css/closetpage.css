@@ -97,18 +97,18 @@
   float: left;
 }
 
-.clothing-fields{
+.clothing-categories{
   display: flex;
   flex-direction:row;
   padding-left: 50px;
 }
 
-.clothing-fields label{
+.clothing-categories label{
   padding-left: 1%;
   padding-right: 1%;
 }
 
-.clothing-fields{
+.clothing-categories{
   margin-left: 8%;
 }
 

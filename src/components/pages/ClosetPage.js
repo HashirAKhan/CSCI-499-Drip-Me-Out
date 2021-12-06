@@ -179,7 +179,7 @@ export default function Closet(props) {
               <label for="accessories"> Accessories </label>
             </div>
 
-            <div class="clothing-fields">
+            <div class="clothing-categories">
               <input type="checkbox" id="category-checkbox" />
               <label id="category-field" for="clothing-category">
                 {" "}
@@ -189,22 +189,17 @@ export default function Closet(props) {
               {/* <input type="input" id="clothing-category" required /> */}
               <select id="category">
                 <option value="select">Select</option>
-                <option value="Coats & Jackets">Coats & Jackets</option>
-                <option value="Dresses">Dresses</option>
-                <option value="Hoodies & Sweatshirts">
-                  Hoodies & Sweatshirts
-                </option>
-                <option value="Jumpsuits & Rompers">
-                  Jumpsuits & Rompers
-                </option>
+                <option value="Coats">Coats</option>
+                <option value="Hoodies/Sweaters/Jackets">Hoodies/Sweaters/Jackets</option>
+                <option value="Long Sleeve T-shirt">Long Sleeve T-shirt</option>
+                <option value="Short Sleeve T-shirt">Short Sleeve T-shirt</option>
+                <option value="Sleeveless Top">Sleeveless Top</option>
                 <option value="Pants">Pants</option>
-                <option value="Shoes">Shoes</option>
-                <option value="Shorts">Shorts</option>
-                <option value="Skirts">Skirts</option>
-                <option value="Sweaters & Cardigans">
-                  Sweaters & Cardigans
-                </option>
-                <option value="Tops">Tops</option>
+                <option value="Dress">Dress</option>
+                <option value="Shorts/Skirt">Shorts/Skirt</option>
+                <option value="Close Toed Shoes">Close Toed Shoes</option>
+                <option value="Open Toed Shoes">Open Toed Shoes</option>
+                <option value="Rain Boots">Rain Boots</option>
               </select>
             </div>
 
