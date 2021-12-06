@@ -1,70 +1,74 @@
 #navbar {
-   height: 60px;
-   background-color: rgba(0,0, 0, .5);
-   text-align: right;
-   padding: 16px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: right;
+  padding: 16px;
+  font-size: 15.5px;
+}
+
+.navBarLink {
+  position: relative;
+  top: 3.5px;
 }
 
 #logout {
-   padding: 30px;
-   text-decoration: none;
-   color: white;
-   font-weight: lighter;
+  padding: 30px;
+  text-decoration: none;
+  color: white;
+  font-weight: lighter;
 }
 
-#logout:hover {
-   position: relative;
-   bottom: 2.5px;
-   cursor: pointer;
+.navBarLink:hover {
+  cursor: pointer;
+  top: 3px;
 }
 
 p {
-   color: white;
-   padding: 20px;
-   font-weight: lighter;
+  color: white;
+  padding: 20px;
+  font-weight: lighter;
 }
 
 .boxes {
-   background-color: rgba(0,0, 0, .5);
-   margin-top: 8%;
-   float: left;
-   text-align: center;
-   border-radius: 25px;
-   width: 32%;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-top: 8%;
+  float: left;
+  text-align: center;
+  border-radius: 25px;
+  width: 32%;
 }
 
 #box1 {
-   margin-left: 1%;
+  margin-left: 1%;
 }
 
 #box2 {
-   margin-left: 1%;
-   margin-right: 1%;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 
 #box3 {
-   margin-right: 1%;
+  margin-right: 1%;
 }
 
 .smalltext {
-   font-weight: lighter;
-   font-size: small;
+  font-weight: lighter;
+  font-size: small;
 }
 
 img {
-   /* !important */
+  /* !important */
   width: 275px;
   height: 275px;
   object-fit: cover;
 }
 
 h1 {
-   font-size: small;
-   color: white;
+  font-size: small;
+  color: white;
 }
 
 .boxes:hover {
-   position: relative;
-   bottom: 2.5px;
-   cursor: pointer;
+  cursor: pointer;
+  border: white 2px solid;
 }
