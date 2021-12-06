@@ -205,8 +205,8 @@ export default function GenerateOutfit() {
               <option value="White">White</option>
               <option value="Yellow">Yellow</option>
             </select>
-            <input type="checkbox" id="accessories" />
-            <label for="accessories"> Accessories </label>
+            <input type="checkbox" id="accessories-filter" />
+            <label for="accessories-filter"> Accessories </label>
           </form>
 
           <div id="drip-button">
