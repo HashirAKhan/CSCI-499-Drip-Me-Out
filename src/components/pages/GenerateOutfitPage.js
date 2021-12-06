@@ -38,6 +38,14 @@ export default function GenerateOutfit() {
     let temp_field = document.getElementById("temp-input");
     let xhr = new XMLHttpRequest();
     xhr.addEventListener("load", () => {
+      if (
+        xhr.responseText ===
+          "400 Nothing to geocode. Try changing zipcode under profile." ||
+        xhr.responseText === "404 city not found"
+      ) {
+        alert(xhr.responseText);
+        return;
+      }
       let tempData = JSON.parse(xhr.response);
       temp_field.defaultValue = (tempData["low"] + tempData["high"]) / 2;
     });
@@ -74,18 +82,18 @@ export default function GenerateOutfit() {
   }
 
   //@func: this function checks if the checkboxes for each filter are checked
-  function checkboxes(){
-    if(document.getElementById('temp').checked){
-      temp_checkbox = true
+  function checkboxes() {
+    if (document.getElementById("temp").checked) {
+      temp_checkbox = true;
     }
-    if(document.getElementById('weather-condition').checked){
-      weather_checkbox = true
+    if (document.getElementById("weather-condition").checked) {
+      weather_checkbox = true;
     }
-    if(document.getElementById('color-selection').checked){
-      color_checkbox = true
+    if (document.getElementById("color-selection").checked) {
+      color_checkbox = true;
     }
-    if(document.getElementById('accessories').checked){
-      accessories_checkbox = true
+    if (document.getElementById("accessories").checked) {
+      accessories_checkbox = true;
     }
   }
 
@@ -124,7 +132,7 @@ export default function GenerateOutfit() {
     //   temp: temp,
     //   condition: condition,
     // });
-    checkboxes()
+    checkboxes();
 
     //sending JSON object with email and checkbox values
     const data = JSON.stringify({
@@ -143,12 +151,12 @@ export default function GenerateOutfit() {
   }
 
   // @func: this function opens the modal for saving an outfit
-  function onClickSaveOutfit(){
+  function onClickSaveOutfit() {
     setShow(true);
   }
 
   // @func: this function closes modal if the user clicks out of it
-  function exitModal(){
+  function exitModal() {
     setShow(false);
   }
 
@@ -176,7 +184,6 @@ export default function GenerateOutfit() {
               <option value="snow"> Snow </option>
               <option value="clouds"> Clouds </option>
             </select>
-
             <input type="checkbox" id="color-selection" />
             <select id="color-dropdown" for="color-selection">
               <option value="select">Select</option>
@@ -198,7 +205,6 @@ export default function GenerateOutfit() {
               <option value="White">White</option>
               <option value="Yellow">Yellow</option>
             </select>
-
             <input type="checkbox" id="accessories" />
             <label for="accessories"> Accessories </label>
           </form>
@@ -224,7 +230,7 @@ export default function GenerateOutfit() {
         </div>
       </div>
 
-      <SaveItemModal show={show} onClose={exitModal} outfits={itemids}/>
+      <SaveItemModal show={show} onClose={exitModal} outfits={itemids} />
     </>
   );
 }
