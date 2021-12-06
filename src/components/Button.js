@@ -201,6 +201,7 @@ const Button = ({ text, href, image, save, save_two, customize }) => {
       data[inputs[i].id] = inputs[i].value;
     }
     data["email"] = localStorage.getItem("email");
+    localStorage.setItem("zipcode", data["zipcode-profile"]);
     console.log(data);
     let xhr = new XMLHttpRequest();
     xhr.addEventListener("load", () => {
