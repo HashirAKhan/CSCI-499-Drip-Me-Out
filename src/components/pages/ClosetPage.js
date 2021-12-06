@@ -101,9 +101,9 @@ export default function Closet(props) {
           console.log(object);
         }
 
-        let leftbox = document.getElementById("leftbox");
-        let height = 240 * (data.length / 2);
-        leftbox.style.height = `${height.toString()}px`;
+        // let leftbox = document.getElementById("leftbox");
+        // let height = 240 * (data.length / 2);
+        // leftbox.style.height = `${height.toString()}px`;
 
         item_label_array.forEach((itemlabel) =>
           setItemLabels((oldArray) => [...oldArray, itemlabel])
@@ -128,17 +128,15 @@ export default function Closet(props) {
     <>
       <Navbar />
       <div id="leftbox">
-        <div id="innerdiv">
-          <a id="load" href="/#/closet">
-            Loading Items...
-          </a>
-          <ItemImages
-            itemimages={itemimages}
-            itemlabels={itemlabels}
-            itemids={itemids}
-            onChange={onChange}
-          />
-        </div>
+        <a id="load" href="/#/closet">
+          Loading Items...
+        </a>
+        <ItemImages
+          itemimages={itemimages}
+          itemlabels={itemlabels}
+          itemids={itemids}
+          onChange={onChange}
+        />
       </div>
       <div onClick={add} id="closetbutton">
         <a className="closet">Add Item</a>
