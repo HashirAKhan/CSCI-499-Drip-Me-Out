@@ -8,12 +8,15 @@ export default function SaveOutfit() {
   const [outfits, setOutfits] = useState([]);
   const rendered = useRef(false);
   const rendered_value = rendered.current;
-  //let test = ["outfits":[{"id": "000000", name: "summer outfit"}, {"id": "111111", name: "outfit 1"}]]
 
-  //@func: sets the list of outfits on the frontend
+  const [itemimages, setItemImages] = useState([]);
+  const [itemids, setItemIds] = useState([]);
+  const [itemlabels, setItemLabels] = useState([]);
+  const [viewitemimage, setViewItemImage] = useState("");
+  const [viewitemid, setViewItemId] = useState("");
+
 
   useEffect(() => {
-    //const [outfits, setOutfits] = useState([]);
 
     const outfitListUl = document.getElementById("outfits");
     while (outfitListUl.lastChild) {
@@ -36,11 +39,7 @@ export default function SaveOutfit() {
       if (saved_outfits.length != 0) {
         for (let i = 0; i < saved_outfits.length; i++) {
           const object = JSON.parse(saved_outfits[i]);
-          //console.log(String(object['name']))
-          //outfits.push(String(object['name']))
           outfit_list.push(object);
-          // outfits_ids.push(`${object["id"]}`)
-          // console.log(typeof(object.name));
         }
       }
 
@@ -66,6 +65,18 @@ export default function SaveOutfit() {
     xhr.open("POST", "http://localhost:8080/getOutfits");
     xhr.send(data);
     //console.log(id);
+  }
+
+  function loadOutfitImages(){
+    let item_image_array = [];
+    let item_id_array = [];
+    let item_label_array = [];
+    let xhr = new XMLHttpRequest();
+    xhr.addEventListener("load", () => {
+      let temp = JSON.parse(xhr.response);
+      let data = temp["items"];
+      
+    })
   }
 
   return (
