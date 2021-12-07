@@ -36,18 +36,18 @@ const AddClothing = () => {
                 <br />
                 {/* <input type="input" id="clothing-category" required /> */}
                 <select id="category">
-                <option value="select">Select</option>
-                <option value="Coats">Coats</option>
-                <option value="Hoodies/Sweaters/Jackets">Hoodies/Sweaters/Jackets</option>
-                <option value="Long Sleeve T-shirt">Long Sleeve T-shirt</option>
-                <option value="Short Sleeve T-shirt">Short Sleeve T-shirt</option>
-                <option value="Sleeveless Top">Sleeveless Top</option>
-                <option value="Pants">Pants</option>
-                <option value="Dress">Dress</option>
-                <option value="Shorts/Skirt">Shorts/Skirt</option>
-                <option value="Close Toed Shoes">Close Toed Shoes</option>
-                <option value="Open Toed Shoes">Open Toed Shoes</option>
-                <option value="Rain Boots">Rain Boots</option>
+                  <option value="select">Select</option>
+                  <option value="Coats">Coats</option>
+                  <option value="Hoodies/Sweaters/Jackets">Hoodies/Sweaters/Jackets</option>
+                  <option value="Long Sleeve T-shirt">Long Sleeve T-shirt</option>
+                  <option value="Short Sleeve T-shirt">Short Sleeve T-shirt</option>
+                  <option value="Sleeveless Top">Sleeveless Top</option>
+                  <option value="Pants">Pants</option>
+                  <option value="Dress">Dress</option>
+                  <option value="Shorts/Skirt">Shorts/Skirt</option>
+                  <option value="Close Toed Shoes">Close Toed Shoes</option>
+                  <option value="Open Toed Shoes">Open Toed Shoes</option>
+                  <option value="Rain Boots">Rain Boots</option>
                 </select>
               </div>
 
