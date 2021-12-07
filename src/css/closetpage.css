@@ -73,3 +73,45 @@
 #rightlowerbox {
   margin-top: 1%;
 }
+
+#filters{
+  /* display: flex;
+  flex-direction:row; */
+  /* display: inline-block; */
+  /* text-align:center; */
+  background-color: rgba(0, 0, 0, 0.5);
+  float: right;
+  font-size: small;
+  margin-right: 1%;
+  border-radius: 10px;
+  padding: 15px;
+  width: 37.5%;
+  height: 18vh;
+}
+
+#filters button{
+  margin-left: 40%;
+}
+
+#accessories{
+  float: left;
+}
+
+.clothing-categories{
+  display: flex;
+  flex-direction:row;
+  padding-left: 50px;
+}
+
+.clothing-categories label{
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.clothing-categories{
+  margin-left: 8%;
+}
+
+#filter-button{
+  padding-top: 5%;
+}

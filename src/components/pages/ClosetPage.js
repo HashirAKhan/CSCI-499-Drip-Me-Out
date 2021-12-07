@@ -42,6 +42,9 @@ export default function Closet(props) {
 
   const [viewitemlabel, setViewItemLabel] = useState("");
 
+  let accessories_checkbox = false;
+  let category_checkbox = false;
+
   function onChange(id, image, itemlabel) {
     setViewItemId(id);
     let div = document.getElementById("toplowerbox");
@@ -73,6 +76,29 @@ export default function Closet(props) {
     localStorage.setItem("viewedit", true);
     localStorage.setItem("viewedititemid", id);
     localStorage.setItem("viewitemimage", image);
+  }
+
+  function checkboxes(){
+    if(document.getElementById('accessories-checkbox').checked){
+      accessories_checkbox = true
+    }
+    if(document.getElementById('category-checkbox').checked){
+      category_checkbox = true
+    }
+  }
+
+  function onClickFilter(){
+    checkboxes()
+      let xhr = new XMLHttpRequest();
+    const data = JSON.stringify({
+      user: localStorage.getItem("email"),
+      accessories_checkbox: accessories_checkbox,
+      category_checkbox: category_checkbox,
+      category_value: document.getElementById("category").value,
+    });
+    console.log(data);
+    xhr.open("POST", "http://localhost:8080/generate");
+    xhr.send(data);
   }
 
   useEffect(() => {
@@ -146,6 +172,43 @@ export default function Closet(props) {
           View Saved Outfits
         </a>
       </div>
+
+        <div id="filters">
+            <div id="accessories">
+              <input type="checkbox" id="accessories-checkbox" />
+              <label for="accessories"> Accessories </label>
+            </div>
+
+            <div class="clothing-categories">
+              <input type="checkbox" id="category-checkbox" />
+              <label id="category-field" for="clothing-category">
+                {" "}
+                Category:{" "}
+              </label>
+              <br />
+              {/* <input type="input" id="clothing-category" required /> */}
+              <select id="category">
+                <option value="select">Select</option>
+                <option value="Coats">Coats</option>
+                <option value="Hoodies/Sweaters/Jackets">Hoodies/Sweaters/Jackets</option>
+                <option value="Long Sleeve T-shirt">Long Sleeve T-shirt</option>
+                <option value="Short Sleeve T-shirt">Short Sleeve T-shirt</option>
+                <option value="Sleeveless Top">Sleeveless Top</option>
+                <option value="Pants">Pants</option>
+                <option value="Dress">Dress</option>
+                <option value="Shorts/Skirt">Shorts/Skirt</option>
+                <option value="Close Toed Shoes">Close Toed Shoes</option>
+                <option value="Open Toed Shoes">Open Toed Shoes</option>
+                <option value="Rain Boots">Rain Boots</option>
+              </select>
+            </div>
+
+          <div id="filter-button">
+            <button onClick={onClickFilter}>Filter Closet</button>
+          </div>
+
+      </div>
+
       <div id="toplowerbox"></div>
       <div class="rightbox" id="rightlowerbox">
         <div onClick={viewedit} itemid={viewitemid}>
@@ -154,6 +217,7 @@ export default function Closet(props) {
           </a>
         </div>
       </div>
+
       <p></p>
     </>
   );
