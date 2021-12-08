@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, setState } from "react";
 import Navbar from "../Navbar";
 import "../../css/saveoutfitpage.css";
+import ItemImages from "../ItemImages";
 import SavedItem from "../SavedItemComponent";
 
 export default function SaveOutfit() {
@@ -58,26 +59,59 @@ export default function SaveOutfit() {
     rendered.current = true;
   }
 
+  function onChange(id){
+    setViewItemId(id);
+  }
+
   function fetchOutfit(e) {
     let xhr = new XMLHttpRequest();
     const data = JSON.stringify({ id: e.target.dataset.value });
-    console.log(data);
+    //console.log(data);
     xhr.open("POST", "http://localhost:8080/getOutfits");
     xhr.send(data);
+    loadOutfitImages()
     //console.log(id);
   }
 
   function loadOutfitImages(){
+    console.log("function running")
     let item_image_array = [];
     let item_id_array = [];
     let item_label_array = [];
     let xhr = new XMLHttpRequest();
     xhr.addEventListener("load", () => {
       let temp = JSON.parse(xhr.response);
+      console.log("parse response")
+      console.log(temp)
       let data = temp["items"];
-      
-    })
+      if (data.length != 0){
+        for (let i = 0; i < data.length; i++) {
+          const object = JSON.parse(data[i]);
+          item_id_array.push(object["id"]);
+          item_image_array.push(`data:image/png;base64,${object["image"]}`);
+          item_label_array.push(object["name"]);
+        }
+      }
+
+      // setItemLabels(item_label_array);
+      // setItemIds(item_id_array);
+      // setItemImages(item_image_array);
+
+
+      item_label_array.forEach((itemlabel) =>
+        setItemLabels((oldArray) => [...oldArray, itemlabel])
+      );
+      item_id_array.forEach((itemid) =>
+        setItemIds((oldArray) => [...oldArray, itemid])
+      );
+      item_image_array.forEach((itemimage) =>
+        setItemImages((oldArray) => [...oldArray, itemimage])
+      );
+    });
+
+    xhr.open("POST", "http://localhost:8080/outfitLookUp");
   }
+
 
   return (
     <>
@@ -101,9 +135,12 @@ export default function SaveOutfit() {
 
         <div id="view-saved">
           <ul id="outfits">
-            <SavedItem img="https://bit.ly/3c8T4fA" itemname="White T-shirt" />
-            <SavedItem img="https://bit.ly/3Cl3svg" itemname="Blue Jeans" />
-            <SavedItem img="https://bit.ly/3HlCfwi" itemname="Puffer Jacket" />
+            <ItemImages
+              itemimages={itemimages}
+              itemids={itemids}
+              itemlabels={itemlabels}
+              onChange={onChange}
+            />
           </ul>
         </div>
       </div>
