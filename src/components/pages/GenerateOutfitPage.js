@@ -92,7 +92,7 @@ export default function GenerateOutfit() {
     if (document.getElementById("color-selection").checked) {
       color_checkbox = true;
     }
-    if (document.getElementById("accessories").checked) {
+    if (document.getElementById("accessories-filter").checked) {
       accessories_checkbox = true;
     }
   }
