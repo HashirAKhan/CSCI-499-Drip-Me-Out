@@ -15,13 +15,6 @@ export default function GenerateOutfit() {
   const [viewitemid, setViewItemId] = useState("");
   const [show, setShow] = useState(false);
 
-  let temp_checkbox = false;
-  let weather_checkbox = false;
-  let color_checkbox = false;
-  let accessories_checkbox = false;
-  // state = {
-  //   outfit_name: "",
-  // };
 
   function onChange(id) {
     setViewItemId(id);
@@ -81,22 +74,6 @@ export default function GenerateOutfit() {
     xhr.send(data);
   }
 
-  //@func: this function checks if the checkboxes for each filter are checked
-  function checkboxes() {
-    if (document.getElementById("temp").checked) {
-      temp_checkbox = true;
-    }
-    if (document.getElementById("weather-condition").checked) {
-      weather_checkbox = true;
-    }
-    if (document.getElementById("color-selection").checked) {
-      color_checkbox = true;
-    }
-    if (document.getElementById("accessories-filter").checked) {
-      accessories_checkbox = true;
-    }
-  }
-
   //@func: sets the item image, item id, and item label array, and sends the users
   //       email and the filter preferences, and filter values to the backend
   function onClick() {
@@ -132,18 +109,17 @@ export default function GenerateOutfit() {
     //   temp: temp,
     //   condition: condition,
     // });
-    checkboxes();
 
     //sending JSON object with email and checkbox values
     const data = JSON.stringify({
       user: localStorage.getItem("email"),
-      temp_checkbox: temp_checkbox,
+      temp_checkbox: document.getElementById("temp").checked,
       temp_value: document.getElementById("temp-input").value,
-      weather_checkbox: weather_checkbox,
+      weather_checkbox: document.getElementById("weather-condition").checked,
       weather_value: document.getElementById("weather-dropdown").value,
-      color_checkbox: color_checkbox,
+      color_checkbox: document.getElementById("color-selection").checked,
       color_value: document.getElementById("color-dropdown").value,
-      accessories_checkbox: accessories_checkbox,
+      accessories_checkbox: document.getElementById("accessories-filter").checked,
     });
     console.log(data);
     xhr.open("POST", "http://localhost:8080/generate");
