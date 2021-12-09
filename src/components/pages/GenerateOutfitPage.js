@@ -95,20 +95,12 @@ export default function GenerateOutfit() {
         item_label_array.push(object["label"]);
       }
 
-      // item_id_array.forEach(itemid => setItemIds(oldArray => [...oldArray, itemid]));
-      //
-      // item_image_array.forEach(itemimage => setItemImages(oldArray => [...oldArray, itemimage]));
       setItemLabels(item_label_array);
       setItemIds(item_id_array);
       setItemImages(item_image_array);
 
       console.log(xhr.response);
     });
-    // const data = JSON.stringify({
-    //   user: localStorage.getItem("email"),
-    //   temp: temp,
-    //   condition: condition,
-    // });
 
     //sending JSON object with email and checkbox values
     const data = JSON.stringify({

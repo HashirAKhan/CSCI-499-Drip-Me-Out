@@ -95,7 +95,6 @@ export default function Closet(props) {
       let xhr = new XMLHttpRequest();
       xhr.addEventListener("load", () => {
         let stop = 0;
-        // let counter = 0;
 
         let load = document.getElementById("load");
         if (document.getElementById("load")) {
@@ -114,10 +113,6 @@ export default function Closet(props) {
           item_image_array.push(`data:image/png;base64,${object["image"]}`);
           console.log(object);
         }
-
-        // let leftbox = document.getElementById("leftbox");
-        // let height = 240 * (data.length / 2);
-        // leftbox.style.height = `${height.toString()}px`;
 
         item_label_array.forEach((itemlabel) =>
           setItemLabels((oldArray) => [...oldArray, itemlabel])
