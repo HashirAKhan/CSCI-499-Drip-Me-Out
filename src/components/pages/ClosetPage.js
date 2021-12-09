@@ -42,9 +42,6 @@ export default function Closet(props) {
 
   const [viewitemlabel, setViewItemLabel] = useState("");
 
-  let colors_checkbox = false;
-  let category_checkbox = false;
-
   function onChange(id, image, itemlabel) {
     setViewItemId(id);
     let div = document.getElementById("toplowerbox");
@@ -78,29 +75,13 @@ export default function Closet(props) {
     localStorage.setItem("viewitemimage", image);
   }
 
-  function checkboxes(){
-    if(document.getElementById('colors-checkbox').checked){
-      colors_checkbox = true
-    }
-    if(document.getElementById('category-checkbox').checked){
-      category_checkbox = true
-    }
-    if(!document.getElementById('colors-checkbox').checked){
-      colors_checkbox = false
-    }
-    if(!document.getElementById('category-checkbox').checked){
-      category_checkbox = false
-    }
-  }
-
   function onClickFilter(){
-    checkboxes();
     let xhr = new XMLHttpRequest();
     const data = JSON.stringify({
       user: localStorage.getItem("email"),
-      colors_checkbox: colors_checkbox,
+      colors_checkbox: document.getElementById('colors-checkbox').checked,
       colors_value: document.getElementById("color").value,
-      category_checkbox: category_checkbox,
+      category_checkbox: document.getElementById('category-checkbox').checked,
       category_value: document.getElementById("category").value,
     });
     console.log(data);
