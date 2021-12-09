@@ -27,8 +27,7 @@ const Button = ({ text, href, image, save, save_two, remove, customize }) => {
         alert("Label required");
       } else if (document.getElementById("category").value === "select") {
         alert("Category required");
-      }
-      else if (document.getElementById("color").value === "select") {
+      } else if (document.getElementById("color").value === "select") {
         alert("Color required");
       } else if (!document.getElementById("clothing_img")) {
         alert("Image upload required");
@@ -246,7 +245,12 @@ const Button = ({ text, href, image, save, save_two, remove, customize }) => {
     const inputs = document.getElementsByTagName("input");
     let data = {};
     for (let i = 0; i < inputs.length; i++) {
-      data[inputs[i].id] = inputs[i].value;
+      const isCelsius = document.getElementById("isCelsius");
+      if (inputs[i] === isCelsius) {
+        data["isCelsius"] = isCelsius?.checked;
+      } else {
+        data[inputs[i]?.id] = inputs[i]?.value;
+      }
     }
     data["email"] = localStorage.getItem("email");
     localStorage.setItem("zipcode", data["zipcode-profile"]);
