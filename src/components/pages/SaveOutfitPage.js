@@ -19,11 +19,6 @@ export default function SaveOutfit() {
 
   useEffect(() => {
 
-    const outfitListUl = document.getElementById("outfits");
-    while (outfitListUl.lastChild) {
-      outfitListUl.lastChild.remove();
-    }
-
     setOutfitList();
 
   }, []);
@@ -45,9 +40,8 @@ export default function SaveOutfit() {
         }
       }
 
-      outfit_list.forEach((outfit) =>
-        setOutfits((oldArray) => [...oldArray, outfit])
-      );
+      setOutfits(outfit_list)
+
 
     });
 
