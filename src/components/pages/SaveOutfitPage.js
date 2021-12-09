@@ -26,7 +26,6 @@ export default function SaveOutfit() {
 
     setOutfitList();
 
-    console.log("running running");
   }, []);
 
   function setOutfitList() {
@@ -48,7 +47,7 @@ export default function SaveOutfit() {
         setOutfits((oldArray) => [...oldArray, outfit])
       );
 
-      console.log(outfits);
+      //console.log(outfits);
     });
 
     const data = JSON.stringify({ email: localStorage.getItem("email") });
@@ -65,31 +64,20 @@ export default function SaveOutfit() {
 
   function fetchOutfit(e) {
     let xhr = new XMLHttpRequest();
-    const data = JSON.stringify({ id: e.target.dataset.value });
-    //console.log(data);
-    xhr.open("POST", "http://localhost:8080/getOutfits");
-    xhr.send(data);
-    loadOutfitImages()
-    //console.log(id);
-  }
-
-  function loadOutfitImages(){
-    console.log("function running")
     let item_image_array = [];
     let item_id_array = [];
     let item_label_array = [];
-    let xhr = new XMLHttpRequest();
+    const data = JSON.stringify({ id: e.target.dataset.value });
+
     xhr.addEventListener("load", () => {
       let temp = JSON.parse(xhr.response);
-      console.log("parse response")
-      console.log(temp)
       let data = temp["items"];
       if (data.length != 0){
         for (let i = 0; i < data.length; i++) {
           const object = JSON.parse(data[i]);
-          item_id_array.push(object["id"]);
-          item_image_array.push(`data:image/png;base64,${object["image"]}`);
-          item_label_array.push(object["name"]);
+          // item_id_array.push(object["id"]);
+          // item_image_array.push(`data:image/png;base64,${object["image"]}`);
+          // item_label_array.push(object["name"]);
         }
       }
 
@@ -98,18 +86,65 @@ export default function SaveOutfit() {
       // setItemImages(item_image_array);
 
 
-      item_label_array.forEach((itemlabel) =>
-        setItemLabels((oldArray) => [...oldArray, itemlabel])
-      );
-      item_id_array.forEach((itemid) =>
-        setItemIds((oldArray) => [...oldArray, itemid])
-      );
-      item_image_array.forEach((itemimage) =>
-        setItemImages((oldArray) => [...oldArray, itemimage])
-      );
+      // item_label_array.forEach((itemlabel) =>
+      //   setItemLabels((oldArray) => [...oldArray, itemlabel])
+      // );
+      // item_id_array.forEach((itemid) =>
+      //   setItemIds((oldArray) => [...oldArray, itemid])
+      // );
+      // item_image_array.forEach((itemimage) =>
+      //   setItemImages((oldArray) => [...oldArray, itemimage])
+      // );
     });
 
     xhr.open("POST", "http://localhost:8080/outfitLookUp");
+    xhr.send(data);
+    console.log("running load images")
+
+    //console.log(id);
+
+  }
+
+  function loadOutfitImages(){
+    console.log("function running")
+    let item_image_array = [];
+    let item_id_array = [];
+    let item_label_array = [];
+    let xhr = new XMLHttpRequest();
+    console.log("parse call")
+    xhr.addEventListener("load", () => {
+      //console.log("parse response")
+      let temp = JSON.parse(xhr.response);
+      console.log("parse response")
+      console.log(xhr.response)
+      //console.log(temp)
+      // let data = temp["items"];
+      // if (data.length != 0){
+      //   for (let i = 0; i < data.length; i++) {
+      //     const object = JSON.parse(data[i]);
+      //     item_id_array.push(object["id"]);
+      //     item_image_array.push(`data:image/png;base64,${object["image"]}`);
+      //     item_label_array.push(object["name"]);
+      //   }
+      // }
+      //
+      // // setItemLabels(item_label_array);
+      // // setItemIds(item_id_array);
+      // // setItemImages(item_image_array);
+      //
+      //
+      // item_label_array.forEach((itemlabel) =>
+      //   setItemLabels((oldArray) => [...oldArray, itemlabel])
+      // );
+      // item_id_array.forEach((itemid) =>
+      //   setItemIds((oldArray) => [...oldArray, itemid])
+      // );
+      // item_image_array.forEach((itemimage) =>
+      //   setItemImages((oldArray) => [...oldArray, itemimage])
+      // );
+    });
+    xhr.open("POST", "http://localhost:8080/outfitLookUp");
+    console.log("parse call to backend")
   }
 
 
