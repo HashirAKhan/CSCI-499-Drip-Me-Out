@@ -88,8 +88,8 @@ export default function Closet(props) {
   }
 
   function onClickFilter(){
-    checkboxes()
-      let xhr = new XMLHttpRequest();
+    checkboxes();
+    let xhr = new XMLHttpRequest();
     const data = JSON.stringify({
       user: localStorage.getItem("email"),
       accessories_checkbox: accessories_checkbox,
