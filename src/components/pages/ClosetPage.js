@@ -42,7 +42,7 @@ export default function Closet(props) {
 
   const [viewitemlabel, setViewItemLabel] = useState("");
 
-  let accessories_checkbox = false;
+  let colors_checkbox = false;
   let category_checkbox = false;
 
   function onChange(id, image, itemlabel) {
@@ -79,11 +79,17 @@ export default function Closet(props) {
   }
 
   function checkboxes(){
-    if(document.getElementById('accessories-checkbox').checked){
-      accessories_checkbox = true
+    if(document.getElementById('colors-checkbox').checked){
+      colors_checkbox = true
     }
     if(document.getElementById('category-checkbox').checked){
       category_checkbox = true
+    }
+    if(!document.getElementById('colors-checkbox').checked){
+      colors_checkbox = false
+    }
+    if(!document.getElementById('category-checkbox').checked){
+      category_checkbox = false
     }
   }
 
@@ -92,7 +98,8 @@ export default function Closet(props) {
     let xhr = new XMLHttpRequest();
     const data = JSON.stringify({
       user: localStorage.getItem("email"),
-      accessories_checkbox: accessories_checkbox,
+      colors_checkbox: colors_checkbox,
+      colors_value: document.getElementById("color").value,
       category_checkbox: category_checkbox,
       category_value: document.getElementById("category").value,
     });
@@ -174,9 +181,30 @@ export default function Closet(props) {
       </div>
 
         <div id="filters">
-            <div id="accessories">
-              <input type="checkbox" id="accessories-checkbox" />
-              <label for="accessories"> Accessories </label>
+            <div id="colors">
+              <input type="checkbox" id="colors-checkbox" />
+              <label for="color"> Color: </label>
+
+              <select id="color">
+                <option value="select">Select</option>
+                <option value="Black">Black</option>
+                <option value="Blue">Blue</option>
+                <option value="Brown">Brown</option>
+                <option value="Gold">Gold</option>
+                <option value="Green">Green</option>
+                <option value="Grey">Grey</option>
+                <option value="Multi">Multi</option>
+                <option value="Navy">Navy</option>
+                <option value="Neutral">Neutral</option>
+                <option value="No Color">No Color</option>
+                <option value="Orange">Orange</option>
+                <option value="Pink">Pink</option>
+                <option value="Purple">Purple</option>
+                <option value="Red">Red</option>
+                <option value="Silver">Silver</option>
+                <option value="White">White</option>
+                <option value="Yellow">Yellow</option>
+              </select>
             </div>
 
             <div class="clothing-categories">
@@ -200,6 +228,7 @@ export default function Closet(props) {
                 <option value="Close Toed Shoes">Close Toed Shoes</option>
                 <option value="Open Toed Shoes">Open Toed Shoes</option>
                 <option value="Rain Boots">Rain Boots</option>
+                <option value="Accessories">Accessories</option>
               </select>
             </div>
 
