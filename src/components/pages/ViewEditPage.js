@@ -117,7 +117,7 @@ const ViewEdit = () => {
 
               <div>
                 <Button text="Save" save_two={true} />
-                <Button text="Delete" delete={true} />
+                <Button text="Remove" remove={true} />
               </div>
             </form>
           </div>
