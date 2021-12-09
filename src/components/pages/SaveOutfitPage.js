@@ -28,11 +28,13 @@ export default function SaveOutfit() {
 
   }, []);
 
+  //@func: this function receives list of saved outfits from the backend and
+  //       displays the list to the frontend
   function setOutfitList() {
     let xhr = new XMLHttpRequest();
     xhr.addEventListener("load", () => {
       let outfitList = JSON.parse(xhr.response);
-      //console.log(outfitList)
+
       //will create an outfits list and populate it with the
       //outfit names
       let saved_outfits = outfitList["outfits"];
@@ -47,7 +49,6 @@ export default function SaveOutfit() {
         setOutfits((oldArray) => [...oldArray, outfit])
       );
 
-      //console.log(outfits);
     });
 
     const data = JSON.stringify({ email: localStorage.getItem("email") });
@@ -57,10 +58,13 @@ export default function SaveOutfit() {
     rendered.current = true;
   }
 
+
   function onChange(id){
     setViewItemId(id);
   }
 
+//@func: sends outfit id to backend, and recieves array of outfit images from backend
+//       and displays image to the front end
   function fetchOutfit(e) {
     let xhr = new XMLHttpRequest();
     let item_image_array = [];
@@ -81,8 +85,6 @@ export default function SaveOutfit() {
         }
       }
 
-      console.log(item_image_array);
-
       setItemLabels(item_label_array);
       setItemIds(item_id_array);
       setItemImages(item_image_array);
@@ -91,50 +93,7 @@ export default function SaveOutfit() {
 
     xhr.open("POST", "http://localhost:8080/outfitLookUp");
     xhr.send(data);
-    //console.log(id);
 
-  }
-
-  function loadOutfitImages(){
-    console.log("function running")
-    let item_image_array = [];
-    let item_id_array = [];
-    let item_label_array = [];
-    let xhr = new XMLHttpRequest();
-    console.log("parse call")
-    xhr.addEventListener("load", () => {
-      //console.log("parse response")
-      let temp = JSON.parse(xhr.response);
-      console.log("parse response")
-      console.log(xhr.response)
-      //console.log(temp)
-      // let data = temp["items"];
-      // if (data.length != 0){
-      //   for (let i = 0; i < data.length; i++) {
-      //     const object = JSON.parse(data[i]);
-      //     item_id_array.push(object["id"]);
-      //     item_image_array.push(`data:image/png;base64,${object["image"]}`);
-      //     item_label_array.push(object["name"]);
-      //   }
-      // }
-      //
-      // // setItemLabels(item_label_array);
-      // // setItemIds(item_id_array);
-      // // setItemImages(item_image_array);
-      //
-      //
-      // item_label_array.forEach((itemlabel) =>
-      //   setItemLabels((oldArray) => [...oldArray, itemlabel])
-      // );
-      // item_id_array.forEach((itemid) =>
-      //   setItemIds((oldArray) => [...oldArray, itemid])
-      // );
-      // item_image_array.forEach((itemimage) =>
-      //   setItemImages((oldArray) => [...oldArray, itemimage])
-      // );
-    });
-    xhr.open("POST", "http://localhost:8080/outfitLookUp");
-    console.log("parse call to backend")
   }
 
 
