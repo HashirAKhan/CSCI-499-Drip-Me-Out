@@ -42,9 +42,6 @@ export default function Closet(props) {
 
   const [viewitemlabel, setViewItemLabel] = useState("");
 
-  let accessories_checkbox = false;
-  let category_checkbox = false;
-
   function onChange(id, image, itemlabel) {
     setViewItemId(id);
     let div = document.getElementById("toplowerbox");
@@ -78,22 +75,13 @@ export default function Closet(props) {
     localStorage.setItem("viewitemimage", image);
   }
 
-  function checkboxes(){
-    if(document.getElementById('accessories-checkbox').checked){
-      accessories_checkbox = true
-    }
-    if(document.getElementById('category-checkbox').checked){
-      category_checkbox = true
-    }
-  }
-
   function onClickFilter(){
-    checkboxes();
     let xhr = new XMLHttpRequest();
     const data = JSON.stringify({
       user: localStorage.getItem("email"),
-      accessories_checkbox: accessories_checkbox,
-      category_checkbox: category_checkbox,
+      colors_checkbox: document.getElementById('colors-checkbox').checked,
+      colors_value: document.getElementById("color").value,
+      category_checkbox: document.getElementById('category-checkbox').checked,
       category_value: document.getElementById("category").value,
     });
     console.log(data);
@@ -107,7 +95,6 @@ export default function Closet(props) {
       let xhr = new XMLHttpRequest();
       xhr.addEventListener("load", () => {
         let stop = 0;
-        // let counter = 0;
 
         let load = document.getElementById("load");
         if (document.getElementById("load")) {
@@ -126,10 +113,6 @@ export default function Closet(props) {
           item_image_array.push(`data:image/png;base64,${object["image"]}`);
           console.log(object);
         }
-
-        // let leftbox = document.getElementById("leftbox");
-        // let height = 240 * (data.length / 2);
-        // leftbox.style.height = `${height.toString()}px`;
 
         item_label_array.forEach((itemlabel) =>
           setItemLabels((oldArray) => [...oldArray, itemlabel])
@@ -174,9 +157,30 @@ export default function Closet(props) {
       </div>
 
         <div id="filters">
-            <div id="accessories">
-              <input type="checkbox" id="accessories-checkbox" />
-              <label for="accessories"> Accessories </label>
+            <div id="colors">
+              <input type="checkbox" id="colors-checkbox" />
+              <label for="color"> Color: </label>
+
+              <select id="color">
+                <option value="select">Select</option>
+                <option value="Black">Black</option>
+                <option value="Blue">Blue</option>
+                <option value="Brown">Brown</option>
+                <option value="Gold">Gold</option>
+                <option value="Green">Green</option>
+                <option value="Grey">Grey</option>
+                <option value="Multi">Multi</option>
+                <option value="Navy">Navy</option>
+                <option value="Neutral">Neutral</option>
+                <option value="No Color">No Color</option>
+                <option value="Orange">Orange</option>
+                <option value="Pink">Pink</option>
+                <option value="Purple">Purple</option>
+                <option value="Red">Red</option>
+                <option value="Silver">Silver</option>
+                <option value="White">White</option>
+                <option value="Yellow">Yellow</option>
+              </select>
             </div>
 
             <div class="clothing-categories">
@@ -200,6 +204,7 @@ export default function Closet(props) {
                 <option value="Close Toed Shoes">Close Toed Shoes</option>
                 <option value="Open Toed Shoes">Open Toed Shoes</option>
                 <option value="Rain Boots">Rain Boots</option>
+                <option value="Accessories">Accessories</option>
               </select>
             </div>
 

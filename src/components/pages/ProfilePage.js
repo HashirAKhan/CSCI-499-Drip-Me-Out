@@ -48,6 +48,12 @@ const Profile = () => {
                 required
               />
             </div>
+
+            <div>
+              Celsius:
+              <br></br>
+              <input type="checkbox" id="isCelsius"></input>
+            </div>
             <Button text="Change">Change</Button>
           </form>
         </div>
@@ -59,7 +65,6 @@ const Profile = () => {
             Logout
           </Link>
         </div>
-
       </div>
     </>
   );
