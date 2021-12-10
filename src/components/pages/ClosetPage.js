@@ -85,7 +85,7 @@ export default function Closet(props) {
       category_value: document.getElementById("category").value,
     });
     console.log(data);
-    xhr.open("POST", "http://localhost:8080/generate");
+    xhr.open("POST", "http://localhost:8080/filterCloset");
     xhr.send(data);
   }
 
