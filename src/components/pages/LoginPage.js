@@ -29,6 +29,7 @@ export default function Login(props) {
           localStorage.setItem("password", password);
           localStorage.setItem("zipcode", response["zipcode"]);
           localStorage.setItem("username", response["username"]);
+          localStorage.setItem("isCelsius", response["isCelsius"]); 
         }
         if (response["response"] === "unsuccessful") {
           alert("Your login info is not in our database, please sign up");

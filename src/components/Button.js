@@ -254,6 +254,7 @@ const Button = ({ text, href, image, save, save_two, remove, customize }) => {
     }
     data["email"] = localStorage.getItem("email");
     localStorage.setItem("zipcode", data["zipcode-profile"]);
+    localStorage.setItem("isCelsius", data["isCelsius"])
     console.log(data);
     let xhr = new XMLHttpRequest();
     xhr.addEventListener("load", () => {

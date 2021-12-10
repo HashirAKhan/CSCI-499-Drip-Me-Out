@@ -42,7 +42,7 @@ export default function GenerateOutfit() {
       let tempData = JSON.parse(xhr.response);
       temp_field.defaultValue = (tempData["low"] + tempData["high"]) / 2;
     });
-    const data = JSON.stringify({ zipcode: localStorage.getItem("zipcode"), temp: localStorage.getItem("temp") });
+    const data = JSON.stringify({ zipcode: localStorage.getItem("zipcode"), isCelsius: localStorage.getItem("isCelsius") });
     xhr.open("POST", "http://localhost:8080/zipcode");
     xhr.send(data);
   }
@@ -69,7 +69,7 @@ export default function GenerateOutfit() {
       }
     });
 
-    const data = JSON.stringify({ zipcode: localStorage.getItem("zipcode"), temp: localStorage.getItem("temp")});
+    const data = JSON.stringify({ zipcode: localStorage.getItem("zipcode"), isCelsius: localStorage.getItem("isCelsius")});
     xhr.open("POST", "http://localhost:8080/zipcode");
     xhr.send(data);
   }
@@ -112,7 +112,7 @@ export default function GenerateOutfit() {
       color_checkbox: document.getElementById("color-selection").checked,
       color_value: document.getElementById("color-dropdown").value,
       accessories_checkbox: document.getElementById("accessories-filter").checked,
-      temp: localStorage.getItem("temp"),
+      isCelsius: localStorage.getItem("isCelsius"),
     });
     console.log(data);
     xhr.open("POST", "http://localhost:8080/generate");
