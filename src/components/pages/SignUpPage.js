@@ -55,11 +55,12 @@ export default function SignUp(props) {
           localStorage.setItem('password', password);
           localStorage.setItem('username', username);
           localStorage.setItem('zipcode', zipcode);
+          localStorage.setItem('temp', true)
           history.push("/home");
         }
       });
       xhr.open("POST", "http://localhost:8080/signup");
-      const data = JSON.stringify({"username": username, "email": email , "password": password, "zipcode": zipcode});
+      const data = JSON.stringify({"username": username, "email": email , "password": password, "zipcode": zipcode, "temp": true});
       xhr.send(data);
 
   }
