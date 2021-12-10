@@ -75,8 +75,30 @@ export default function Closet(props) {
     localStorage.setItem("viewitemimage", image);
   }
 
+  //@func: function runs when the filter closet button is pressed, and sends the filter data to
+  //       the backend, and updates image array, label array, and id array and displays filtered images
   function onClickFilter(){
     let xhr = new XMLHttpRequest();
+    xhr.addEventListener("load", () => {
+      let item_image_array = [];
+      let item_id_array = [];
+      let item_label_array = [];
+      let temp = JSON.parse(xhr.response);
+
+      let data = temp["closet"];
+
+      for(let i = 0; i < data.length; i++){
+        const object = JSON.parse(data[i]);
+        item_label_array.push(`${object["label"]}`);
+        item_id_array.push(`${object["id"]}`);
+        item_image_array.push(`data:image/png;base64,${object["image"]}`);
+      }
+
+      setItemLabels(item_label_array);
+      setItemIds(item_id_array);
+      setItemImages(item_image_array);
+
+    });
     const data = JSON.stringify({
       user: localStorage.getItem("email"),
       colors_checkbox: document.getElementById('colors-checkbox').checked,
@@ -87,6 +109,7 @@ export default function Closet(props) {
     console.log(data);
     xhr.open("POST", "http://localhost:8080/filterCloset");
     xhr.send(data);
+
   }
 
   useEffect(() => {
