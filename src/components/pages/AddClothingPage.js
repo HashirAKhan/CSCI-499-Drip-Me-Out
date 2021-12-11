@@ -48,6 +48,7 @@ const AddClothing = () => {
                   <option value="Close Toed Shoes">Close Toed Shoes</option>
                   <option value="Open Toed Shoes">Open Toed Shoes</option>
                   <option value="Rain Boots">Rain Boots</option>
+                  <option value="Accessories">Accessories</option>
                 </select>
               </div>
 
