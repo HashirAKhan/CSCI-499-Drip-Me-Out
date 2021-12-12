@@ -15,7 +15,6 @@ export default function GenerateOutfit() {
   const [viewitemid, setViewItemId] = useState("");
   const [show, setShow] = useState(false);
 
-
   function onChange(id) {
     setViewItemId(id);
   }
@@ -42,7 +41,17 @@ export default function GenerateOutfit() {
       let tempData = JSON.parse(xhr.response);
       temp_field.defaultValue = (tempData["low"] + tempData["high"]) / 2;
     });
-    const data = JSON.stringify({ zipcode: localStorage.getItem("zipcode"), isCelsius: localStorage.getItem("isCelsius") });
+    const data = JSON.stringify({
+      zipcode: localStorage.getItem("zipcode"),
+      isCelsius: localStorage.getItem("isCelsius"),
+    });
+    console.log(localStorage.getItem("isCelsius"));
+    if (localStorage.getItem("isCelsius")) {
+      document.getElementById("celsiusFahrenheit").innerHTML = "°C";
+    }
+    if (localStorage.getItem("isCelsius") === "false") {
+      document.getElementById("celsiusFahrenheit").innerHTML = "°F";
+    }
     xhr.open("POST", "http://localhost:8080/zipcode");
     xhr.send(data);
   }
@@ -69,7 +78,10 @@ export default function GenerateOutfit() {
       }
     });
 
-    const data = JSON.stringify({ zipcode: localStorage.getItem("zipcode"), isCelsius: localStorage.getItem("isCelsius")});
+    const data = JSON.stringify({
+      zipcode: localStorage.getItem("zipcode"),
+      isCelsius: localStorage.getItem("isCelsius"),
+    });
     xhr.open("POST", "http://localhost:8080/zipcode");
     xhr.send(data);
   }
@@ -111,7 +123,8 @@ export default function GenerateOutfit() {
       weather_value: document.getElementById("weather-dropdown").value,
       color_checkbox: document.getElementById("color-selection").checked,
       color_value: document.getElementById("color-dropdown").value,
-      accessories_checkbox: document.getElementById("accessories-filter").checked,
+      accessories_checkbox:
+        document.getElementById("accessories-filter").checked,
       isCelsius: localStorage.getItem("isCelsius"),
     });
     console.log(data);
@@ -136,46 +149,59 @@ export default function GenerateOutfit() {
       <div id="generate-outfit">
         <div id="filters-container">
           <form>
-            <h1> Filter By: </h1>
-            <input type="checkbox" id="temp" />
-            <input
-              type="number"
-              id="temp-input"
-              for="temp"
-              min="-100"
-              max="150"
-            />{" "}
-            °F
-            <input type="checkbox" id="weather-condition" />
-            <select id="weather-dropdown" for="weather-condition">
-              <option value="clear"> Clear </option>
-              <option value="rain"> Rain </option>
-              <option value="snow"> Snow </option>
-              <option value="clouds"> Clouds </option>
-            </select>
-            <input type="checkbox" id="color-selection" />
-            <select id="color-dropdown" for="color-selection">
-              <option value="select">Select</option>
-              <option value="Black">Black</option>
-              <option value="Blue">Blue</option>
-              <option value="Brown">Brown</option>
-              <option value="Gold">Gold</option>
-              <option value="Green">Green</option>
-              <option value="Grey">Grey</option>
-              <option value="Multi">Multi</option>
-              <option value="Navy">Navy</option>
-              <option value="Neutral">Neutral</option>
-              <option value="No Color">No Color</option>
-              <option value="Orange">Orange</option>
-              <option value="Pink">Pink</option>
-              <option value="Purple">Purple</option>
-              <option value="Red">Red</option>
-              <option value="Silver">Silver</option>
-              <option value="White">White</option>
-              <option value="Yellow">Yellow</option>
-            </select>
-            <input type="checkbox" id="accessories-filter" />
-            <label for="accessories-filter"> Accessories </label>
+            <div id="form">
+              <h1> Filter By: </h1>
+              <input
+                type="checkbox"
+                id="temp"
+                style={{
+                  float: "left",
+                  marginTop: "5px",
+                }}
+              />
+              <input
+                style={{ float: "left" }}
+                type="number"
+                id="temp-input"
+                for="temp"
+                min="-100"
+                max="150"
+              />{" "}
+              <div id="celsiusFahrenheit" style={{ marginLeft: "4px" }}>
+                {" "}
+                °F
+              </div>
+              <input type="checkbox" id="weather-condition" />
+              <select id="weather-dropdown" for="weather-condition">
+                <option value="clear"> Clear </option>
+                <option value="rain"> Rain </option>
+                <option value="snow"> Snow </option>
+                <option value="clouds"> Clouds </option>
+              </select>
+              <input type="checkbox" id="color-selection" />
+              <select id="color-dropdown" for="color-selection">
+                <option value="select">Select</option>
+                <option value="Black">Black</option>
+                <option value="Blue">Blue</option>
+                <option value="Brown">Brown</option>
+                <option value="Gold">Gold</option>
+                <option value="Green">Green</option>
+                <option value="Grey">Grey</option>
+                <option value="Multi">Multi</option>
+                <option value="Navy">Navy</option>
+                <option value="Neutral">Neutral</option>
+                <option value="No Color">No Color</option>
+                <option value="Orange">Orange</option>
+                <option value="Pink">Pink</option>
+                <option value="Purple">Purple</option>
+                <option value="Red">Red</option>
+                <option value="Silver">Silver</option>
+                <option value="White">White</option>
+                <option value="Yellow">Yellow</option>
+              </select>
+              <input type="checkbox" id="accessories-filter" />
+              <label for="accessories-filter"> Accessories </label>
+            </div>
           </form>
 
           <div id="drip-button">
@@ -198,7 +224,6 @@ export default function GenerateOutfit() {
           </div>
         </div>
       </div>
-
       <SaveItemModal show={show} onClose={exitModal} outfits={itemids} />
     </>
   );
