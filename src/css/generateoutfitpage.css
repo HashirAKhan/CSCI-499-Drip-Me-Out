@@ -1,10 +1,14 @@
-#generate-outfit{
+#generate-outfit {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
 }
 
-#filters-container{
-  background-color: rgba(0,0, 0, .5);
+#celsiusFahrenheit {
+  float: left;
+}
+
+#filters-container {
+  background-color: rgba(0, 0, 0, 0.5);
   width: 40%;
   margin-left: 2%;
   padding-top: 1%;
@@ -14,19 +18,19 @@
   height: 30vh;
 }
 
-#filters-container h1{
+#filters-container h1 {
   font-size: 120%;
 }
 
-#filters-container input{
+#filters-container input {
   margin-left: 3%;
 }
 
-#filters-container select{
+#filters-container select {
   margin-left: 3%;
 }
 
-#filters-container button{
+#filters-container button {
   position: static;
   margin-top: 12%;
   margin-left: 36%;
@@ -37,9 +41,9 @@
   padding-left
 } */
 
-#outfit-display{
+#outfit-display {
   padding: 20px 25px 20px;
-  background-color: rgba(0,0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 25px;
   margin-left: 5%;
   margin-right: 2%;
@@ -50,17 +54,17 @@
   margin-bottom: 2%;
 }
 
-#display-div{
-  float:right;
+#display-div {
+  float: right;
   width: 60%;
 }
 
-#display-div{
-  float:right;
+#display-div {
+  float: right;
   width: 60%;
 }
 
-#save-button{
+#save-button {
   text-align: center;
   padding-bottom: 2%;
 }

@@ -77,7 +77,7 @@ export default function Closet(props) {
 
   //@func: function runs when the filter closet button is pressed, and sends the filter data to
   //       the backend, and updates image array, label array, and id array and displays filtered images
-  function onClickFilter(){
+  function onClickFilter() {
     let xhr = new XMLHttpRequest();
     xhr.addEventListener("load", () => {
       let item_image_array = [];
@@ -86,30 +86,38 @@ export default function Closet(props) {
       let temp = JSON.parse(xhr.response);
 
       let data = temp["closet"];
+      console.log(data);
 
-      for(let i = 0; i < data.length; i++){
+      for (let i = 0; i < data.length; i++) {
         const object = JSON.parse(data[i]);
         item_label_array.push(`${object["label"]}`);
         item_id_array.push(`${object["id"]}`);
         item_image_array.push(`data:image/png;base64,${object["image"]}`);
       }
 
+      console.log(item_image_array.length + "hello");
+
       setItemLabels(item_label_array);
       setItemIds(item_id_array);
       setItemImages(item_image_array);
 
+      const imgs = document.getElementById("leftbox");
+      for (let i = 0; i < imgs.childNodes.length; i++) {
+        if (imgs.childNodes[i].id === "") {
+          imgs.removeChild(imgs.childNodes[i]);
+        }
+      }
     });
     const data = JSON.stringify({
       user: localStorage.getItem("email"),
-      colors_checkbox: document.getElementById('colors-checkbox').checked,
+      colors_checkbox: document.getElementById("colors-checkbox").checked,
       colors_value: document.getElementById("color").value,
-      category_checkbox: document.getElementById('category-checkbox').checked,
+      category_checkbox: document.getElementById("category-checkbox").checked,
       category_value: document.getElementById("category").value,
     });
     console.log(data);
     xhr.open("POST", "http://localhost:8080/filterCloset");
     xhr.send(data);
-
   }
 
   useEffect(() => {
@@ -179,62 +187,63 @@ export default function Closet(props) {
         </a>
       </div>
 
-        <div id="filters">
-            <div id="colors">
-              <input type="checkbox" id="colors-checkbox" />
-              <label for="color"> Color: </label>
+      <div id="filters">
+        <div id="colors">
+          <input type="checkbox" id="colors-checkbox" />
+          <label for="color"> Color: </label>
 
-              <select id="color">
-                <option value="select">Select</option>
-                <option value="Black">Black</option>
-                <option value="Blue">Blue</option>
-                <option value="Brown">Brown</option>
-                <option value="Gold">Gold</option>
-                <option value="Green">Green</option>
-                <option value="Grey">Grey</option>
-                <option value="Multi">Multi</option>
-                <option value="Navy">Navy</option>
-                <option value="Neutral">Neutral</option>
-                <option value="No Color">No Color</option>
-                <option value="Orange">Orange</option>
-                <option value="Pink">Pink</option>
-                <option value="Purple">Purple</option>
-                <option value="Red">Red</option>
-                <option value="Silver">Silver</option>
-                <option value="White">White</option>
-                <option value="Yellow">Yellow</option>
-              </select>
-            </div>
+          <select id="color">
+            <option value="select">Select</option>
+            <option value="Black">Black</option>
+            <option value="Blue">Blue</option>
+            <option value="Brown">Brown</option>
+            <option value="Gold">Gold</option>
+            <option value="Green">Green</option>
+            <option value="Grey">Grey</option>
+            <option value="Multi">Multi</option>
+            <option value="Navy">Navy</option>
+            <option value="Neutral">Neutral</option>
+            <option value="No Color">No Color</option>
+            <option value="Orange">Orange</option>
+            <option value="Pink">Pink</option>
+            <option value="Purple">Purple</option>
+            <option value="Red">Red</option>
+            <option value="Silver">Silver</option>
+            <option value="White">White</option>
+            <option value="Yellow">Yellow</option>
+          </select>
+        </div>
 
-            <div class="clothing-categories">
-              <input type="checkbox" id="category-checkbox" />
-              <label id="category-field" for="clothing-category">
-                {" "}
-                Category:{" "}
-              </label>
-              <br />
-              {/* <input type="input" id="clothing-category" required /> */}
-              <select id="category">
-                <option value="select">Select</option>
-                <option value="Coats">Coats</option>
-                <option value="Hoodies/Sweaters/Jackets">Hoodies/Sweaters/Jackets</option>
-                <option value="Long Sleeve T-shirt">Long Sleeve T-shirt</option>
-                <option value="Short Sleeve T-shirt">Short Sleeve T-shirt</option>
-                <option value="Sleeveless Top">Sleeveless Top</option>
-                <option value="Pants">Pants</option>
-                <option value="Dress">Dress</option>
-                <option value="Shorts/Skirt">Shorts/Skirt</option>
-                <option value="Close Toed Shoes">Close Toed Shoes</option>
-                <option value="Open Toed Shoes">Open Toed Shoes</option>
-                <option value="Rain Boots">Rain Boots</option>
-                <option value="Accessories">Accessories</option>
-              </select>
-            </div>
+        <div class="clothing-categories">
+          <input type="checkbox" id="category-checkbox" />
+          <label id="category-field" for="clothing-category">
+            {" "}
+            Category:{" "}
+          </label>
+          <br />
+          {/* <input type="input" id="clothing-category" required /> */}
+          <select id="category">
+            <option value="select">Select</option>
+            <option value="Coats">Coats</option>
+            <option value="Hoodies/Sweaters/Jackets">
+              Hoodies/Sweaters/Jackets
+            </option>
+            <option value="Long Sleeve T-shirt">Long Sleeve T-shirt</option>
+            <option value="Short Sleeve T-shirt">Short Sleeve T-shirt</option>
+            <option value="Sleeveless Top">Sleeveless Top</option>
+            <option value="Pants">Pants</option>
+            <option value="Dress">Dress</option>
+            <option value="Shorts/Skirt">Shorts/Skirt</option>
+            <option value="Close Toed Shoes">Close Toed Shoes</option>
+            <option value="Open Toed Shoes">Open Toed Shoes</option>
+            <option value="Rain Boots">Rain Boots</option>
+            <option value="Accessories">Accessories</option>
+          </select>
+        </div>
 
-          <div id="filter-button">
-            <button onClick={onClickFilter}>Filter Closet</button>
-          </div>
-
+        <div id="filter-button">
+          <button onClick={onClickFilter}>Filter Closet</button>
+        </div>
       </div>
 
       <div id="toplowerbox"></div>
