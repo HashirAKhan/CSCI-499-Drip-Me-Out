@@ -47,7 +47,6 @@
   font-size: small;
   height: 1200px;
   overflow: scroll;
-  overflow-x: hidden;
 }
 
 .rightbox {
@@ -75,7 +74,7 @@
   margin-top: 1%;
 }
 
-#filters{
+#filters {
   /* display: flex;
   flex-direction:row; */
   /* display: inline-block; */
@@ -89,29 +88,29 @@
   width: 37.5%;
 }
 
-#filters button{
+#filters button {
   margin-left: 40%;
 }
 
-#colors{
+#colors {
   float: left;
 }
 
-.clothing-categories{
+.clothing-categories {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   padding-left: 50px;
 }
 
-.clothing-categories label{
+.clothing-categories label {
   padding-left: 1%;
   padding-right: 1%;
 }
 
-.clothing-categories{
+.clothing-categories {
   margin-left: 8%;
 }
 
-#filter-button{
+#filter-button {
   padding-top: 5%;
 }
