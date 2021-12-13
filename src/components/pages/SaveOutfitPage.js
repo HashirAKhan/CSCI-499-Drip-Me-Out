@@ -42,7 +42,6 @@ export default function SaveOutfit() {
 
       setOutfits(outfit_list)
 
-
     });
 
     const data = JSON.stringify({ email: localStorage.getItem("email") });
@@ -65,10 +64,10 @@ export default function SaveOutfit() {
     let item_id_array = [];
     let item_label_array = [];
     const data = JSON.stringify({ id: e.target.dataset.value });
-
+    console.log(data)
     xhr.addEventListener("load", () => {
       let temp = JSON.parse(xhr.response);
-      console.log(temp);
+      //console.log(temp);
       let data = temp["items"];
       if (data.length != 0){
         for (let i = 0; i < data.length; i++) {
@@ -90,6 +89,23 @@ export default function SaveOutfit() {
 
   }
 
+  function deleteOutfit(id){
+    console.log("delete outfit")
+    let xhr = new XMLHttpRequest();
+    let item_image_array = [];
+    let item_id_array = [];
+    let item_label_array = [];
+    const data = JSON.stringify({ id: id });
+    console.log(data)
+    xhr.addEventListener("load", () => {
+      setOutfitList();
+      window.location.reload();
+    })
+    xhr.open("POST", "http://localhost:8080/deleteOutfit");
+    xhr.send(data);
+
+  }
+
 
   return (
     <>
@@ -106,6 +122,7 @@ export default function SaveOutfit() {
               >
                 {" "}
                 {outfit["name"]}{" "}
+                <button onClick={() => deleteOutfit(outfit["id"])}> x </button>
               </li>
             ))}
           </ul>

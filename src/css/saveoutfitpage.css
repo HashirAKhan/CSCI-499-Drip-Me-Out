@@ -39,6 +39,12 @@ div#save-outfit {
   margin-top: 2%;
 }
 
+#outfits button{
+  float: right;
+  color: red;
+  background-color: rgba(0,0,0,0);
+}
+
 /* overflow: scroll;
 padding: 20px 25px 20px;
 background-color: rgba(0,0, 0, .5);
