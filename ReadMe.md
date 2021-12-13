@@ -2,7 +2,7 @@
 
 Previous version: **https://hashirakhan.github.io/CSCI-499-Drip-Me-Out/#/**
 
-To install the libraries used in this project, run `npm install`
+To install the libraries used in this project, run `npm install`\
 To run the latest version, run `npm start`
 
 **Back-end**: https://github.com/rtieu10/CSCI-499-Drip-Me-Out-backend
