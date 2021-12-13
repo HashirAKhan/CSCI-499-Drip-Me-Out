@@ -49,6 +49,7 @@
   margin-right: 2%;
   color: white;
   width: 90%;
+  overflow: scroll;
   height: 80vh;
   margin-bottom: 2%;
 }

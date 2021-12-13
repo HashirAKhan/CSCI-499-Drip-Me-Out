@@ -1,35 +1,36 @@
 div#save-outfit {
-    display: flex;
+  display: flex;
 }
 
-#outfits{
+#outfits {
   list-style: none;
   padding: 7% 6%;
+  overflow: scroll;
 }
 
-#outfits li:hover{
+#outfits li:hover {
   cursor: pointer;
   margin-top: -0.8%;
   font-weight: 1000;
   /* font-size: larger; */
 }
 
-#outfit-list{
-  background-color: rgba(0,0, 0, .5);
+#outfit-list {
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  width:40%;
+  width: 40%;
   margin-left: 2%;
   margin-top: 2%;
   text-align: center;
   border-radius: 25px;
 }
 
-#outfit-list li{
+#outfit-list li {
   padding-bottom: 8%;
 }
 
-#view-saved{
-  background-color: rgba(0,0, 0, .5);
+#view-saved {
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border-radius: 25px;
   margin-left: 5%;
@@ -37,12 +38,13 @@ div#save-outfit {
   width: 50%;
   height: 75vh;
   margin-top: 2%;
+  overflow: scroll;
 }
 
-#outfits button{
+#outfits button {
   float: right;
   color: red;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 /* overflow: scroll;
