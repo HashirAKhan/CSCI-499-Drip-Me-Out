@@ -14,3 +14,10 @@ To run the latest version, run `npm start`
 
 ![Design](https://github.com/HashirAKhan/CSCI-499-Drip-Me-Out/blob/main/ReadMeAssets/Design.gif)
 ![Design](https://github.com/HashirAKhan/CSCI-499-Drip-Me-Out/blob/main/ReadMeAssets/DesignScreenshot.png)
+
+# Final Product
+
+## Login Page
+![Login](https://github.com/HashirAKhan/CSCI-499-Drip-Me-Out/blob/main/ReadMeAssets/loginpage.png)
+
+This is the login page, which allows users to login to their account on Drip Me Out. 
