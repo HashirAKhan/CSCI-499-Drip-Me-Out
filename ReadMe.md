@@ -53,6 +53,11 @@ When the user tries to save an outfit, a modal will pop up where they will be as
 
 The user will also be given the ability to customize their own outfits based on the clothes they have uploaded to Drip Me Out. Currently, the user is given the ability to choose a top, bottom, and shoes to customize the outfit. If they like the outfit they have customized, they can also save the outfit for future reference. When pressing the save outfit button, the user will be taken to a screen with the save outfit modal where they will be asked to name their customized outfit.
 
+## Select Item for Customize Outfit
+![SelectItem](https://github.com/HashirAKhan/CSCI-499-Drip-Me-Out/blob/main/ReadMeAssets/selectitem.png)
+
+When customizing an outfit, the user has the ability to customize three layers of the outfit. When the user clicks on a box to customize a layer the user will be taken to a different page where they can choose from items in their closet. After pressing on an image, the user can hit the select button to choose the piece of clothing for the customized outfit. After selecting the item, the user will be redirected back to the customize outfit page. 
+
 ## Closet Page
 
 ![Closet](https://github.com/HashirAKhan/CSCI-499-Drip-Me-Out/blob/main/ReadMeAssets/closet.png)
