@@ -47,6 +47,7 @@
   font-size: small;
   height: 1200px;
   overflow: scroll;
+  overflow-x: hidden;
 }
 
 .rightbox {

@@ -5,7 +5,6 @@ div#save-outfit {
 #outfits{
   list-style: none;
   padding: 7% 6%;
-  overflow: scroll;
 }
 
 #outfits li:hover{
@@ -30,7 +29,6 @@ div#save-outfit {
 }
 
 #view-saved{
-  overflow: scroll;
   background-color: rgba(0,0, 0, .5);
   color: white;
   border-radius: 25px;
@@ -39,7 +37,6 @@ div#save-outfit {
   width: 50%;
   height: 75vh;
   margin-top: 2%;
-
 }
 
 /* overflow: scroll;
