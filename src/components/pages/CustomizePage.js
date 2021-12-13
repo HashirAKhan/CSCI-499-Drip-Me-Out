@@ -1,13 +1,33 @@
 import Navbar from "../Navbar";
 import Button from "../Button";
+import SaveItemModal from "../SaveItemModal";
 import "../../css/customizepage.css";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 export default function CustomizePage() {
+  const [show, setShow] = useState(false);
+  const [itemids, setItemIds] = useState([]);
+
   let history = useHistory();
 
+  function exitModal() {
+    setShow(false);
+  }
+
   useEffect(() => {
+    const button = document.getElementsByClassName("btn")[0];
+    button.addEventListener("click", () => {
+      setShow(true);
+      const items = document.getElementsByTagName("img");
+      let outfit = [];
+      for (let i = 0; i < items.length; i++) {
+        outfit.push(items[i].id);
+      }
+      if (items.length > 1) {
+        setItemIds(outfit);
+      }
+    });
     const xhr = new XMLHttpRequest();
     xhr.addEventListener("load", () => {
       displayImages();
@@ -109,6 +129,7 @@ export default function CustomizePage() {
         </div>
         <Button text="Save Outfit" />
       </div>
+      <SaveItemModal show={show} onClose={exitModal} outfits={itemids} />
     </>
   );
 }
