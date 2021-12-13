@@ -130,7 +130,7 @@ const Button = ({ text, href, image, save, save_two, remove, customize }) => {
           image: base64,
           id: `${localStorage.getItem("viewedititemid")}`,
         });
-        // console.log(data);
+        console.log(data);
         xhr.send(data);
       }
     }
@@ -215,30 +215,30 @@ const Button = ({ text, href, image, save, save_two, remove, customize }) => {
   };
 
   function saveOutfit() {
-    const items = document.getElementsByTagName("img");
-    let outfit = [];
-    for (let i = 0; i < items.length; i++) {
-      outfit.push(items[i].id);
-    }
-    if (items.length > 1) {
-      let xhr = new XMLHttpRequest();
-      xhr.addEventListener("load", () => {
-        if (xhr.responseText === "saved") {
-          alert("Outfit saved");
-        } else {
-          alert("Outfit not saved");
-        }
-      });
-      xhr.open("POST", "http://localhost:8080/saveOutfit");
-      const data = JSON.stringify({
-        name: "Outfit",
-        outfit: outfit,
-        user: localStorage.getItem("email"),
-      });
-      xhr.send(data);
-    } else {
-      alert("Select more items to save outfit");
-    }
+    // const items = document.getElementsByTagName("img");
+    // let outfit = [];
+    // for (let i = 0; i < items.length; i++) {
+    //   outfit.push(items[i].id);
+    // }
+    // if (items.length > 1) {
+    //   let xhr = new XMLHttpRequest();
+    //   xhr.addEventListener("load", () => {
+    //     if (xhr.responseText === "saved") {
+    //       alert("Outfit saved");
+    //     } else {
+    //       alert("Outfit not saved");
+    //     }
+    //   });
+    //   xhr.open("POST", "http://localhost:8080/saveOutfit");
+    //   const data = JSON.stringify({
+    //     name: "Outfit",
+    //     outfit: outfit,
+    //     user: localStorage.getItem("email"),
+    //   });
+    //   xhr.send(data);
+    // } else {
+    //   alert("Select more items to save outfit");
+    // }
   }
 
   function changeProfile() {
@@ -254,7 +254,7 @@ const Button = ({ text, href, image, save, save_two, remove, customize }) => {
     }
     data["email"] = localStorage.getItem("email");
     localStorage.setItem("zipcode", data["zipcode-profile"]);
-    localStorage.setItem("isCelsius", data["isCelsius"])
+    localStorage.setItem("isCelsius", data["isCelsius"]);
     console.log(data);
     let xhr = new XMLHttpRequest();
     xhr.addEventListener("load", () => {
