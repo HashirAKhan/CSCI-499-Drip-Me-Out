@@ -1,6 +1,6 @@
 # Drip Me Out
 
-Live: **https://hashirakhan.github.io/CSCI-499-Drip-Me-Out/#/**
+**Live**: https://hashirakhan.github.io/CSCI-499-Drip-Me-Out/#/
 
 To install the libraries used in this project, run `npm install`\
 To run the latest version, run `npm start`
