@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/CSCI-499-Drip-Me-Out/static/css/main.b13d20fb.chunk.css",
-    "main.js": "/CSCI-499-Drip-Me-Out/static/js/main.f272cf66.chunk.js",
-    "main.js.map": "/CSCI-499-Drip-Me-Out/static/js/main.f272cf66.chunk.js.map",
-    "runtime-main.js": "/CSCI-499-Drip-Me-Out/static/js/runtime-main.a702d93b.js",
-    "runtime-main.js.map": "/CSCI-499-Drip-Me-Out/static/js/runtime-main.a702d93b.js.map",
-    "static/js/2.6cf18688.chunk.js": "/CSCI-499-Drip-Me-Out/static/js/2.6cf18688.chunk.js",
-    "static/js/2.6cf18688.chunk.js.map": "/CSCI-499-Drip-Me-Out/static/js/2.6cf18688.chunk.js.map",
-    "static/js/3.eb1d7614.chunk.js": "/CSCI-499-Drip-Me-Out/static/js/3.eb1d7614.chunk.js",
-    "static/js/3.eb1d7614.chunk.js.map": "/CSCI-499-Drip-Me-Out/static/js/3.eb1d7614.chunk.js.map",
-    "index.html": "/CSCI-499-Drip-Me-Out/index.html",
-    "static/css/main.b13d20fb.chunk.css.map": "/CSCI-499-Drip-Me-Out/static/css/main.b13d20fb.chunk.css.map",
-    "static/js/2.6cf18688.chunk.js.LICENSE.txt": "/CSCI-499-Drip-Me-Out/static/js/2.6cf18688.chunk.js.LICENSE.txt",
-    "static/media/customicon.b0eb6ef2.png": "/CSCI-499-Drip-Me-Out/static/media/customicon.b0eb6ef2.png"
+    "main.css": "/static/css/main.b13d20fb.chunk.css",
+    "main.js": "/static/js/main.47f95374.chunk.js",
+    "main.js.map": "/static/js/main.47f95374.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.20793060.js",
+    "runtime-main.js.map": "/static/js/runtime-main.20793060.js.map",
+    "static/js/2.6cf18688.chunk.js": "/static/js/2.6cf18688.chunk.js",
+    "static/js/2.6cf18688.chunk.js.map": "/static/js/2.6cf18688.chunk.js.map",
+    "static/js/3.eb1d7614.chunk.js": "/static/js/3.eb1d7614.chunk.js",
+    "static/js/3.eb1d7614.chunk.js.map": "/static/js/3.eb1d7614.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.b13d20fb.chunk.css.map": "/static/css/main.b13d20fb.chunk.css.map",
+    "static/js/2.6cf18688.chunk.js.LICENSE.txt": "/static/js/2.6cf18688.chunk.js.LICENSE.txt",
+    "static/media/customicon.b0eb6ef2.png": "/static/media/customicon.b0eb6ef2.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.a702d93b.js",
+    "static/js/runtime-main.20793060.js",
     "static/js/2.6cf18688.chunk.js",
     "static/css/main.b13d20fb.chunk.css",
-    "static/js/main.f272cf66.chunk.js"
+    "static/js/main.47f95374.chunk.js"
   ]
 }
