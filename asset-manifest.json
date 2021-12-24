@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/CSCI-499-Drip-Me-Out/static/css/main.006e8dff.chunk.css",
-    "main.js": "/CSCI-499-Drip-Me-Out/static/js/main.34ec5ce0.chunk.js",
-    "main.js.map": "/CSCI-499-Drip-Me-Out/static/js/main.34ec5ce0.chunk.js.map",
-    "runtime-main.js": "/CSCI-499-Drip-Me-Out/static/js/runtime-main.c1cca1ad.js",
-    "runtime-main.js.map": "/CSCI-499-Drip-Me-Out/static/js/runtime-main.c1cca1ad.js.map",
-    "static/js/2.8f9afdca.chunk.js": "/CSCI-499-Drip-Me-Out/static/js/2.8f9afdca.chunk.js",
-    "static/js/2.8f9afdca.chunk.js.map": "/CSCI-499-Drip-Me-Out/static/js/2.8f9afdca.chunk.js.map",
-    "static/js/3.78f1ff38.chunk.js": "/CSCI-499-Drip-Me-Out/static/js/3.78f1ff38.chunk.js",
-    "static/js/3.78f1ff38.chunk.js.map": "/CSCI-499-Drip-Me-Out/static/js/3.78f1ff38.chunk.js.map",
+    "main.css": "/CSCI-499-Drip-Me-Out/static/css/main.b13d20fb.chunk.css",
+    "main.js": "/CSCI-499-Drip-Me-Out/static/js/main.f272cf66.chunk.js",
+    "main.js.map": "/CSCI-499-Drip-Me-Out/static/js/main.f272cf66.chunk.js.map",
+    "runtime-main.js": "/CSCI-499-Drip-Me-Out/static/js/runtime-main.a702d93b.js",
+    "runtime-main.js.map": "/CSCI-499-Drip-Me-Out/static/js/runtime-main.a702d93b.js.map",
+    "static/js/2.6cf18688.chunk.js": "/CSCI-499-Drip-Me-Out/static/js/2.6cf18688.chunk.js",
+    "static/js/2.6cf18688.chunk.js.map": "/CSCI-499-Drip-Me-Out/static/js/2.6cf18688.chunk.js.map",
+    "static/js/3.eb1d7614.chunk.js": "/CSCI-499-Drip-Me-Out/static/js/3.eb1d7614.chunk.js",
+    "static/js/3.eb1d7614.chunk.js.map": "/CSCI-499-Drip-Me-Out/static/js/3.eb1d7614.chunk.js.map",
     "index.html": "/CSCI-499-Drip-Me-Out/index.html",
-    "static/css/main.006e8dff.chunk.css.map": "/CSCI-499-Drip-Me-Out/static/css/main.006e8dff.chunk.css.map",
-    "static/js/2.8f9afdca.chunk.js.LICENSE.txt": "/CSCI-499-Drip-Me-Out/static/js/2.8f9afdca.chunk.js.LICENSE.txt"
+    "static/css/main.b13d20fb.chunk.css.map": "/CSCI-499-Drip-Me-Out/static/css/main.b13d20fb.chunk.css.map",
+    "static/js/2.6cf18688.chunk.js.LICENSE.txt": "/CSCI-499-Drip-Me-Out/static/js/2.6cf18688.chunk.js.LICENSE.txt",
+    "static/media/customicon.b0eb6ef2.png": "/CSCI-499-Drip-Me-Out/static/media/customicon.b0eb6ef2.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.c1cca1ad.js",
-    "static/js/2.8f9afdca.chunk.js",
-    "static/css/main.006e8dff.chunk.css",
-    "static/js/main.34ec5ce0.chunk.js"
+    "static/js/runtime-main.a702d93b.js",
+    "static/js/2.6cf18688.chunk.js",
+    "static/css/main.b13d20fb.chunk.css",
+    "static/js/main.f272cf66.chunk.js"
   ]
 }
