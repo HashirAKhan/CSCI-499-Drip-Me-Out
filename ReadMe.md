@@ -7,8 +7,6 @@ To run the latest version, run `npm start`
 
 **Back-end**: https://github.com/rtieu10/CSCI-499-Drip-Me-Out-backend
 
-  For back-end integration, run back-end server using `node index.js`
-
   **Note**: For local setup, you will need your own OpenWeatherMap API key for weather-related functionalities
 
 # Design
