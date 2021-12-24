@@ -1,6 +1,6 @@
 # Drip Me Out
 
-Previous version: **https://hashirakhan.github.io/CSCI-499-Drip-Me-Out/#/**
+Live: **https://hashirakhan.github.io/CSCI-499-Drip-Me-Out/#/**
 
 To install the libraries used in this project, run `npm install`\
 To run the latest version, run `npm start`
@@ -9,7 +9,7 @@ To run the latest version, run `npm start`
 
   For back-end integration, run back-end server using `node index.js`
 
-  **Note**: Since backend has not been deployed, you will need your own OpenWeatherMap API key for weather-related functionalities
+  **Note**: For local setup, you will need your own OpenWeatherMap API key for weather-related functionalities
 
 # Design
 
