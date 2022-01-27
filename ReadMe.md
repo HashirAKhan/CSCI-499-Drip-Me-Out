@@ -2,6 +2,9 @@
 
 **Live**: https://hashirakhan.github.io/CSCI-499-Drip-Me-Out/#/
 
+**Technologies**: JavaScript, React, HTML/CSS, Node.js
+**Deployed using**: Github Pages, Heroku, Back4App
+
 To install the libraries used in this project, run `npm install`\
 To run the latest version, run `npm start`
 
