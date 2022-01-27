@@ -1,16 +1,9 @@
 # Drip Me Out
 
-**Live**: https://hashirakhan.github.io/CSCI-499-Drip-Me-Out/#/
-
+**Live**: https://hashirakhan.github.io/CSCI-499-Drip-Me-Out/#/ </br>
 **Technologies**: JavaScript, React, HTML/CSS, Node.js </br>
-**Deployed using**: Github Pages, Heroku, Back4App
-
-To install the libraries used in this project, run `npm install`\
-To run the latest version, run `npm start`
-
-**Back-end**: https://github.com/rtieu10/CSCI-499-Drip-Me-Out-backend
-
-  **Note**: For local setup, you will need your own OpenWeatherMap API key for weather-related functionalities
+**Deployed using**: Github Pages, Heroku, Back4App </br>
+**Back-end**: https://github.com/rtieu10/CSCI-499-Drip-Me-Out-backend </br>
 
 # Design
 
@@ -79,3 +72,8 @@ The add item page allows users to upload images of clothing items in their close
 ![View-Edit](https://github.com/HashirAKhan/CSCI-499-Drip-Me-Out/blob/main/ReadMeAssets/view-edit.png)
 
 The view/edit page allows users to edit the information they have inputted for a clothing item. On this page, they can update the clothing label, the category, and the color of the item. After pressing the save button, this information will be updated on the backend. The user can also remove this item from the closet by pressing the remove button for the item.
+
+## 
+To install the libraries used in this project, run `npm install` </br>
+To run the latest version, run `npm start` </br>
+**Note**: For local setup, you will need your own OpenWeatherMap API key for weather-related functionalities
