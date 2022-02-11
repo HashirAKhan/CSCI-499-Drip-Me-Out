@@ -1,7 +1,7 @@
 # Drip Me Out
 
 **Live**: https://hashirakhan.github.io/CSCI-499-Drip-Me-Out/#/ </br>
-**Technologies**: JavaScript, React, HTML/CSS, Node.js </br>
+**Technologies**: React, Node.js </br>
 **Deployed using**: Github Pages, Heroku, Back4App </br>
 **Back-end**: https://github.com/rtieu10/CSCI-499-Drip-Me-Out-backend </br>
 
